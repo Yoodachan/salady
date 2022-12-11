@@ -1,45 +1,399 @@
 /* 메인 페이지 풀스크린 설정 */
-
-html,body,#main {
+html,body {
     width:100%;
     height:100%;
     overflow:hidden;
 }
-
 ::selection {
     background: none;
 }
 
+#main,#main_slide,.banner_wrap,.area {
+    position:relative;
+    width: 100%;
+    height: 100%;
+}
+
 #main {
-    border: 1px solid red;
+    z-index:8;
+    position:relative;
 }
 
-#main_slide {
+/* 헤더 영역 */
+#header {
+    width: 100%;
+    position: fixed;
+    top:0px;
+    left: 0px;
+    z-index:10;
+    transition-duration: .3s;
+}
+
+.header_on {
+    color: #666666;
+    height: 420px;
+}
+
+.header_off {
+    background: none;
+    color: #fff;
+    height: 100px;
+    overflow: hidden;
+}
+
+
+#nav {
     position: relative;
-    border: 1px solid blue;
-    width:100%;
-    height: 100%;
-    top: -965px;
+    height: 100px;
+    
 }
 
-#menu,#franchise,#qna,#sns {
-    width:100%;
-    height: 100%;
-    border: 3px solid black;
+#nav h1 {
+    position: absolute;
+    display: block;
+    width: 20%;
+    height: 100px;
+    top: 0px;
+    left: 0px;
+    padding: 0px 20px;
+    margin: 0px auto;
 }
 
-#menu {
-    background-color: blue;
-    z-index: 0;
+#nav h1 a {
+    display: block;
+    width: 120px;
+    margin: 0 auto;
 }
-#franchise {
-    background-color: purple;
+
+.logo_img {
+    display: block;
+    content: "";
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80px,80px;
+    margin: 0px auto;
+}
+.logo_hover_off {
+    background-image: url(../images/logo_2.png);
+}
+.logo_hover_on {
+    background-image: url(../images/logo.png);
+}
+
+
+.nav_menu {
+    display: flex;
+    width: 60%;
+    height: 100px;
+    line-height: 40px;
+    justify-content: center;
+    padding: 10px 0px;
+    font-size:20px;
+    margin: 0 auto;
+}
+
+.nav_on {
+    background-color: #fff;
+}
+/* .gnb_on {
+    background-color: #333333;
+} */
+
+
+.nav_menu>li {
+    display: block;
+    width: 15%;
+    height: 80px;
+    margin: 0px 20px;
+    text-align: left;
+    padding: 20px 0px;
+}
+
+.nav_menu>li>a {
+    display: inline;
+    height: 40px;
+}
+
+
+
+.nav_right {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 20%;
+    height: 100px;
+}
+
+.nav_mbtn_wrap {
+    position:absolute;
+    display: flex;
+    justify-content: right;
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    right: 0px;
+    margin: 25px;
+    z-index: 11;
+}
+
+.nav_mbtn {
+    display: block;
+    width: 100%;    
+    background: none;
+    border: none;
+}
+
+
+.mbtn_img {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin: 0 auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+}
+.mbtn_img_off {
+    background-image: url(../images/ico_menu.png);
+}
+.mbtn_img_on {
+    background-image: url(../images/ico_menu_hover.png);
+}
+
+
+
+/* 헤더 하부 */
+
+.gnb_wrap {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 16px;
+    color: #fff;
+    transition-duration: .3s;
+    background-color: #333333;
+}
+
+/* 헤더 하부 왼쪽 */
+
+.gnb_left,
+.gnb_right {
+    width: 20%;
+}
+
+.gnb_left {
+    cursor:pointer;
+    overflow: hidden;
+}
+
+.gnb_left>img {
+    display: block;
+    width:50%;
+    height: 320px;
+    margin: 0 auto;
+    transition-duration: 1.2s
+}
+
+.model_off {
+    transform: translate(0,200%);
+}
+.model_on {
+    transition-delay: .3s;
+    transform: translate(0);
+}
+
+.gnb_depth {
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    overflow: hidden;
+}
+.gnb_depth>li {
+    display: block;
+    display: block;
+    width: 15%;
+    margin: 0px 20px;
+    text-align: left;
+    padding: 20px 0px;
+}
+
+.gnb_depth>li>ul {
+    transition-duration: .6s;
+}
+
+.gnb_depth>li ul li {
+    margin-bottom: 15px;
+}
+.gnb_depth>li ul li>a {
+    display: block;
+}
+
+.news li:hover,.list li:hover,
+.brand li:hover,.franchise li:hover,
+.order li:hover {
+    transition-duration: .2s;
+    color:#226140;
+}
+.select {
+    position: relative;
+    color:#226140;
+}
+
+.select::after {
+    position: absolute;
+    bottom: -20px;
+    left: 5%;
+    content: "";
+    width: 15px;
+    height:15px;
+    border: 2px;
+    background-color: #333333;
+    transform: rotate(45deg);
+}
+
+/* 메인 영역 */
+.slide_list {
+    display: flex;
+    justify-content: left;
+    width:500vw;
+    height:100%;
+}
+
+.banner_wrap {
+    position:relative;
+}
+
+.banner {
+    display: block;
+    width:100vw;
+    height:100%;
+    transition: 0.6s;
+}
+
+.left,.right {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+}
+.left {
+    left: 10px;
+}
+.right {
+    right: 10px;
+}
+
+.bn_img img {
+    width: 100%;
+    height: 100%;
+    z-index:1;
+}
+
+
+.main_slide {
+    position:relative;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+.swiper-slide {
+    background: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide_btn_wrap {
+    position: absolute;
+    left: 50%;
+    bottom: 32px;
+    width: 250px;
+    height: 60px;
+    border-radius: 50px;
+    background-color:rgba(0,0,0,.6);
     z-index: 1;
-}
-#qna {
-    background-color: aqua;
-}
-#sns {
-    background-color: cadetblue;
+    margin-left: -120px;
 }
 
+.slide_btn_wrap button {
+    background: none;
+    border: none;
+}
+
+.slide_btn_wrap i {
+    position: absolute;
+    top: 30%;
+    color: #fff;
+    font-size: 24px;
+}
+
+.fa-arrow-left {
+    left: 12px;
+}
+
+.fa-arrow-right {
+    right: 12px;
+}
+
+.swiper-pagination-current {
+    color: #fff;
+}
+
+.slide_pagination {
+    position: absolute;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    color: #999999;
+    font-weight: bold;
+    top: 15px;
+}
+
+
+.order_btn {
+    position: fixed;
+    bottom: 28px;
+    right: 26px;
+    width: 200px;
+    height: 70px;
+    line-height: 30px;
+    background-color: #226140;
+    border-radius: 50px;
+    z-index: 6;
+    padding: 20px 50px;
+}
+
+.fa-leaf {
+    position: absolute;
+    left: 30px;
+    bottom: 26px;
+}
+
+.order_btn {
+    display: block;
+    color: #fff;
+    text-align: right;
+    font-size: 18px;
+}

@@ -33,26 +33,123 @@
 </head>
 
 <body>
+    <header id="header" class="header_off">
+      <!-- 헤더 상부 -->
+      <nav id="nav" class="nav_off">
+        <!-- 좌측 로고 20% -->
+        <h1 id="logo" title="logo">
+          <a href="#"><span class="logo_img logo_hover_off"></span></a>
+        </h1>
+        <!-- 중앙 메뉴 및 SNS 60% -->
+        <ul class="nav_menu">
+          <li class="news"><a href="#">새소식</a></li>
+          <li class="list"><a href="#">메뉴</a></li>
+          <li class="brand"><a href="#">브랜드</a></li>
+          <li class="franchise"><a href="#">가맹점</a></li>
+          <li class="order"><a href="#">주문</a></li>
+        </ul>
+        <!-- 우측 메뉴바 20% -->
+        <div class="nav_right">
+        </div>
+      </nav>
+
+      <!-- 헤더 하부 -->
+      <div class="gnb_wrap gnb_on">
+        <!-- 새소식 메뉴 -->
+        <div class="gnb_left">
+        </div>
+        <ul class="gnb_depth">
+          <!-- 새소식 -->
+          <li>
+            <ul class="news">
+              <li><a href="#">공지사항</a></li>
+              <li><a href="#">이벤트</a></li>
+            </ul>
+            
+          </li>
+          <!-- 메뉴 메뉴 -->
+          <li>
+            <ul class="list">
+              <li><a href="#">웜볼</a></li>
+              <li><a href="#">샐러디</a></li>
+              <li><a href="#">샌드&랩</a></li>
+              <li><a href="#">토핑&드레싱</a></li>
+              <li><a href="#">음료&사이드</a></li>
+            </ul>
+          </li>
+          <!-- 브랜드 메뉴 -->
+          <li>
+            <ul class="brand">
+              <li><a href="#">샐러디</a></li>
+              <li><a href="#">샐러디 키친</a></li>
+              <li><a href="#">샐러디 팜</a></li>
+            </ul>
+          </li>
+          <!-- 가맹점 메뉴 -->
+          <li>
+            <ul class="franchise">
+              <li><a href="#">가맹 안내</a></li>
+              <li><a href="#">가맹 신청</a></li>
+            </ul>
+          </li>
+          <!-- 주문 메뉴 -->
+          <li>
+            <ul class="order">
+              <li><a href="#">매장 주문</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="gnb_right"></div>
+
+
+      </div>
+    </header>
+    <div class="nav_mbtn_wrap">
+      <button class="nav_mbtn" type="button" ><span class="mbtn_img mbtn_img_off"></span></button> 
+    </div>
+
+
     <main id="main">
       <section id="main_slide">
+
+        <div id="banner" class="area">
+          <div class="main_slide">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="./images/banner_img_001.png"/></div>
+              <div class="swiper-slide"><img src="./images/banner_img_002.png"/></div>
+              <div class="swiper-slide"><img src="./images/banner_img_003.png"/></div>
+              <div class="swiper-slide"><img src="./images/banner_img_004.png"/></div>
+            </div>
+            <div class="slide_btn_wrap">
+              <button type="button" class="slide_btn_prev"><i class="fa-solid fa-arrow-left"></i></button>
+              <div class="slide_pagination"></div>
+              <button type="button" class="slide_btn_next"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+          <a href="#" class="order_btn">
+            <i class="fa-solid fa-leaf"></i>
+            <strong> 온라인 주문</strong>
+          </a>
+        </div>
   
         <div id="menu" class="area">
-
+          1
         </div>
   
         <div id="franchise" class="area">
-
+          2
         </div>
   
         <div id="qna" class="area">
-
+          3
         </div>
   
         <div id="sns" class="area">
-
+          4
         </div>
-      </section>
-    </main>  
-</body>
 
+      </section>
+      
+    </main>
+</body>
 </html>
