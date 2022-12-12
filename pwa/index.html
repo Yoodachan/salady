@@ -15,7 +15,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/index.css">
   <link rel="stylesheet" href="./css/reset.css">
   <script src="https://kit.fontawesome.com/73110e26f5.js" crossorigin="anonymous"></script>
@@ -42,11 +42,11 @@
         </h1>
         <!-- 중앙 메뉴 및 SNS 60% -->
         <ul class="nav_menu">
-          <li class="news"><a href="#">새소식</a></li>
-          <li class="list"><a href="#">메뉴</a></li>
           <li class="brand"><a href="#">브랜드</a></li>
+          <li class="list"><a href="#">메뉴</a></li>
           <li class="franchise"><a href="#">가맹점</a></li>
           <li class="order"><a href="#">주문</a></li>
+          <li class="news"><a href="#">새소식</a></li>
         </ul>
         <!-- 우측 메뉴바 20% -->
         <div class="nav_right">
@@ -59,13 +59,13 @@
         <div class="gnb_left">
         </div>
         <ul class="gnb_depth">
-          <!-- 새소식 -->
+          <!-- 브랜드 메뉴 -->
           <li>
-            <ul class="news">
-              <li><a href="#">공지사항</a></li>
-              <li><a href="#">이벤트</a></li>
+            <ul class="brand">
+              <li><a href="#">샐러디</a></li>
+              <li><a href="#">샐러디 키친</a></li>
+              <li><a href="#">샐러디 팜</a></li>
             </ul>
-            
           </li>
           <!-- 메뉴 메뉴 -->
           <li>
@@ -75,14 +75,6 @@
               <li><a href="#">샌드&랩</a></li>
               <li><a href="#">토핑&드레싱</a></li>
               <li><a href="#">음료&사이드</a></li>
-            </ul>
-          </li>
-          <!-- 브랜드 메뉴 -->
-          <li>
-            <ul class="brand">
-              <li><a href="#">샐러디</a></li>
-              <li><a href="#">샐러디 키친</a></li>
-              <li><a href="#">샐러디 팜</a></li>
             </ul>
           </li>
           <!-- 가맹점 메뉴 -->
@@ -98,8 +90,16 @@
               <li><a href="#">매장 주문</a></li>
             </ul>
           </li>
+          <!-- 새소식 -->
+          <li>
+            <ul class="news">
+              <li><a href="#">공지사항</a></li>
+              <li><a href="#">이벤트</a></li>
+            </ul>
+          </li>
         </ul>
         <div class="gnb_right"></div>
+        
 
 
       </div>
@@ -110,46 +110,283 @@
 
 
     <main id="main">
-      <section id="main_slide">
-
-        <div id="banner" class="area">
-          <div class="main_slide">
+        <section id="banner">
+          <div class="banner_wrap">
             <div class="swiper-wrapper">
               <div class="swiper-slide"><img src="./images/banner_img_001.png"/></div>
               <div class="swiper-slide"><img src="./images/banner_img_002.png"/></div>
               <div class="swiper-slide"><img src="./images/banner_img_003.png"/></div>
               <div class="swiper-slide"><img src="./images/banner_img_004.png"/></div>
             </div>
-            <div class="slide_btn_wrap">
-              <button type="button" class="slide_btn_prev"><i class="fa-solid fa-arrow-left"></i></button>
-              <div class="slide_pagination"></div>
-              <button type="button" class="slide_btn_next"><i class="fa-solid fa-arrow-right"></i></button>
+            <div class="banner_btn_wrap">
+              <button type="button" class="banner_btn_prev"><i class="bn_ico_prev"></i></button>
+              <div class="banner_pagination"></div>
+              <button type="button" class="banner_btn_next"><i class="bn_ico_next"></i></button>
             </div>
           </div>
+        </section>
+        <article>
           <a href="#" class="order_btn">
             <i class="fa-solid fa-leaf"></i>
             <strong> 온라인 주문</strong>
           </a>
-        </div>
+        </article>
   
-        <div id="menu" class="area">
-          1
-        </div>
+        <section id="menu">
+          <div class="menu_content">
+            <h3 class="menu_title">
+              MENU STORY
+            </h3>
+            <ul class="menu_cate">
+              <li><button type="button">
+                <em class="on_view"> 든든하게 즐길 수 있는 웜볼 </em>
+                <strong class="on_style">WARM BOWL</strong>
+              </button></li>
   
-        <div id="franchise" class="area">
-          2
-        </div>
+              <li><button type="button">
+                <em class="off_view"> 국내산 프리미엄 채소로만 구성된 샐러디 </em>
+                <strong class="off_style">SALADY</strong>
+              </button></li>
   
-        <div id="qna" class="area">
-          3
-        </div>
+              <li><button type="button">
+                <em class="off_view"> 또띠아로 돌돌 말아낸 맛있고 간편한 랩 </em>
+                <strong class="off_style">WRAP/WARM WRAP</strong>
+              </button></li>
   
-        <div id="sns" class="area">
-          4
-        </div>
+              <li><button type="button">
+                <em class="off_view"> 씹을수록 고소한 귀리번이 매력적인 샌드 </em>
+                <strong class="off_style">SAND/BREAD</strong>
+              </button></li>
+            </ul>
 
-      </section>
-      
+              <!-- product -->
+            <div class="menu_slide_wrap">
+
+              <div class="menu_list">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="./images/warm_bowl_001.jpg"/></div>
+                  <div class="swiper-slide"><img src="./images/warm_bowl_002.jpg"/></div>
+                  <div class="swiper-slide"><img src="./images/warm_bowl_003.jpg"/></div>
+                  <div class="swiper-slide"><img src="./images/warm_bowl_004.jpg"/></div>
+                </div>
+                <div class="menu_btn_wrap">
+                  <button type="button" class="menu_btn_prev"><i class="menu_ico_prev"></i></button>
+                  <div class="menu_now_title">칠리 베이컨 웜볼</div>
+                  <button type="button" class="menu_btn_next"><i class="menu_ico_next"></i></button>
+                </div>
+              </div>
+
+
+            </div>
+
+          </div>
+        </section>
+  
+        <section id="franchise">
+          <div class="franchise_content">
+            <h3 class="franchise_title">
+              FRANCHISE
+            </h3>
+            <strong class="franchise_desc">
+              지속 가능한 브랜드, <br/>
+              샐러디가 함께합니다.
+            </strong>
+            <span class="franchise_text">
+              데이터로 입증된 연간 평균 영업이익률 25% <br/>
+              샐러디의 축적된 경험과 노하우를 <br/>
+              바탕으로 여러분의 성공창업을 약속 드립니다.
+            </span>
+
+            <div class="franchise_btn_wrap">
+              <button type="button" class="fc_btn_left">
+                창업안내 바로가기
+                <i class="frc_ico_left"></i>
+              </button>
+              <button type="button" class="fc_btn_right">
+                가맹상담 신청
+                <i class="frc_ico_right"></i>
+              </button>
+            </div>
+
+          </div>
+        </section>
+  
+        <section id="store">
+          <div class="store_content">
+            <h3 class="store_title">
+              STORE
+            </h3>
+
+            <div class="store_location">
+              <a href="#" class="location_img"><img src="./images/m_brand_top_img.jpg"/></a>
+              <a href="#" class="store_btn">
+                매장 주문하기
+              </a>
+            </div>
+
+            <div class="location_wrap">
+              <strong class="location_wrap_title">매장 위치</strong>
+              <form class="location_form">
+                <input type="text" class="location_seach" placeholder="매장명 또는 주소를 입력하세요." />
+                <a href="#" class="location_user" >내 위치 중심으로 지도 보기</a>
+              </form>
+
+              <div class="location_list">
+
+                <div class="location_box">
+                  <strong class="box_name">샐러디 선릉점</strong>
+                  <div class="box_ico_wrap">
+                    <sapn class="mab_tag tag_01"></sapn>
+                    <sapn class="mab_tag tag_02"></sapn>
+                    <sapn class="mab_tag tag_03"></sapn>
+                    <sapn class="mab_tag tag_04"></sapn>
+                    <sapn class="mab_tag tag_05"></sapn>
+                    <sapn class="mab_tag tag_06"></sapn>
+                    <sapn class="mab_tag tag_07"></sapn>
+                  </div>
+                  <address class="box_address">
+                    <a href="#">
+                      02-556-4066
+                    </a>
+                  </address>
+                  <a href="" class="box_btn">자세히 보기</a>
+                </div>
+                <div class="location_box">
+                  <strong class="box_name">샐러디 선릉점</strong>
+                  <div class="box_ico_wrap">
+                    <sapn class="mab_tag tag_01"></sapn>
+                    <sapn class="mab_tag tag_02"></sapn>
+                    <sapn class="mab_tag tag_03"></sapn>
+                    <sapn class="mab_tag tag_04"></sapn>
+                    <sapn class="mab_tag tag_05"></sapn>
+                    <sapn class="mab_tag tag_06"></sapn>
+                    <sapn class="mab_tag tag_07"></sapn>
+                  </div>
+                  <address class="box_address">
+                    <a href="#">
+                      02-556-4066
+                    </a>
+                  </address>
+                  <a href="" class="box_btn">자세히 보기</a>
+                </div>
+                <div class="location_box">
+                  <strong class="box_name">샐러디 선릉점</strong>
+                  <div class="box_ico_wrap">
+                    <sapn class="mab_tag tag_01"></sapn>
+                    <sapn class="mab_tag tag_02"></sapn>
+                    <sapn class="mab_tag tag_03"></sapn>
+                    <sapn class="mab_tag tag_04"></sapn>
+                    <sapn class="mab_tag tag_05"></sapn>
+                    <sapn class="mab_tag tag_06"></sapn>
+                    <sapn class="mab_tag tag_07"></sapn>
+                  </div>
+                  <address class="box_address">
+                    <a href="#">
+                      02-556-4066
+                    </a>
+                  </address>
+                  <a href="" class="box_btn">자세히 보기</a>
+                </div>
+        
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+
+  
+        <section id="sns">
+          <div class="sns_content">
+            <h3 class="sns_title">
+              SNS
+            </h3>
+              <ul class="sns_link_wrap">
+                <li class="link_item">
+                  <a href="#">
+                    <img src="../pwa/images/sns_img_001.jpg">
+                  </a>
+                </li>
+
+                <li class="link_item">
+                  <a href="#">
+                    <img src="../pwa/images/sns_img_002.jpg">
+                  </a>
+                </li>
+
+                <li class="link_item">
+                  <a href="#">
+                    <img src="../pwa/images/sns_img_003.jpg">
+                  </a>
+                </li>
+
+                <li class="link_item">
+                  <a href="#">
+                    <img src="../pwa/images/sns_img_004.jpg">
+                  </a>
+                </li>
+
+                <li class="link_item">
+                  <a href="#">
+                    <img src="../pwa/images/sns_img_005.jpg">
+                  </a>
+                </li>
+
+                <li class="link_item">
+                  <a href="#">
+                    <img src="../pwa/images/sns_img_006.jpg">
+                  </a>
+                </li>
+
+                <li class="link_item">
+                  <a href="#">
+                    <img src="../pwa/images/sns_img_007.jpg">
+                  </a>
+                </li>
+
+                <li class="link_item">
+                  <a href="#">
+                    <img src="../pwa/images/sns_img_008.jpg">
+                  </a>
+                </li>
+
+                <li class="link_item">
+                  <a href="#">
+                    <img src="../pwa/images/sns_img_009.jpg">
+                  </a>
+                </li>
+
+                <li class="link_item">
+                  <a href="#">
+                    <img src="../pwa/images/sns_img_010.jpg">
+                  </a>
+                </li>
+
+              </ul>
+          </div>
+        </section>
     </main>
+    <footer>
+      <div class="footer_menu_wrap">
+        
+        <ul class="footer_menu_box">
+          <li><a href="#">이용약관</a></li>
+          <li><a href="#">개인정보 처리방침</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer_wrap">
+
+        <div class="footer_content">
+
+          <ul class="footer_icon_wrap">
+            <li><a href="#"><img src="./images/logo_back.png"/></a></li>
+          </ul>
+
+        </div>
+      </div>
+  </footer>
 </body>
 </html>

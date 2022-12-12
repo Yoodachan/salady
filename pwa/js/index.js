@@ -1,15 +1,15 @@
 
 // 스와이프
-var banner_slide = new Swiper(".main_slide", {
+var banner_slide = new Swiper(".banner_wrap", {
 	loop : true,   // 슬라이드 반복 여부
 	loopAdditionalSlides : 1,
 	autoplay: false,
 	navigation: {
-		nextEl: ".slide_btn_next",
-		prevEl: ".slide_btn_prev",
+		nextEl: ".banner_btn_next",
+		prevEl: ".banner_btn_prev",
 	},
 	pagination: {
-		el: ".slide_pagination",
+		el: ".banner_pagination",
 		type: "fraction",
 	}
 });
@@ -64,15 +64,19 @@ let order_menu = document.getElementsByClassName('order')[0];
 let order_item = document.getElementsByClassName('order')[1];
 
 nav.addEventListener('mouseenter', function () {
+
 	// 헤더 on/off
 	header.classList.remove('header_off');
 	header.classList.add('header_on');
+
 	//로고 on/off
 	logo_img.classList.remove('logo_hover_off');
 	logo_img.classList.add('logo_hover_on');
+
 	//버튼 on/off
 	mbtn_img.classList.remove('mbtn_img_off');
 	mbtn_img.classList.add('mbtn_img_on');
+
 	// 모델 애니메이션
 	model_move.classList.remove('model_off');
 	model_move.classList.add('model_on');
@@ -82,26 +86,29 @@ nav.addEventListener('mouseenter', function () {
 	nav.classList.add('nav_on');
 
 });
-
 header.addEventListener('mouseleave', function () {
+
 	// 헤더 on/off
 	header.classList.add('header_off');
 	header.classList.remove('header_on');
+
 	//로고 on/off
 	logo_img.classList.add('logo_hover_off');
 	logo_img.classList.remove('logo_hover_on');
+
 	//버튼 on/off
 	mbtn_img.classList.add('mbtn_img_off');
 	mbtn_img.classList.remove('mbtn_img_on');
+
 	// 모델 애니메이션
 	model_move.classList.add('model_off');
 	model_move.classList.remove('model_on');
+
 	// 네브 on/off
 	nav.classList.add('nav_off');
 	nav.classList.remove('nav_on');
 
 });
-
 
 
 news_menu.addEventListener('mouseenter', function () {
@@ -145,6 +152,7 @@ brand_item.addEventListener('mouseleave', function () {
 	brand_menu.classList.remove('select');
 })
 
+
 franchise_menu.addEventListener('mouseenter', function () {
 	this.classList.add('select');
 })
@@ -157,6 +165,7 @@ franchise_item.addEventListener('mouseenter', function () {
 franchise_item.addEventListener('mouseleave', function () {
 	franchise_menu.classList.remove('select');
 })
+
 
 order_menu.addEventListener('mouseenter', function () {
 	this.classList.add('select');
@@ -173,54 +182,25 @@ order_item.addEventListener('mouseleave', function () {
 
 
 
+var swiper = new Swiper('.menu_list', {
+	slidesPerView: 3,
+	direction: getDirection(),
+	navigation: {
+	  nextEl: '.menu_btn_next',
+	  prevEl: '.menu_btn_prev',
+	},
+	loop: true,
+	spaceBetween : 20, // 슬라이드 사이 여백
+	on: {
+	  resize: function () {
+		swiper.changeDirection(getDirection());
+	  },
+	},
+  });
 
-let section = document.getElementsByTagName('section');
-let section_co = section.length;
+  function getDirection() {
+	var windowWidth = window.innerWidth;
+	var direction = windowWidth <= 760 ? 'vertical' : 'horizontal';
 
-// for (let i = 0; i < section_co; i++) {
-
-// }
-
-// let main = document.getElementById('main');
-// let banner = document.getElementById('banner');
-let menu   = document.getElementById('menu');
-let franchise = document.getElementById('franchise');
-let qna = document.getElementById('qna');
-let sns = document.getElementById('sns');
-
-
-
-// const main_clientRect = main.getBoundingClientRect();
-// const banner_clientRect = banner.getBoundingClientRect();
-const menu_clientRect = menu.getBoundingClientRect();
-const franchise_clientRect = franchise.getBoundingClientRect();
-const qna_clientRect = qna.getBoundingClientRect();
-const sns_clientRect = sns.getBoundingClientRect();
-
-// console.log(main_clientRect)
-// console.log(banner_clientRect)
-console.log(menu_clientRect) 
-console.log(franchise_clientRect)
-console.log(qna_clientRect)
-console.log(sns_clientRect) 
-// const main_relativeTop = main_clientRect.top;
-// const banner_relativeTop = banner_clientRect.top;
-const menu_relativeTop = menu_clientRect.top;
-
-const franchise_relativeTop = franchise_clientRect.top;
-const qna_relativeTop = qna_clientRect.top;
-const sns_relativeTop = sns_clientRect.top;
-
-// console.log(main_relativeTop);
-// console.log(banner_relativeTop);
-console.log(menu_relativeTop);
-
-console.log(franchise_relativeTop);
-console.log(qna_relativeTop);
-console.log(sns_relativeTop);
-
-function yyy () {
-	window.scrollTo( 0, franchise_relativeTop );	
-}
-
-yyy()
+	return direction;
+  }

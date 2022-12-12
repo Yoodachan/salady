@@ -52,11 +52,11 @@ body,h1,h2,h3,h4,h5,p,div,dl,dt,dd{
     margin: 0;
     padding: 0;
 }
-h1,h4,h5,dt,strong,body,i,em,p,div,ul,li,dl,dt,dd,input,button,textarea {
+dt,strong,body,i,em,p,div,ul,li,dl,dt,dd,input,button,textarea {
   font-family: 'Noto Sans KR',sans-serif;
 }
-h2,h3,ul,li {
-    font-family: 'Jua', serif;
+h1,h2,h3,h4,h5 {
+    font-family: 'Black Han Sans', serif;
 }
 ul,li{
     margin:0;
