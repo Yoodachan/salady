@@ -340,18 +340,39 @@ html,body {
     top: 15px;
 }
 
+/* 아티클 영역 */
 
-.order_btn {
+/* 온라인 주문 버튼 */
+
+#order_btn {
     position: fixed;
-    bottom: 28px;
-    right: 26px;
+    right: 30px;
     width: 200px;
     height: 70px;
     line-height: 30px;
-    background-color: #226140;
+    text-align: right;
+    font-size: 18px;
     border-radius: 50px;
     z-index: 6;
     padding: 20px 50px;
+    transition-duration: 0.3s;
+}
+
+.order_color_off {
+    background-color: #226140;
+    color: #fff;
+}
+.order_color_on {
+    background-color: #fff;
+    color: #226140;
+}
+
+.order_off {
+    bottom: 30px;
+}
+
+.order_on {
+    bottom: 110px;
 }
 
 .fa-leaf {
@@ -360,13 +381,36 @@ html,body {
     bottom: 26px;
 }
 
-.order_btn {
+/* 스크롤 업 버튼 */
+.scroll_up_btn {
     display: block;
+    width: 60px;
+    background-color: rgba(120,120,120,.7);
+    border: none;
     color: #fff;
-    text-align: right;
-    font-size: 18px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 5;
+    transition-duration: 0.3s;
+}
+.scroll_up_btn i {
+    width: inherit;
+    height: inherit;
+    line-height: 60px;
+    display: block;
+    font-size: 32px;
 }
 
+.scroll_off {
+    height: 1px;
+    visibility: hidden;
+    overflow: hidden;
+}
+.scroll_on {
+    height: 60px;
+    visibility: visible;
+}
 /* 메뉴 시작 */
 
 #menu {
@@ -642,9 +686,73 @@ html,body {
     color: #333;
     font-size: 20px;
     font-weight: 600;
-    padding: 10px 30px;
     margin: 0px 5px;
+    overflow: hidden;
 }
+
+.franchise_btn_wrap button>span {
+    position:relative;
+    display: block;
+    width: 240px;
+    height: 70px;
+    line-height: 50px;
+    transition: .3s;
+    color: #333;
+    z-index: 7;
+    top: 0px;
+    left: 0px;
+    padding: 10px 40px 10px 10px;
+}
+
+.franchise_btn_wrap button>span:hover {
+    color: #fff;
+}
+
+.franchise_btn_wrap button::after {
+    display: block;
+    content:"";
+    width: 1px;
+    height: 70px;
+    position:absolute;
+    top: 0px;
+    left: -5px;
+    background-color:#333;
+    transition-duration: .5s;
+}
+
+.franchise_btn_wrap button:hover::after {
+    width: 270px;
+    left: 0px;
+    background-color: #333;
+}
+
+.frc_ico {
+    display: block;
+    width: 30px;
+    height: 30px;
+    z-index: 11;
+    filter:#333;
+    background-image: url(../images/ico_arrow_right_333.png);
+    background-repeat: no-repeat;
+    background-size: 30px,30px;
+    background-position: center;
+    position: absolute;
+    transition-duration: .3s;
+    top: 20px;
+    right: 20px;
+}
+
+button>span:hover .frc_ico {
+    background-image: url(../images/ico_arrow_right_fff.png);
+}
+
+
+
+
+
+
+
+
 
 /* store & location 시작 */
 
@@ -694,17 +802,12 @@ html,body {
     left: 0px;
 }
 
-.location_img {
+#map {
     width: 400px;
     height: 400px;
     position:absolute;
     top: 0px;
     left: 0px;
-}
-.store_location img {
-    display: block;
-    width: 400px;
-    height: 400px;
 }
 
 .store_btn {
@@ -712,10 +815,10 @@ html,body {
     width:280px;
     height: 60px;
     line-height: 40px;
-    background-color: #226140;
     border: 3px solid #333;
     border-radius: 4px;
-    color: #fff;
+    background-color: #fff;
+    color: #333;
     font-size: 20px;
     font-weight: 600;
     padding: 10px 30px;
@@ -723,6 +826,38 @@ html,body {
     position: absolute;
     left: 0px;
     bottom: 30px;
+    overflow: hidden;
+}
+
+.store_btn>span {
+    position:relative;
+    display: block;
+    z-index: 7;
+    background: none;
+    transition: .3s;
+}
+.store_btn>span:hover {
+    color: #fff;
+}
+
+.store_btn::after {
+    display: block;
+    content:"";
+    width: 1px;
+    height: 57px;
+    position:absolute;
+    top: 0px;
+    left: -5px;
+    background-color:#333;
+    transition-duration: .5s;
+    z-index: 1;
+}
+
+.store_btn:hover::after {
+    width: 280px;
+    left: 0px;
+    background-color: #226140;
+    z-index: 1;
 }
 
 .location_wrap {
@@ -917,16 +1052,46 @@ html,body {
     display: block;
     width: 20%;
     border: 1px solid #fff;
+    position:relative;
 }
 
 .link_item a {
     display: block;
     width: 100%;
+    z-index:6;
 }
 
 .link_item a img {
     display: block;
     width: inherit;
+}
+
+.item_fade {
+    display: block; 
+    overflow:hidden; 
+    width: 100%;
+    padding: 10%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    background-color: rgba(0,0,0,.6);
+    z-index:3;
+    transition-duration: .3s;
+}
+
+.fade_off {
+    opacity: 0;
+    height: 0px;
+    visibility: hidden;
+}
+
+.fade_on {
+    opacity: 1;
+    height: 100%;
+    visibility: visible;
 }
 
 footer {
@@ -968,24 +1133,107 @@ footer {
     display: flex;
     justify-content: left;
     margin: 0 auto;
+    position:relative;
+}
+
+.footer_icon {
+    display: flex;
+    justify-content: left;
+    width: 570px;
+    height: 60px;
+    position:absolute;
+    left: 0px; 
+    top: 0px;
+    padding: 10px 10px;
+}
+
+.footer_icon_logo {
+    width: 120px;
+    height: 40px;
+    font-size: 32px;
+}
+.footer_icon_list {
+    width: 350px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer_icon h4 {
+    display: block;
+}
+
+.footer_sns,
+.footer_app {
+    width: 150px;
+    height: 40px;
+    display: flex;
+}
+.footer_sns {
+    justify-content: left;
+}
+.footer_app {
+    justify-content: right;
+}
+.footer_sns li {
+    margin-right: 6px;
+}
+.footer_app li {
+    margin-left: 6px;
+}
+
+.footer_sns li,
+.footer_sns i {
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+.footer_sns a {
+    display: block;
+}
+
+.footer_sns i {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 22px;
+    text-align: center;
+    background-color: #fff;
+    color:#333;
+    border-radius: 50%;
+}
+
+.footer_app i {
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 35px,35px;
+}
+
+.kakao_icon { 
+    background-image: url(../images/ico_kakao_back.png);
+}
+.app_icon { 
+    background-image: url(../images/ico_app_back.png);
 }
 
 .footer_address {
     display: block;
     justify-content: left;
     width: 570px;
-    height: 160px;
-    margin: 0 auto; 
-    font-size: 16px;
-    border: 1px solid green;
+    height: 100px;
+    margin: 60px auto 0px; 
+    font-size: 14px;
     padding: 10px;
     
 }
 .footer_address li {
     display: block;
     width: 450px;
-    height: 24px;
-    line-height: 24px;
+    height: 20px;
+    line-height: 20px;
     color: #aaaaaa;
 }
 .footer_address li strong {
@@ -998,7 +1246,6 @@ footer {
     width: 570px;
     height: 160px;
     margin: 0 auto; 
-    border: 1px solid green;
     padding: 10px 30px;
 }
 

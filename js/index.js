@@ -204,3 +204,96 @@ var swiper = new Swiper('.menu_list', {
 
 	return direction;
   }
+
+
+
+//   스크롤 아티클
+
+const scroll_btn = document.getElementsByClassName('scroll_up_btn')[0];
+const order_btn = document.getElementById('order_btn');
+window.addEventListener('scroll',
+function(){
+	const now_scroll = this.scrollY;
+	if ( now_scroll >= 400 ) {
+		scroll_btn.classList.remove('scroll_off');
+		scroll_btn.classList.add('scroll_on');
+		order_btn.classList.remove('order_off');
+		order_btn.classList.add('order_on');
+	}
+	if ( now_scroll < 400 ) {
+		scroll_btn.classList.remove('scroll_on');
+		scroll_btn.classList.add('scroll_off');
+		order_btn.classList.remove('order_on');
+		order_btn.classList.add('order_off');
+	}
+	if ( (now_scroll > 800 && now_scroll < 1600) ) {
+		order_btn.classList.remove('order_color_off');
+		order_btn.classList.add('order_color_on');
+	}
+	if ( !(now_scroll > 800 && now_scroll < 1600) ) {
+		order_btn.classList.remove('order_color_on');
+		order_btn.classList.add('order_color_off');
+	}
+})
+
+scroll_btn.addEventListener('click', function () {
+	window.scrollTo( {top:0, left:0, behavior:'smooth'} )
+})
+
+const link_item = document.getElementsByClassName('link_item')
+const item_fade = document.getElementsByClassName('item_fade')
+const fade_num = link_item.length
+
+for (let i = 0; i < fade_num; i++) {
+	link_item[i].addEventListener('mouseenter', function () {
+			item_fade[i].classList.remove('fade_off');
+			item_fade[i].classList.add('fade_on');
+	})
+
+	link_item[i].addEventListener('mouseleave', function () {
+		item_fade[i].classList.remove('fade_on');
+		item_fade[i].classList.add('fade_off');
+	})
+}
+
+
+var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+var options = { //지도를 생성할 때 필요한 기본 옵션
+	center: new kakao.maps.LatLng(37.504057731674656, 127.0488437873566), //지도의 중심좌표.
+	level: 3 //지도의 레벨(확대, 축소 정도)
+};
+
+var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+
+// 마커가 표시될 위치입니다 
+// 선릉
+var markerPosition1  = new kakao.maps.LatLng(37.504057731674656, 127.0488437873566);
+// 강남
+var markerPosition2  = new kakao.maps.LatLng(37.49706134409247, 127.03022540916527);
+// 삼성
+var markerPosition3  = new kakao.maps.LatLng(37.50845834102672, 127.05668691066668);
+// 역삼
+var markerPosition4  = new kakao.maps.LatLng(37.50091890504352, 127.03832427979548); 
+
+// 마커를 생성합니다
+var marker1 = new kakao.maps.Marker({
+    position: markerPosition1
+});
+var marker2 = new kakao.maps.Marker({
+    position: markerPosition2
+});
+var marker3 = new kakao.maps.Marker({
+    position: markerPosition3
+});
+var marker4 = new kakao.maps.Marker({
+    position: markerPosition4
+});
+
+// 마커가 지도 위에 표시되도록 설정합니다
+marker1.setMap(map);
+marker2.setMap(map);
+marker3.setMap(map);
+marker4.setMap(map);
+
+
+

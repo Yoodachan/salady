@@ -18,8 +18,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/index.css">
   <link rel="stylesheet" href="./css/reset.css">
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=305d54fd0bb9abcff1d8c2f06996db04"></script>
   <script src="https://kit.fontawesome.com/73110e26f5.js" crossorigin="anonymous"></script>
-
   <script defer src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script defer src="./service_worker.js"></script>
   <script defer src="./js/index.js"></script>
@@ -110,6 +110,7 @@
 
 
     <main id="main">
+        <!-- 배너 영역 시작 -->
         <section id="banner">
           <div class="banner_wrap">
             <div class="swiper-wrapper">
@@ -125,13 +126,16 @@
             </div>
           </div>
         </section>
+        <!-- 아티클 영역 시작 -->
         <article>
-          <a href="#" class="order_btn">
+          <a id="order_btn" href="#" class="order_color_off order_off">
             <i class="fa-solid fa-leaf"></i>
             <strong> 온라인 주문</strong>
           </a>
+
+          <button class="scroll_up_btn scroll_off" type="button"><i class="fa-solid fa-arrow-up-long"></i></button>
         </article>
-  
+        <!-- 메뉴 영역 시작 -->
         <section id="menu">
           <div class="menu_content">
             <h3 class="menu_title">
@@ -181,7 +185,7 @@
 
           </div>
         </section>
-  
+        <!-- 체인점 영역 시작 -->
         <section id="franchise">
           <div class="franchise_content">
             <h3 class="franchise_title">
@@ -199,18 +203,22 @@
 
             <div class="franchise_btn_wrap">
               <button type="button" class="fc_btn_left">
-                창업안내 바로가기
-                <i class="frc_ico_left"></i>
+                <span>
+                  창업안내 바로가기
+                  <i class="frc_ico"></i>
+                </span>
               </button>
               <button type="button" class="fc_btn_right">
-                가맹상담 신청
-                <i class="frc_ico_right"></i>
+                <span>
+                  가맹상담 신청
+                  <i class="frc_ico"></i>
+                </span>
               </button>
             </div>
 
           </div>
         </section>
-  
+        <!-- 매장 영역 시작 -->
         <section id="store">
           <div class="store_content">
             <h3 class="store_title">
@@ -218,9 +226,11 @@
             </h3>
 
             <div class="store_location">
-              <a href="#" class="location_img"><img src="./images/m_brand_top_img.jpg"/></a>
+              <div id="map" class="location_img"></div>
               <a href="#" class="store_btn">
-                매장 주문하기
+                <span>
+                  매장 주문하기
+                </span>
               </a>
             </div>
 
@@ -294,9 +304,7 @@
 
           </div>
         </section>
-
-
-  
+        <!-- SNS 영역 시작 -->
         <section id="sns">
           <div class="sns_content">
             <h3 class="sns_title">
@@ -304,62 +312,156 @@
             </h3>
               <ul class="sns_link_wrap">
                 <li class="link_item">
-                  <a href="#">
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/">
                     <img src="./images/sns_img_001.jpg">
                   </a>
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/" class="item_fade fade_off">
+                    🙂 샐러디 #초성퀴즈 #이벤트 🙃
+                    🗝️ HINT. 이번 겨울 신메뉴에서 처음 선보이는,
+                    쫄~깃하고 폭신!한 식감이 매력적인 샌드위치빵이에요!
+
+                    퀴즈의 정답을 댓글로 남겨주세요 📝
+
+                    샐러디 계정 팔로우 시, 당첨확률 UP !!
+                  </a>
                 </li>
 
                 <li class="link_item">
-                  <a href="#">
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/">
                     <img src="./images/sns_img_002.jpg">
                   </a>
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/" class="item_fade fade_off">
+                    ⛄ #샐러디 #겨울신메뉴 출시 ⛄
+                    
+                    ❤️ #스파이시비프 브레드
+                    🌶️ #크리미칠리 드레싱으로 매콤함을 더했구요!
+                    
+                    #스파이시비프브레드 vs #로스트닭다리살브레드
+                    샐럽님들 원픽은??? 👀
+                  </a>
                 </li>
 
                 <li class="link_item">
-                  <a href="#">
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/">
                     <img src="./images/sns_img_003.jpg">
                   </a>
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/" class="item_fade fade_off">
+                    WHAT’S NEXT? 🧐
+                    두근두근! 설레는 겨울과 함께 찾아올
+                    #겨울 #신메뉴 !! ⛄ ❄️
+                    
+                    따아아악! 3일만 기다려주세요 🥳 🥳
+                    
+                    #12월_1일에_만나요
+                    COMING SOON ~ ❤️‍🔥
+                  </a>
                 </li>
 
                 <li class="link_item">
-                  <a href="#">
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/">
                     <img src="./images/sns_img_004.jpg">
                   </a>
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/" class="item_fade fade_off">
+                    힘내라 대한민국 💪💪
+                    축구 국가대표팀 응원은 샐러디와 함께!
+                    
+                    월드컵에서 빠질 수 없는 건 뭐다? 👀
+                    바로 힘찬 응원과 맛있는 음식!! 🫶
+                    
+                    #월드컵에_진심
+                    #깨어나라_내안의_붉은악마 ❤️‍🔥❤️‍🔥
+                  </a>
                 </li>
 
                 <li class="link_item">
-                  <a href="#">
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/">
                     <img src="./images/sns_img_005.jpg">
                   </a>
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/" class="item_fade fade_off">
+                    샐러디와 함께라면 비건도 맛있다! 😋
+                    오늘부터 하루 한 끼, 비건 도전할 사람?
+                    
+                    🥗 샐러디 #비건메뉴
+                    #팔라펠단호박 웜볼
+                    #고추장머쉬룸 웜볼
+                    
+                    🥣 샐러디 #비건드레싱
+                    #크리미할라피뇨 드레싱
+                    #발사믹 드레싱
+                    #고추장비니거 드레싱
+                  </a>
                 </li>
 
                 <li class="link_item">
-                  <a href="#">
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/">
                     <img src="./images/sns_img_006.jpg">
                   </a>
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/" class="item_fade fade_off">
+                    찬바람을 부드럽게 녹여줄
+                    따~끈한 스프 페어링 어때요? 🥗🥣
+                    
+                    옥수수와 치즈가 만나 🌽
+                    달콤하고 고소한 #콘치즈 스프도 있고
+                    
+                    양송이의 풍미가 가득한 🍄
+                    부드럽고 담백한 #양송이 스프도 있어요!
+                
+                    
+                    #메인메뉴_구매시_스프_할인!!!!! 😉
+                  </a>
                 </li>
 
                 <li class="link_item">
-                  <a href="#">
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/">
                     <img src="./images/sns_img_007.jpg">
                   </a>
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/" class="item_fade fade_off">
+                    지금 #샐러디앱 회원가입하면
+                    #웰컴드링크 쿠폰을 드려요 🧃
+                  
+                    
+                    😁 프로필 링크타고 다운로드 GO !
+                    
+                    #건강한패스트푸드 #샐러디
+                  </a>
                 </li>
 
                 <li class="link_item">
-                  <a href="#">
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/">
                     <img src="./images/sns_img_008.jpg">
                   </a>
-                </li>
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/" class="item_fade fade_off">
+                    📆 11월 11일은 #웜랩데이
 
-                <li class="link_item">
-                  <a href="#">
-                    <img src="./images/sns_img_009.jpg">
+                    식단관리 중이신 샐럽님들이라면
+                    올해 11월 11일은 딱딱한 과자대신
+                    따~땃한 #웜랩 어때요? 👀
+                    
                   </a>
                 </li>
 
                 <li class="link_item">
-                  <a href="#">
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/">
+                    <img src="./images/sns_img_009.jpg">
+                  </a>
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/" class="item_fade fade_off">
+                    #샐러디 #라이어게임 #이벤트 📁
+                    
+                    😉 A양 : 닭가슴살, 스윗포테이토, 견과류 조합이에요!
+                    🙂 B군 : 기본 드레싱은 크리미칠리 드레싱이에요!
+                    😁 C양 : 다이어터도 부담없이 먹을 수 있어요!
+                    
+                  </a>
+                </li>
+
+                <li class="link_item">
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/">
                     <img src="./images/sns_img_010.jpg">
+                  </a>
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/" class="item_fade fade_off">
+                    #로스트닭다리살 랩 그리고 샐러디! 🥗
+                    오동통 닭다리살에 크리미 할라피뇨 드레싱 조합으로
+                    마지막 한 입까지 맛있게 즐겨요 😉😉
                   </a>
                 </li>
 
@@ -367,6 +469,7 @@
           </div>
         </section>
     </main>
+    <!-- 푸터 영역 시작 -->
     <footer>
       <div class="footer_menu_wrap">
         
@@ -380,7 +483,20 @@
       <div class="footer_wrap">
 
         <div class="footer_content">
-
+          <ul class="footer_icon">
+            <li class="footer_icon_logo"><h4><a href="">SALADY</a></h4></li>
+            <li class="footer_icon_list">
+              <ul class="footer_sns">
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+              </ul>
+              <ul class="footer_app">
+                <li><a href="#"><i class="kakao_icon"></i></a></li>
+                <li><a href="#"><i class="app_icon"></i></a></li>
+              </ul>
+            </li>
+          </ul>
           <ul class="footer_address">
             <li>회사명 : ㈜샐러디</li>
             <li>사업자등록번호 : 000-00-00000</li>
