@@ -102,7 +102,7 @@ html,body {
     margin: 0px 20px;
     text-align: left;
     padding: 20px 0px;
-    font-family: 'Black Han Sans','Noto Sans KR',sans-serif;
+    font-family: 'Do Hyeon','Noto Sans KR',sans-serif;
 }
 
 .nav_menu>li>a {
@@ -386,7 +386,7 @@ html,body {
 .menu_title {
     position: absolute;
     display: block;
-    width: 600px;
+    width: 470px;
     height: 100px;
     line-height: 100px;
     font-size: 82px;
@@ -583,7 +583,7 @@ html,body {
 
 .franchise_title {
     display: block;
-    width: 600px;
+    width: 470px;
     height: 100px;
     line-height: 100px;
     font-size: 82px;
@@ -600,7 +600,7 @@ html,body {
     width: 20px;
     height: 20px; 
     position:absolute;
-    right: 15px;
+    right: 0px;
     bottom: 22px;
     background-color: #ff8400;
 }
@@ -665,7 +665,7 @@ html,body {
 .store_title {
     position: absolute;
     display: block;
-    width: 320px;
+    width: 270px;
     height: 100px;
     line-height: 100px;
     font-size: 82px;
@@ -884,7 +884,7 @@ html,body {
 
 .sns_title {
     display: block;
-    width: 250px;
+    width: 220px;
     height: 100px;
     line-height: 100px;
     font-size: 82px;
@@ -963,10 +963,56 @@ footer {
     color: #fff;
 }
 
-.footer_icon_wrap {
+.footer_content {
+    width: 1140px;
     display: flex;
     justify-content: left;
-    width: 1140px;
+    margin: 0 auto;
+}
+
+.footer_address {
+    display: block;
+    justify-content: left;
+    width: 570px;
+    height: 160px;
+    margin: 0 auto; 
+    font-size: 16px;
+    border: 1px solid green;
+    padding: 10px;
+    
+}
+.footer_address li {
+    display: block;
+    width: 450px;
+    height: 24px;
+    line-height: 24px;
+    color: #aaaaaa;
+}
+.footer_address li strong {
+    color: #fff;
+}
+
+.footer_text_wrap {
+    display: flex;
+    justify-content: left;
+    width: 570px;
+    height: 160px;
     margin: 0 auto; 
     border: 1px solid green;
+    padding: 10px 30px;
+}
+
+.footer_text_wrap>li {
+    width: 80px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.footer_text_wrap>li>ul {
+    color: #aaaaaa;
+    font-size: 14px;
+}
+.footer_text_wrap>li>ul>li {
+    height: 20px;
+    margin-top: 2px;
 }
