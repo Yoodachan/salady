@@ -23,13 +23,10 @@ html,body {
 }
 
 .header_on {
-    color: #666666;
     height: 420px;
 }
 
 .header_off {
-    background: none;
-    color: #fff;
     height: 100px;
     overflow: hidden;
 }
@@ -38,7 +35,21 @@ html,body {
 #nav {
     position: relative;
     height: 100px;
+    transition-duration: .6s;
     
+}
+
+.nav_on {
+    background: #fff;
+    color: #333;
+    border-bottom: 1px solid #f4f6f8;
+
+}
+
+.nav_off {
+    background: none;
+    overflow: hidden;
+    color: #fff;
 }
 
 #nav h1 {
@@ -67,6 +78,7 @@ html,body {
     background-position: center;
     background-size: 80px,80px;
     margin: 0px auto;
+    transition-duration: .6s;
 }
 .logo_hover_off {
     background-image: url(../images/logo_2.png);
@@ -87,13 +99,7 @@ html,body {
     margin: 0 auto;
 }
 
-.nav_on {
-    background-color: #fff;
-    border-bottom: 1px solid #f4f6f8;
-}
-/* .gnb_on {
-    background-color: #333333;
-} */
+
 
 
 .nav_menu>li {
@@ -131,6 +137,7 @@ html,body {
     right: 0px;
     margin: 25px;
     z-index: 11;
+    
 }
 
 .nav_mbtn {
@@ -149,6 +156,7 @@ html,body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 24px 24px;
+    transition-duration: .6s;
 }
 .mbtn_img_off {
     background-image: url(../images/ico_menu.png);

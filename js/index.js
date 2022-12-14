@@ -1,4 +1,4 @@
-
+console.log()
 
 // 스와이프
 var banner_slide = new Swiper(".banner_wrap", {
@@ -70,6 +70,10 @@ nav.addEventListener('mouseenter', function () {
 	header.classList.remove('header_off');
 	header.classList.add('header_on');
 
+// 	// 네브 on/off
+	nav.classList.remove('nav_off');
+	nav.classList.add('nav_on');
+
 	//로고 on/off
 	logo_img.classList.remove('logo_hover_off');
 	logo_img.classList.add('logo_hover_on');
@@ -82,16 +86,37 @@ nav.addEventListener('mouseenter', function () {
 	model_move.classList.remove('model_off');
 	model_move.classList.add('model_on');
 
-	// 네브 on/off
+});
+header.addEventListener('mouseleave', function () {
+	let now_scroll = window.scrollY;
+
+	if (now_scroll >= 700 ) {
+	// 헤더 on/off
+	header.classList.remove('header_on');
+	header.classList.add('header_off');
+
+/// 네브 on/off
 	nav.classList.remove('nav_off');
 	nav.classList.add('nav_on');
 
-});
-header.addEventListener('mouseleave', function () {
+	//로고 on/off
+	logo_img.classList.remove('logo_hover_off');
+	logo_img.classList.add('logo_hover_on');
+
+	//버튼 on/off
+	mbtn_img.classList.remove('mbtn_img_off');
+	mbtn_img.classList.add('mbtn_img_on');
+
+	// 모델 애니메이션
+	model_move.classList.remove('model_off');
+	model_move.classList.add('model_on');
+	}
+
+	else {
 
 	// 헤더 on/off
-	header.classList.add('header_off');
 	header.classList.remove('header_on');
+	header.classList.add('header_off');
 
 	//로고 on/off
 	logo_img.classList.add('logo_hover_off');
@@ -109,7 +134,80 @@ header.addEventListener('mouseleave', function () {
 	nav.classList.add('nav_off');
 	nav.classList.remove('nav_on');
 
+	}
+
 });
+
+
+
+const scroll_btn = document.getElementsByClassName('scroll_up_btn')[0];
+const order_btn = document.getElementById('order_btn');
+
+window.addEventListener('scroll',
+function() {
+	let now_scroll = window.scrollY;
+
+	if ( now_scroll >= 700 ) {
+
+		//버튼 on/off
+		mbtn_img.classList.remove('mbtn_img_off');
+		mbtn_img.classList.add('mbtn_img_on');
+
+		//로고 on/off
+		logo_img.classList.remove('logo_hover_off');
+		logo_img.classList.add('logo_hover_on');
+
+		// 네브 on/off
+		// if (header.classList.contains('header_on')) {
+			nav.classList.remove('nav_off');
+			nav.classList.add('nav_on');
+
+		// }
+
+	}
+
+	if ( now_scroll < 700 ) {
+
+		// 네브 on/off
+		if (header.classList.contains('header_off')) {
+			nav.classList.add('nav_off');
+			nav.classList.remove('nav_on');
+			// 버튼 on/off
+			mbtn_img.classList.add('mbtn_img_off');
+			mbtn_img.classList.remove('mbtn_img_on');
+
+			// 로고 on/off
+			logo_img.classList.add('logo_hover_off');
+			logo_img.classList.remove('logo_hover_on');
+
+		}
+	}
+
+
+	if ( now_scroll >= 400 ) {
+		scroll_btn.classList.remove('scroll_off');
+		scroll_btn.classList.add('scroll_on');
+		order_btn.classList.remove('order_off');
+		order_btn.classList.add('order_on');
+	}
+
+	if ( now_scroll < 400 ) {
+		scroll_btn.classList.remove('scroll_on');
+		scroll_btn.classList.add('scroll_off');
+		order_btn.classList.remove('order_on');
+		order_btn.classList.add('order_off');
+	}
+
+	if ( (now_scroll > 800 && now_scroll < 1600) ) {
+		order_btn.classList.remove('order_color_off');
+		order_btn.classList.add('order_color_on');
+	}
+
+	if ( !(now_scroll > 800 && now_scroll < 1600) ) {
+		order_btn.classList.remove('order_color_on');
+		order_btn.classList.add('order_color_off');
+	}
+})
 
 
 news_menu.addEventListener('mouseenter', function () {
@@ -181,6 +279,7 @@ order_item.addEventListener('mouseleave', function () {
 	order_menu.classList.remove('select');
 })
 
+// 슬라이더
 
 var slide_warm = new Swiper("#menu_warm", {
 	slidesPerView: 1,
@@ -250,17 +349,21 @@ var slide_sand = new Swiper("#menu_sand", {
 	}
 });
 
+// 슬라이더 아코디언
 
-// const menu_list = document.querySelectorAll('.menu_list');
+// 핸들러 li
 const cate_item = document.getElementsByClassName('cate_item');
+// 스와이프 컨텐츠
 const menu_list = document.getElementsByClassName('menu_list');
+// 설명 on/off
 const cate_text = document.getElementsByClassName('cate_text');
+// 타이틀 색변경
 const cate_title = document.getElementsByClassName('cate_title');
 const cate_num = cate_item.length;
 
 for (let i = 0; i < cate_num; i++ ) {
 	cate_item[i].addEventListener('click', 
-	function () {
+	function (a) {
 			cate_text[i].classList.remove('off_view');
 			cate_text[i].classList.add('on_view');
 	
@@ -303,94 +406,6 @@ for (let i = 0; i < cate_num; i++ ) {
 
 //   스크롤 아티클
 
-const scroll_btn = document.getElementsByClassName('scroll_up_btn')[0];
-const order_btn = document.getElementById('order_btn');
-
-window.addEventListener('scroll',
-function(){
-	const now_scroll = this.scrollY;
-
-	// if( now_scroll > 800 ) {
-
-	// // 헤더 on/off
-	// header.classList.remove('header_off');
-	// header.classList.add('header_on');
-
-	// //로고 on/off
-	// logo_img.classList.remove('logo_hover_off');
-	// logo_img.classList.add('logo_hover_on');
-
-	// //버튼 on/off
-	// mbtn_img.classList.remove('mbtn_img_off');
-	// mbtn_img.classList.add('mbtn_img_on');
-
-	// // 모델 애니메이션
-	// model_move.classList.remove('model_off');
-	// model_move.classList.add('model_on');
-
-	// // 네브 on/off
-	// nav.classList.remove('nav_off');
-	// nav.classList.add('nav_on');
-	// }
-
-	// if( now_scroll < 800 ) {
-
-	// // 헤더 on/off
-	// header.classList.add('header_off');
-	// header.classList.remove('header_on');
-
-	// //로고 on/off
-	// logo_img.classList.add('logo_hover_off');
-	// logo_img.classList.remove('logo_hover_on');
-
-	// //버튼 on/off
-	// mbtn_img.classList.add('mbtn_img_off');
-	// mbtn_img.classList.remove('mbtn_img_on');
-
-	// // 모델 애니메이션
-	// model_move.classList.add('model_off');
-	// model_move.classList.remove('model_on');
-
-	// // 네브 on/off
-	// nav.classList.add('nav_off');
-	// nav.classList.remove('nav_on');
-
-	// }
-
-	let nav_menu = document.getElementsByClassName('nav_menu')[0];
-
-	if ( now_scroll > 700 ) {
-		nav_menu.style.color = '#333';
-		nav.style.background = '#fff';
-		nav_menu.style.border = '0px 0px 1px 0px solid #333';
-	}
-	if ( now_scroll >= 400 ) {
-		scroll_btn.classList.remove('scroll_off');
-		scroll_btn.classList.add('scroll_on');
-		order_btn.classList.remove('order_off');
-		order_btn.classList.add('order_on');
-	}
-
-	if ( now_scroll < 400 ) {
-		scroll_btn.classList.remove('scroll_on');
-		scroll_btn.classList.add('scroll_off');
-		order_btn.classList.remove('order_on');
-		order_btn.classList.add('order_off');
-	}
-
-	if ( (now_scroll > 800 && now_scroll < 1600) ) {
-		order_btn.classList.remove('order_color_off');
-		order_btn.classList.add('order_color_on');
-	}
-
-	if ( !(now_scroll > 800 && now_scroll < 1600) ) {
-		order_btn.classList.remove('order_color_on');
-		order_btn.classList.add('order_color_off');
-	}
-
-})
-
-
 scroll_btn.addEventListener('click', function () {
 	window.scrollTo( {top:0, left:0, behavior:'smooth'} )
 })
@@ -411,6 +426,9 @@ for (let i = 0; i < fade_num; i++) {
 		item_fade[i].classList.add('fade_off');
 	})
 }
+
+
+// 카카오 지도
 
 
 var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
