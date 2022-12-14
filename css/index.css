@@ -499,13 +499,19 @@ html,body {
 }
 
 .menu_list {
-    width: 620px;
-    height: 500px;
-    position: absolute;
-    top: 100px;
-    right: 0px;
+    width: 650px;
+    height: 450px;
+    position: relative;
+    top: 50px;
+    left: 400px;
     z-index: 3;
     overflow: hidden;
+}
+
+.menu_list .swiper-wrapper {
+    position: absolute;
+    bottom: 0px;
+    left: 210px;
 }
 
 .menu_list .swiper-slide-active,
@@ -535,15 +541,22 @@ html,body {
 
 }
 
-.menu_list .swiper-slide-active {
+.menu_list .swiper-slide-active,
+.menu_list .swiper-slide-prev {
     width: 450px !important;
     height: 450px !important;
+    
 }
 
 .menu_list .swiper-slide-next {
     width: 150px !important;
     height: 150px !important;
     margin-top: 300px !important;
+}
+
+.menu_list .swiper-slide-next img {
+    width: inherit;
+    height: inherit;
 }
 
 .menu_btn_wrap {
@@ -553,7 +566,7 @@ html,body {
     z-index: 6;
     padding: 15px 0px;
     position:absolute;
-    right: 195px;
+    right: 215px;
     bottom: 20px;
 }
 .menu_now_title {

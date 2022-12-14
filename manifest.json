@@ -1,6 +1,6 @@
 {
-     "name" : "Hello, PWA -v",
-     "short_name" : "PWA",
+     "name" : "Salady",
+     "short_name" : "salady",
      "description" : "start for PWA",
      "scope" : ".",
      "start_url" : "./",

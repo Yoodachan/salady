@@ -1,4 +1,5 @@
 
+
 // 스와이프
 var banner_slide = new Swiper(".banner_wrap", {
 	loop : true,   // 슬라이드 반복 여부
@@ -182,28 +183,49 @@ order_item.addEventListener('mouseleave', function () {
 
 
 
-var swiper = new Swiper('.menu_list', {
-	slidesPerView: 3,
-	direction: getDirection(),
+// var swiper = new Swiper('.menu_list', {
+// 	slidesPerView: 3,
+// 	direction: getDirection(),
+// 	navigation: {
+// 	  nextEl: '.menu_btn_next',
+// 	  prevEl: '.menu_btn_prev',
+// 	},
+// 	loop: true,
+// 	spaceBetween : 20, // 슬라이드 사이 여백
+// 	on: {
+// 	  resize: function () {
+// 		swiper.changeDirection(getDirection());
+// 	  },
+// 	},
+//   });
+
+//   function getDirection() {
+// 	var windowWidth = window.innerWidth;
+// 	var direction = windowWidth <= 760 ? 'vertical' : 'horizontal';
+
+// 	return direction;
+// }
+
+
+var swiper = new Swiper(".menu_list", {
+	slidesPerView: 1,
+	spaceBetween: 30,
+	centeredSlides: true,
+	freeMode: true,
 	navigation: {
-	  nextEl: '.menu_btn_next',
-	  prevEl: '.menu_btn_prev',
+		nextEl: '.menu_btn_next',
+		prevEl: '.menu_btn_prev',
 	},
 	loop: true,
-	spaceBetween : 20, // 슬라이드 사이 여백
-	on: {
-	  resize: function () {
-		swiper.changeDirection(getDirection());
-	  },
-	},
+	loopAdditionalSlides : 2,
+	pagination: {
+	  el: ".swiper-pagination",
+	  clickable: true,
+	}
   });
 
-  function getDirection() {
-	var windowWidth = window.innerWidth;
-	var direction = windowWidth <= 760 ? 'vertical' : 'horizontal';
 
-	return direction;
-  }
+
 
 
 

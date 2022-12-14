@@ -13,21 +13,33 @@
   <link rel="shortcut icon" href="https://salady.com:443/superboard/data/siteconfig/2022070113323616566499560070.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/index.css">
   <link rel="stylesheet" href="./css/reset.css">
+  <link rel="manifest" href="./manifest.json" crossorigin="use-credentials" />
   <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=305d54fd0bb9abcff1d8c2f06996db04"></script>
   <script src="https://kit.fontawesome.com/73110e26f5.js" crossorigin="anonymous"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  <script defer src="./service_worker.js"></script>
+
   <script defer src="./js/index.js"></script>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
 
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('./service_worker.js')
+        .then(function () {
+        console.log('서비스 워커가 등록됨!');
+        })
+      }
+    </script>
 
   <title>샐러디 </title>
 </head>
@@ -110,8 +122,10 @@
 
 
     <main id="main">
+
         <!-- 배너 영역 시작 -->
         <section id="banner">
+
           <div class="banner_wrap">
             <div class="swiper-wrapper">
               <div class="swiper-slide"><img src="./images/banner_img_001.png"/></div>
@@ -119,13 +133,16 @@
               <div class="swiper-slide"><img src="./images/banner_img_003.png"/></div>
               <div class="swiper-slide"><img src="./images/banner_img_004.png"/></div>
             </div>
+
             <div class="banner_btn_wrap">
               <button type="button" class="banner_btn_prev"><i class="bn_ico_prev"></i></button>
               <div class="banner_pagination"></div>
               <button type="button" class="banner_btn_next"><i class="bn_ico_next"></i></button>
             </div>
           </div>
+
         </section>
+
         <!-- 아티클 영역 시작 -->
         <article>
           <a id="order_btn" href="#" class="order_color_off order_off">
