@@ -2,8 +2,7 @@ const sCacheName = "hello-pwa"; // 캐시 제목
 const aFilesToCache = [ // 캐시할 파일 지정
     './', 
     './index.html', 
-    './manifest.json', 
-    './images/hello-pwa.png'
+    './manifest.json'
 ];
 // 서비스워커 실행 & 캐시파일 저장
 self.addEventListener("install", pEvent => {
