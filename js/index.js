@@ -279,6 +279,8 @@ order_item.addEventListener('mouseleave', function () {
 	order_menu.classList.remove('select');
 })
 
+
+
 // 슬라이더
 
 var slide_warm = new Swiper("#menu_warm", {
@@ -351,55 +353,43 @@ var slide_sand = new Swiper("#menu_sand", {
 
 // 슬라이더 아코디언
 
-// 핸들러 li
-const cate_item = document.getElementsByClassName('cate_item');
+// 선택자
+const cate_item = document.querySelectorAll('.cate_item');
+
 // 스와이프 컨텐츠
-const menu_list = document.getElementsByClassName('menu_list');
-// 설명 on/off
-const cate_text = document.getElementsByClassName('cate_text');
+const menu_list = document.querySelectorAll('.menu_list');
 // 타이틀 색변경
-const cate_title = document.getElementsByClassName('cate_title');
-const cate_num = cate_item.length;
-
-for (let i = 0; i < cate_num; i++ ) {
-	cate_item[i].addEventListener('click', 
-	function (a) {
-			cate_text[i].classList.remove('off_view');
-			cate_text[i].classList.add('on_view');
-	
-			cate_title[i].classList.remove('off_style');
-			cate_title[i].classList.add('on_style');
-	
-			menu_list[i].classList.remove('menu_off');
-			menu_list[i].classList.add('menu_on');
-
-		// else {
-		// 	cate_text[i].classList.add('off_view');
-		// 	cate_text[i].classList.remove('on_view');
-	
-		// 	cate_title[i].classList.add('off_style');
-		// 	cate_title[i].classList.remove('on_style');
-	
-		// 	menu_list[i].classList.add('menu_off');
-		// 	menu_list[i].classList.remove('menu_on');
-		// }
-
-		// var next_text = cate_text[i].nextElementSibling;
-		// var next_title = cate_title[i].nextElementSibling;
-		// var next_list = menu_list[i].nextElementSibling;
-
-	});
-}
+const cate_btn = document.querySelectorAll('.cate_btn');
+// 설명 on/off
+const cate_text = document.querySelectorAll('.cate_text');
 
 
-// a b c d
+// 2. 변수를 반복하고 파라미터에 담는다.
+cate_item.forEach(function(q,i) {
+// 3. 반복된 변수의 파라미터를 클릭하면 크기가 변동된다.
+    q.addEventListener("click", 
+	function () {
+		cate_btn.forEach(function(q){
+			q.classList.remove('cate_btn_on')
+			// q.classList.add('cate_btn_off')
+		})
+		menu_list.forEach(function(q){
+			q.classList.remove('menu_on')
+			q.classList.add('menu_off')
+		})
+		cate_text.forEach(function(q){
+			q.classList.remove('cate_text_on')
+			// q.classList.add('cate_text_off')
+		})
 
-// a를 눌렀을때
-// b c d에 클래스 뭐가 있으면
-// bcd제거
+		cate_btn[i].classList.add('cate_btn_on');
+		menu_list[i].classList.add('menu_on');
+		menu_list[i].classList.remove('menu_off');
+		cate_text[i].classList.add('cate_text_on');
+         
+    })
 
-// b를 눌렀을때
-
+})
 
 
 

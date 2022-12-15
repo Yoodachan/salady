@@ -446,7 +446,7 @@ html,body {
     text-align: left;
     top: 60px;
     left: 30px;
-    z-index: 6;
+    z-index: 9;
 }
 
 .menu_title::after {
@@ -461,71 +461,76 @@ html,body {
 }
 
 .menu_cate {
-    display: block;
-    width: 600px;
+    display: inline-block;
     margin: 0 auto;
     position: absolute;
     top: 200px;
     left: 30px;
+    transition-duration: .6s;
+    z-index: 6;
 }
-.menu_cate li {
+.cate_item {
     display: block;
     margin: 30px 0px;
+    color: #999;
 }
-.menu_cate button {
+.cate_btn {
     display: block;
-    background: none;
+    height: 80px;
     border: none;
+    background: none;
     text-align: left;
-}
-
-.menu_cate button>em {
     font-size: 16px;
     font-weight: 700;
-}
-.menu_cate button>strong {
-    font-size: 32px;
+    color: #999;
 }
 
-.off_view {
-    display: none;
-    
+.cate_btn_on {
+    color: #333;
 }
 
-.on_view {
+.cate_text {
     display: block;
+    visibility: hidden;
 }
 
-.off_style {
-    color:#999;
+.cate_text_on {
+    color: #333;
+    visibility: visible;
+}
+
+.cate_title {
+    display: inline;
+    width: 100%;
+    font-size: 32px;
     text-decoration: none;
 }
 
-.on_style {
-    color:#333;
-    text-decoration: underline;
-
+.menu_slide_wrap {
+    position:relative;
+    border: 1px solid red;
+    width: 1080px;
+    height: 680px;
 }
 
 .menu_list {
     width: 650px;
-    position: relative;
+    height: 450px;
+    position: absolute;
     top: 50px;
     left: 400px;
     overflow: hidden;
     transition-duration: .6s;
 }
 .menu_off {
-    height: 0px;
+    z-index:1;
     visibility: hidden;
     opacity: 0;
-    z-index: 0;
 }
 .menu_on {
-    height: 450px;
+    z-index:6;
     visibility: visible;
     opacity: 1;
-    z-index: 3;
 }
 
 .menu_list .swiper-wrapper {
@@ -1130,6 +1135,8 @@ button>span:hover .frc_ico {
     visibility: visible;
 }
 
+/* 푸터 시작 */
+
 footer {
     width: 100%;
     height: 260px;
@@ -1303,4 +1310,54 @@ footer {
 }
 .app_icon { 
     background-image: url(../images/ico_app_back.png);
+}
+
+
+/* PC , 테블릿 가로 (~ 1023px)*/
+@media screen and (max-width:1023px) { 
+
+    .footer_menu_box {
+        display:flex;
+        width: 800px;
+        justify-content: left;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 0 auto;
+        padding: 0 30px;
+        border: 1px solid red;
+    }
+
+} 
+
+
+/* 모바일 가로, 테블릿 세로 (해상도 480px ~ 767px)*/
+@media screen and (max-width:767px) {
+    .footer_menu_box {
+        display:flex;
+        width: 600px;
+        justify-content: left;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 0 auto;
+        padding: 0 30px;
+        border: 1px solid blue;
+    }
+
+}
+
+
+
+/* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/
+@media screen and (max-width:479px) {
+    .footer_menu_box {
+        display:flex;
+        width: 400px;
+        justify-content: left;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 0 auto;
+        padding: 0 30px;
+        border: 1px solid green;
+    }
+
 }
