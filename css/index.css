@@ -434,8 +434,8 @@ html,body,#main {
     display: flex;
     justify-content: space-between;
     flex-wrap:wrap;
-    width: 100%;
-    height: 100%; 
+    width: 1140px;
+    height: 100%;
     padding: 100px 60px;
     position: relative;
     margin: 0 auto; 
@@ -656,7 +656,7 @@ html,body,#main {
 }
 
 .franchise_content {
-    width: 100%;
+    width: 1140px;
     height: 100%;
     padding: 100px 60px;
     position: relative;
@@ -798,7 +798,7 @@ button>span:hover .frc_ico {
 }
 
 .store_content {
-    width: 100%;
+    width: 1140px;
     height: 100%;
     padding: 100px 60px;
     position: relative;
@@ -1057,9 +1057,9 @@ button>span:hover .frc_ico {
     background-color: #f5f5f5;
 }
 .sns_content {
-    width: 100%;
+    width: 1140px;
     height: 100%;
-    padding: 100px 60px !important;
+    padding: 100px 60px;
     position: relative;
     margin: 0px auto; 
 }
@@ -1146,7 +1146,6 @@ button>span:hover .frc_ico {
 footer {
     width: 100%;
     height: auto;
-    margin-top: 100px;
 }
 
 /* 푸터 상단 */
