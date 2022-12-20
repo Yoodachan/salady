@@ -1,5 +1,9 @@
 /* 메인 페이지 풀스크린 설정 */
-html,body {
+body {
+    background-color: #f5f5f5;
+    /* overflow: hidden; */
+}
+html,body,#main {
     width:100%;
     height:100%;
 }
@@ -98,9 +102,6 @@ html,body {
     font-size:20px;
     margin: 0 auto;
 }
-
-
-
 
 .nav_menu>li {
     display: block;
@@ -260,15 +261,14 @@ html,body {
 
 /* 배너 시작 */
 
-#banner {
+#banner,.banner_wrap {
     position:relative;
-    height: 800px; 
+    width: 100%;
+    height: 100%; 
 }
 
 .banner_wrap {
-    position:relative;
     overflow: hidden;
-    height: 800px;
     z-index: 3;
 }
 
@@ -288,13 +288,14 @@ html,body {
     align-items: center;
 }
 
-.banner_wrap .swiper-slide>img {
+.banner_wrap .swiper-slide img {
     display: block;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
     object-fit: cover;
 }
+
 
 .banner_btn_wrap {
     position: absolute;
@@ -424,8 +425,9 @@ html,body {
 
 #menu {
     width: 100%;
-    height: 800px; 
+    height: 100%; 
     color: #333;
+    background-color: #fff;
 }
 
 .menu_content {
@@ -433,8 +435,8 @@ html,body {
     justify-content: space-between;
     flex-wrap:wrap;
     width: 100%;
-    height: 800px;
-    padding: 60px;
+    height: 100%; 
+    padding: 100px 60px;
     position: relative;
     margin: 0 auto; 
 }
@@ -512,8 +514,6 @@ html,body {
     position:relative;
     overflow: hidden;
     padding-top: 65px;
-    
-
 }
 
 .menu_slide_box {
@@ -528,11 +528,13 @@ html,body {
     position:absolute;
     left: 280px;
 }
+
 .menu_off {
     z-index:1;
     visibility: hidden;
     opacity: 0;
 }
+
 .menu_on {
     z-index:6;
     visibility: visible;
@@ -570,7 +572,6 @@ html,body {
     object-fit: cover;
     border: 2px solid #f2f2f2;
     border-radius: 4px;
-
 }
 
 .menu_list .swiper-slide {
@@ -649,15 +650,15 @@ html,body {
 
 #franchise {
     width: 100%;
-    height: 800px;
+    height: 100%;
     background-color: #226140;
     position: relative;
 }
 
 .franchise_content {
-    width: 1140px;
-    height: 800px;
-    padding: 160px 30px;
+    width: 100%;
+    height: 100%;
+    padding: 100px 60px;
     position: relative;
     margin: 0 auto; 
 }
@@ -791,14 +792,15 @@ button>span:hover .frc_ico {
 
 #store {
     width: 100%;
-    height: 800px; 
+    height: 100%;
     color: #333;
+    background-color: #fff;
 }
 
 .store_content {
-    width: 1140px;
-    height: 800px;
-    padding: 60px 30px;
+    width: 100%;
+    height: 100%;
+    padding: 100px 60px;
     position: relative;
     margin: 0 auto; 
 }
@@ -1051,13 +1053,15 @@ button>span:hover .frc_ico {
 
 #sns {
     width: 100%;
+    height: 100%;
     background-color: #f5f5f5;
 }
 .sns_content {
-    width: 1140px;
-    padding: 60px 30px;
+    width: 100%;
+    height: 100%;
+    padding: 100px 60px !important;
     position: relative;
-    margin: 50px auto; 
+    margin: 0px auto; 
 }
 
 .sns_title {
@@ -1141,7 +1145,8 @@ button>span:hover .frc_ico {
 
 footer {
     width: 100%;
-    height: 300px;
+    height: auto;
+    margin-top: 100px;
 }
 
 /* 푸터 상단 */
@@ -1150,17 +1155,16 @@ footer {
     width: 100%;
     height: 60px;
     background-color: #226140;
-    padding: 20px 30px;
+    padding: 20px 60px;
 }
 
 .footer_menu_box {
     display:flex;
-    width: 980px;
+    width: 100%;
     justify-content: left;
     font-size: 16px;
     font-weight: 700;
     margin: 0 auto;
-    padding: 0px 30px;
 }
 .footer_menu_box li {
     display: block;
@@ -1179,7 +1183,7 @@ footer {
     height: 240px;
     background-color: #333;
     color: #fff;
-    padding: 40px 30px;
+    padding: 40px 60px;
 }
 
 .footer_content {

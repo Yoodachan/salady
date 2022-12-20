@@ -1,4 +1,25 @@
-console.log()
+
+
+const banner = document.querySelector('#banner');
+const menu = document.querySelector('#menu');
+const franchise = document.querySelector('#franchise');
+const store = document.querySelector('#store');
+
+// //마우스 휠시 위 아래 구분해서 콘솔에 표기해줌
+
+// let wheel_cooltime;
+
+// addEventListener('wheel', function (e) {
+// 	clearTimeout(wheel_cooltime); // 이전 휠 이벤트 제거
+// 	wheel_cooltime = setTimeout ( function () {
+// 		const mouse_direction = e.deltaY > 0 ? "Scroll Down" : "Scroll Up";
+// 		console.log(e.deltaY+mouse_direction)
+// 	}, 300 )
+// });
+
+
+
+
 
 // 스와이프
 var banner_slide = new Swiper(".banner_wrap", {
