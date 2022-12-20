@@ -428,6 +428,7 @@ html,body,#main {
     height: 100%; 
     color: #333;
     background-color: #fff;
+    overflow: hidden;
 }
 
 .menu_content {
@@ -468,7 +469,8 @@ html,body,#main {
     width: 35%;
     height: 580px;
     transition-duration: .6s;
-    z-index: 6;
+    z-index: 7;
+    background-color: #fff;
 }
 .cate_item {
     display: block;
@@ -512,8 +514,8 @@ html,body,#main {
     width: 65%;
     height: 580px;
     position:relative;
-    overflow: hidden;
     padding-top: 65px;
+    border: 2px solid blue;
 }
 
 .menu_slide_box {
@@ -564,6 +566,7 @@ html,body,#main {
     -webkit-align-items: center;
     align-items: center;
 }
+
 
 .menu_list .swiper-slide img {
     display: block;
@@ -649,6 +652,7 @@ html,body,#main {
 /* 프랜차이즈 시작 */
 
 #franchise {
+    display:table;
     width: 100%;
     height: 100%;
     background-color: #226140;
@@ -657,9 +661,12 @@ html,body,#main {
 
 .franchise_content {
     width: 1140px;
-    height: 100%;
+    height: auto;
     padding: 100px 60px;
-    position: relative;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     margin: 0 auto; 
 }
 
