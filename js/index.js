@@ -293,7 +293,7 @@ var slide_warm = new Swiper("#menu_warm", {
 		prevEl: '.menu_btn_prev',
 	},
 	loop: true,
-	loopAdditionalSlides : 2,
+	loopAdditionalSlides : 3,
 	pagination: {
 	  el: ".swiper-pagination",
 	  clickable: true,
@@ -310,7 +310,7 @@ var slide_salady = new Swiper("#menu_salady", {
 		prevEl: '.menu_btn_prev',
 	},
 	loop: true,
-	loopAdditionalSlides : 2,
+	loopAdditionalSlides : 6,
 	pagination: {
 	  el: ".swiper-pagination",
 	  clickable: true,
@@ -327,7 +327,7 @@ var slide_wrap = new Swiper("#menu_wrap", {
 		prevEl: '.menu_btn_prev',
 	},
 	loop: true,
-	loopAdditionalSlides : 2,
+	loopAdditionalSlides : 6,
 	pagination: {
 	  el: ".swiper-pagination",
 	  clickable: true,
@@ -344,7 +344,7 @@ var slide_sand = new Swiper("#menu_sand", {
 		prevEl: '.menu_btn_prev',
 	},
 	loop: true,
-	loopAdditionalSlides : 2,
+	loopAdditionalSlides : 6,
 	pagination: {
 	  el: ".swiper-pagination",
 	  clickable: true,
@@ -459,5 +459,64 @@ marker2.setMap(map);
 marker3.setMap(map);
 marker4.setMap(map);
 
+//강남역
+// 37.4971636070215, 127.03023053922148
+//선릉역
+// 37.504282083362334, 127.04884054063321
+//역삼역
+// 37.50101756352483, 127.0383294193219
+//삼성역
+// 37.50856961099675, 127.05669547749909
 
 
+
+var iwContent = '<div style="padding:5px;">Hello World!</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+    iwPosition = new kakao.maps.LatLng(37.4971636070215, 127.03023053922148), //인포윈도우 표시 위치입니다
+    iwRemoveable = false; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
+
+// 인포윈도우를 생성하고 지도에 표시합니다
+var infowindow = new kakao.maps.InfoWindow({
+    map: map, // 인포윈도우가 표시될 지도
+    position : iwPosition, 
+    content : iwContent,
+    removable : iwRemoveable
+});
+
+
+kakao.maps.event.addListener(marker1, 'click', function() {
+	// 마커 위에 인포윈도우를 표시합니다
+	infowindow.open(map, marker1);  
+});
+
+
+//지도의 중심좌표 설정
+map.setCenter(new kakao.maps.LatLng(37.4971636070215, 127.03023053922148));
+
+// // 지도를 클릭한 위치에 표출할 마커입니다
+// var marker = new kakao.maps.Marker({ 
+//     // 지도 중심좌표에 마커를 생성합니다 
+//     // position: map.getCenter() 
+// }); 
+
+
+// // 지도에 마커를 표시합니다
+// marker.setMap(map);
+
+// // 지도에 클릭 이벤트를 등록합니다
+// // 지도를 클릭하면 마지막 파라미터로 넘어온 함수를 호출합니다
+// kakao.maps.event.addListener(map, 'click', function(mouseEvent) {        
+    
+//     // 클릭한 위도, 경도 정보를 가져옵니다 
+//     var latlng = mouseEvent.latLng; 
+    
+//     // 마커 위치를 클릭한 위치로 옮깁니다
+//     marker.setPosition(latlng);
+    
+//     var message = '클릭한 위치의 위도는 ' + latlng.getLat() + ' 이고, ';
+//     message += '경도는 ' + latlng.getLng() + ' 입니다';
+    
+//     // var resultDiv = document.getElementById('clickLatlng'); 
+//     // resultDiv.innerHTML = message;
+// 	console.log(message)
+    
+// });
