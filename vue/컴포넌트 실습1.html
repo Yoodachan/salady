@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> component와 template </title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <style>
+        .fruit_style {
+            border: 1px solid #ccc;
+            background-color: #fff;
+            padding-left: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+
+        <h1> {{ sTitle }} </h1>
+        <!-- 신규 컴포넌트 엘리먼트 2번 사용 -->
+        <favorite-fruits></favorite-fruits>
+        <favorite-fruits></favorite-fruits>
+
+    </div>
+
+    <script>
+
+        //좋아하는 과일 3개를 표시하는 컴포넌트 정의
+        Vue.component('favorite-fruits', {
+            //데이터는 fruits 배열에 3개의 과일명을 반환하는 함수로 정의
+            data: function () {
+                return {
+                    fruits: [
+                        { fruit_name: '사과', fruit_count: '10', fruit_price: '10000'},
+                        { fruit_name: '배', fruit_count: '20', fruit_price: '23000' },
+                        { fruit_name: '복숭아', fruit_count: '30', fruit_price: '36000'}
+
+                    ]
+                }
+            },
+            //템플릿은 화면에 표시할 엘리먼트 구조 정의
+            template: `
+                <div>
+                    <div v-for="item in fruits" class="fruit_style">
+                        <p>좋아하는 과일 {{ item.fruit_name }} {{ item.fruit_count }} {{ item.fruit_price }} </p>
+                    </div>
+                    <br>
+                </div>
+            `
+        });
+
+        new Vue({
+            el: '#main',
+            data: {
+                sTitle: 'Hello!'
+            }
+        });
+
+    </script>
+</body>
+</html>

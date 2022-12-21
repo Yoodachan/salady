@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<!-- 언어를 한글로 설정 -->
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <!-- 매니페스트 파일 연결, 테마색상 변경 -->
+  <!-- <link rel="manifest" href="manifest.json"> -->
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- 뷰포트, 파비콘 설정-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="https://salady.com:443/superboard/data/siteconfig/2022070113323616566499560070.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="stylesheet" href="./css/reset.css" />
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=305d54fd0bb9abcff1d8c2f06996db04"></script>
+  <script src="https://kit.fontawesome.com/73110e26f5.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+  <script defer src="./js/index.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+  <!-- <link rel="manifest" href="./manifest.json" crossorigin="use-credentials" /> -->
+
+  <!-- <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('./service_worker.js')
+        .then(function () {
+        console.log('서비스 워커가 등록됨!');
+        })
+      }
+    </script> -->
+
+  <title>샐러디</title>
+</head>
+
+<body>
+    <header id="header" class="header_off">
+      <!-- 헤더 상부 -->
+      <nav id="nav" class="nav_off">
+        <!-- 좌측 로고 20% -->
+        <h1 id="logo" title="logo">
+          <a href="#"><span class="logo_img logo_hover_off"></span></a>
+        </h1>
+        <!-- 중앙 메뉴 및 SNS 60% -->
+        <ul class="nav_menu">
+          <li class="brand"><a href="#">브랜드</a></li>
+          <li class="list"><a href="#">메뉴</a></li>
+          <li class="franchise"><a href="#">가맹점</a></li>
+          <li class="order"><a href="#">주문</a></li>
+          <li class="news"><a href="#">새소식</a></li>
+        </ul>
+        <!-- 우측 메뉴바 20% -->
+        <div class="nav_right">
+        </div>
+      </nav>
+
+      <!-- 헤더 하부 -->
+      <div class="gnb_wrap">
+        <!-- 새소식 메뉴 -->
+        <div class="gnb_left">
+        </div>
+        <ul class="gnb_depth">
+          <!-- 브랜드 메뉴 -->
+          <li>
+            <ul class="brand">
+              <li><a href="#">샐러디</a></li>
+              <li><a href="#">샐러디 키친</a></li>
+              <li><a href="#">샐러디 팜</a></li>
+            </ul>
+          </li>
+          <!-- 메뉴 메뉴 -->
+          <li>
+            <ul class="list">
+              <li><a href="#">웜볼</a></li>
+              <li><a href="#">샐러디</a></li>
+              <li><a href="#">샌드&랩</a></li>
+              <li><a href="#">토핑&드레싱</a></li>
+              <li><a href="#">음료&사이드</a></li>
+            </ul>
+          </li>
+          <!-- 가맹점 메뉴 -->
+          <li>
+            <ul class="franchise">
+              <li><a href="#">가맹 안내</a></li>
+              <li><a href="#">가맹 신청</a></li>
+            </ul>
+          </li>
+          <!-- 주문 메뉴 -->
+          <li>
+            <ul class="order">
+              <li><a href="#">매장 주문</a></li>
+            </ul>
+          </li>
+          <!-- 새소식 -->
+          <li>
+            <ul class="news">
+              <li><a href="#">공지사항</a></li>
+              <li><a href="#">이벤트</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="gnb_right"></div>
+
+      </div>
+      <div class="nav_mbtn_wrap">
+        <button class="nav_mbtn" type="button" ><span class="mbtn_img mbtn_img_off"></span></button> 
+      </div>
+    </header>
+    
+
+
+    <main id="main">
+
+        <!-- 배너 영역 시작 -->
+        <section id="banner">
+
+          <div class="banner_wrap">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="./images/banner_img_001.png"/></div>
+              <div class="swiper-slide"><img src="./images/banner_img_002.png"/></div>
+              <div class="swiper-slide"><img src="./images/banner_img_003.png"/></div>
+              <div class="swiper-slide"><img src="./images/banner_img_004.png"/></div>
+            </div>
+
+            <div class="banner_btn_wrap">
+              <button type="button" class="banner_btn_prev"><i class="bn_ico_prev"></i></button>
+              <div class="banner_pagination"></div>
+              <button type="button" class="banner_btn_next"><i class="bn_ico_next"></i></button>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- 아티클 영역 시작 -->
+
+        <article>
+          <a id="order_btn" href="#" class="order_color_off order_off">
+            <i class="fa-solid fa-leaf"></i>
+            <strong> 온라인 주문</strong>
+          </a>
+
+          <button class="scroll_up_btn scroll_off" type="button"><i class="fa-solid fa-arrow-up-long"></i></button>
+        </article>
+
+        <!-- 메뉴 영역 시작 -->
+        <section id="menu">
+          <div class="menu_content">
+            <h3 class="menu_title">
+              MENU STORY
+            </h3>
+            <ul class="menu_cate">
+
+              <li class="cate_item">
+                <button class="cate_btn cate_btn_on" type="button">
+                  <em class="cate_text cate_text_on "> 든든하게 즐길 수 있는 웜볼 </em>
+                  <strong class="cate_title"> WARM BOWL </strong>
+                </button>
+              </li>
+  
+              <li class="cate_item">
+                <button class="cate_btn" type="button">
+                  <em class="cate_text"> 국내산 프리미엄 채소로만 구성된 샐러디 </em>
+                  <strong class="cate_title"> SALADY </strong>
+                </button>
+              </li>
+  
+              <li class="cate_item">
+                <button class="cate_btn" type="button">
+                  <em class="cate_text"> 또띠아로 돌돌 말아낸 맛있고 간편한 랩 </em>
+                  <strong class="cate_title"> WRAP/WARM WRAP </strong>
+                </button>
+              </li>
+  
+              <li class="cate_item">
+                <button class="cate_btn" type="button">
+                  <em class="cate_text"> 씹을수록 고소한 귀리번이 매력적인 샌드 </em>
+                  <strong class="cate_title"> SAND/BREAD </strong>
+                </button>
+              </li>
+
+            </ul>
+
+            <div class="menu_slide_wrap">
+              <div class="menu_slide_box">
+
+                <div id="menu_warm" class="menu_list menu_on">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="./images/warm_bowl_001.jpg"/></div>
+                    <div class="swiper-slide"><img src="./images/warm_bowl_002.jpg"/></div>
+                    <div class="swiper-slide"><img src="./images/warm_bowl_003.jpg"/></div>
+                    <div class="swiper-slide"><img src="./images/warm_bowl_004.jpg"/></div>
+                  </div>
+                  <div class="menu_btn_wrap">
+                    <button type="button" class="menu_btn_prev"><i class="menu_ico_prev"></i></button>
+                    <div class="menu_now_title">칠리 베이컨 웜볼</div>
+                    <button type="button" class="menu_btn_next"><i class="menu_ico_next"></i></button>
+                  </div>
+                </div>
+  
+                <div id="menu_salady" class="menu_list menu_off">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="./images/salady_001.jpg"/></div>
+                    <div class="swiper-slide"><img src="./images/salady_002.jpg"/></div>
+                    <div class="swiper-slide"><img src="./images/salady_003.jpg"/></div>
+                    <div class="swiper-slide"><img src="./images/salady_004.jpg"/></div>
+                    <div class="swiper-slide"><img src="./images/salady_005.jpg"/></div>
+                    <div class="swiper-slide"><img src="./images/salady_006.jpg"/></div>
+                    <div class="swiper-slide"><img src="./images/salady_007.jpg"/></div>
+                  </div>
+                  <div class="menu_btn_wrap">
+                    <button type="button" class="menu_btn_prev"><i class="menu_ico_prev"></i></button>
+                    <div class="menu_now_title">칠리 베이컨 웜볼</div>
+                    <button type="button" class="menu_btn_next"><i class="menu_ico_next"></i></button>
+                  </div>
+                </div>
+  
+                <div id="menu_wrap" class="menu_list menu_off">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="./images/wrap_001.jpg"/></div>
+                    <div class="swiper-slide"><img src="./images/wrap_002.jpg"/></div>
+                    <div class="swiper-slide"><img src="./images/wrap_003.jpg"/></div>
+                    <div class="swiper-slide"><img src="./images/wrap_004.jpg"/></div>
+                    <div class="swiper-slide"><img src="./images/wrap_005.jpg"/></div>
+                    <div class="swiper-slide"><img src="./images/wrap_006.jpg"/></div>
+                    <div class="swiper-slide"><img src="./images/wrap_007.jpg"/></div>
+                    <div class="swiper-slide"><img src="./images/wrap_008.jpg"/></div>
+                  </div>
+  
+                  <div class="menu_btn_wrap">
+                    <button type="button" class="menu_btn_prev"><i class="menu_ico_prev"></i></button>
+                    <div class="menu_now_title">칠리 베이컨 웜볼</div>
+                    <button type="button" class="menu_btn_next"><i class="menu_ico_next"></i></button>
+                  </div>
+  
+                </div>
+  
+                <div id="menu_sand" class="menu_list menu_off">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="./images/sand_001.jpg"/></div>
+                    <div class="swiper-slide"><img src="./images/sand_002.jpg"/></div>
+                    <div class="swiper-slide"><img src="./images/sand_003.jpg"/></div>
+                    <div class="swiper-slide"><img src="./images/sand_004.jpg"/></div>
+                    <div class="swiper-slide"><img src="./images/sand_005.jpg"/></div>
+                  </div>
+  
+                  <div class="menu_btn_wrap">
+                    <button type="button" class="menu_btn_prev"><i class="menu_ico_prev"></i></button>
+                    <div class="menu_now_title">칠리 베이컨 웜볼</div>
+                    <button type="button" class="menu_btn_next"><i class="menu_ico_next"></i></button>
+                  </div>
+  
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </section> 
+
+        <!-- 체인점 영역 시작 -->
+
+        <section id="franchise">
+          <div class="franchise_content">
+            <h3 class="franchise_title">
+              FRANCHISE
+            </h3>
+            <strong class="franchise_desc">
+              지속 가능한 브랜드, <br/>
+              샐러디가 함께합니다.
+            </strong>
+            <span class="franchise_text">
+              데이터로 입증된 연간 평균 영업이익률 25% <br/>
+              샐러디의 축적된 경험과 노하우를 <br/>
+              바탕으로 여러분의 성공창업을 약속 드립니다.
+            </span>
+
+            <div class="frc_btn_wrap">
+              <div class="frc_btn_box">
+                <button type="button" class="fc_btn_left">
+                  <span>
+                    창업안내 바로가기
+                    <i class="frc_ico"></i>
+                  </span>
+                </button>
+              </div>
+              <div class="frc_btn_box">
+                <button type="button" class="fc_btn_right">
+                  <span>
+                    가맹상담 신청
+                    <i class="frc_ico"></i>
+                  </span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 매장 영역 시작 -->
+        <section id="store">
+          <div class="store_content">
+            <h3 class="store_title">
+              STORE
+            </h3>
+
+            <div class="store_location">
+              <div id="map" class="location_img"></div>
+
+              <div class="location_wrap">
+                <strong class="location_wrap_title">매장 위치</strong>
+                <form class="location_form">
+                  <input type="text" class="location_seach" placeholder="매장명 또는 주소를 입력하세요." />
+                  <a href="#" class="location_user" >내 위치 중심으로 지도 보기</a>
+                </form>
+  
+                <div class="location_list">
+  
+                  <div class="location_box">
+                    <strong class="box_name">샐러디 강남점</strong>
+                    <div class="box_ico_wrap">
+                      <sapn class="mab_tag tag_01"></sapn>
+                      <sapn class="mab_tag tag_02"></sapn>
+                      <sapn class="mab_tag tag_03"></sapn>
+                      <sapn class="mab_tag tag_04"></sapn>
+                      <sapn class="mab_tag tag_05"></sapn>
+                      <sapn class="mab_tag tag_06"></sapn>
+                      <sapn class="mab_tag tag_07"></sapn>
+                    </div>
+                    <address class="box_address">
+                      <a href="#">
+                        02-556-4066
+                      </a>
+                    </address>
+                    <a href="" class="box_btn">자세히 보기</a>
+                  </div>
+                  <div class="location_box">
+                    <strong class="box_name">샐러디 역삼점</strong>
+                    <div class="box_ico_wrap">
+                      <sapn class="mab_tag tag_01"></sapn>
+                      <sapn class="mab_tag tag_02"></sapn>
+                      <sapn class="mab_tag tag_03"></sapn>
+                      <sapn class="mab_tag tag_04"></sapn>
+                      <sapn class="mab_tag tag_05"></sapn>
+                      <sapn class="mab_tag tag_06"></sapn>
+                      <sapn class="mab_tag tag_07"></sapn>
+                    </div>
+                    <address class="box_address">
+                      <a href="#">
+                        02-556-4066
+                      </a>
+                    </address>
+                    <a href="" class="box_btn">자세히 보기</a>
+                  </div>
+                  <div class="location_box">
+                    <strong class="box_name">샐러디 선릉점</strong>
+                    <div class="box_ico_wrap">
+                      <sapn class="mab_tag tag_01"></sapn>
+                      <sapn class="mab_tag tag_02"></sapn>
+                      <sapn class="mab_tag tag_03"></sapn>
+                      <sapn class="mab_tag tag_04"></sapn>
+                      <sapn class="mab_tag tag_05"></sapn>
+                      <sapn class="mab_tag tag_06"></sapn>
+                      <sapn class="mab_tag tag_07"></sapn>
+                    </div>
+                    <address class="box_address">
+                      <a href="#">
+                        02-556-4066
+                      </a>
+                    </address>
+                    <a href="" class="box_btn">자세히 보기</a>
+                  </div>
+                  <div class="location_box">
+                    <strong class="box_name">샐러디 삼성점</strong>
+                    <div class="box_ico_wrap">
+                      <sapn class="mab_tag tag_01"></sapn>
+                      <sapn class="mab_tag tag_02"></sapn>
+                      <sapn class="mab_tag tag_03"></sapn>
+                      <sapn class="mab_tag tag_04"></sapn>
+                      <sapn class="mab_tag tag_05"></sapn>
+                      <sapn class="mab_tag tag_06"></sapn>
+                      <sapn class="mab_tag tag_07"></sapn>
+                    </div>
+                    <address class="box_address">
+                      <a href="#">
+                        02-556-4066
+                      </a>
+                    </address>
+                    <a href="" class="box_btn">자세히 보기</a>
+                  </div>
+          
+                </div>
+  
+              </div>
+              <div class="store_btn_wrap">
+                <a href="#" class="store_btn">
+                  <span>주문 바로하기</span>
+                </a>
+              </div>
+            </div>
+
+
+
+          </div>
+        </section>
+
+        <!-- SNS 영역 시작 -->
+        <section id="sns">
+          <div class="sns_content">
+            <h3 class="sns_title">
+              SNS
+            </h3>
+              <ul class="sns_link_wrap">
+                <li class="link_item">
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/">
+                    <img src="./images/sns_img_001.jpg">
+                  </a>
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/" class="item_fade fade_off">
+                    🙂 샐러디 #초성퀴즈 #이벤트 🙃
+                    🗝️ HINT. 이번 겨울 신메뉴에서 처음 선보이는,
+                    쫄~깃하고 폭신!한 식감이 매력적인 샌드위치빵이에요!
+
+                    퀴즈의 정답을 댓글로 남겨주세요 📝
+
+                    샐러디 계정 팔로우 시, 당첨확률 UP !!
+                  </a>
+                </li>
+
+                <li class="link_item">
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/">
+                    <img src="./images/sns_img_002.jpg">
+                  </a>
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/" class="item_fade fade_off">
+                    ⛄ #샐러디 #겨울신메뉴 출시 ⛄
+                    
+                    ❤️ #스파이시비프 브레드
+                    🌶️ #크리미칠리 드레싱으로 매콤함을 더했구요!
+                    
+                    #스파이시비프브레드 vs #로스트닭다리살브레드
+                    샐럽님들 원픽은??? 👀
+                  </a>
+                </li>
+
+                <li class="link_item">
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/">
+                    <img src="./images/sns_img_003.jpg">
+                  </a>
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/" class="item_fade fade_off">
+                    WHAT’S NEXT? 🧐
+                    두근두근! 설레는 겨울과 함께 찾아올
+                    #겨울 #신메뉴 !! ⛄ ❄️
+                    
+                    따아아악! 3일만 기다려주세요 🥳 🥳
+                    
+                    #12월_1일에_만나요
+                    COMING SOON ~ ❤️‍🔥
+                  </a>
+                </li>
+
+                <li class="link_item">
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/">
+                    <img src="./images/sns_img_004.jpg">
+                  </a>
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/" class="item_fade fade_off">
+                    힘내라 대한민국 💪💪
+                    축구 국가대표팀 응원은 샐러디와 함께!
+                    
+                    월드컵에서 빠질 수 없는 건 뭐다? 👀
+                    바로 힘찬 응원과 맛있는 음식!! 🫶
+                    
+                    #월드컵에_진심
+                    #깨어나라_내안의_붉은악마 ❤️‍🔥❤️‍🔥
+                  </a>
+                </li>
+
+                <li class="link_item">
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/">
+                    <img src="./images/sns_img_005.jpg">
+                  </a>
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/" class="item_fade fade_off">
+                    샐러디와 함께라면 비건도 맛있다! 😋
+                    오늘부터 하루 한 끼, 비건 도전할 사람?
+                    
+                    🥗 샐러디 #비건메뉴
+                    #팔라펠단호박 웜볼
+                    #고추장머쉬룸 웜볼
+                    
+                    🥣 샐러디 #비건드레싱
+                    #크리미할라피뇨 드레싱
+                    #발사믹 드레싱
+                    #고추장비니거 드레싱
+                  </a>
+                </li>
+
+                <li class="link_item">
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/">
+                    <img src="./images/sns_img_006.jpg">
+                  </a>
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/" class="item_fade fade_off">
+                    찬바람을 부드럽게 녹여줄
+                    따~끈한 스프 페어링 어때요? 🥗🥣
+                    
+                    옥수수와 치즈가 만나 🌽
+                    달콤하고 고소한 #콘치즈 스프도 있고
+                    
+                    양송이의 풍미가 가득한 🍄
+                    부드럽고 담백한 #양송이 스프도 있어요!
+                
+                    #메인메뉴_구매시_스프_할인!!!!! 😉
+                  </a>
+                </li>
+
+                <li class="link_item">
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/">
+                    <img src="./images/sns_img_007.jpg">
+                  </a>
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/" class="item_fade fade_off">
+                    지금 #샐러디앱 회원가입하면
+                    #웰컴드링크 쿠폰을 드려요 🧃
+                  
+                    😁 프로필 링크타고 다운로드 GO !
+                    
+                    #건강한패스트푸드 #샐러디
+                  </a>
+                </li>
+
+                <li class="link_item">
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/">
+                    <img src="./images/sns_img_008.jpg">
+                  </a>
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/" class="item_fade fade_off">
+                    📆 11월 11일은 #웜랩데이
+
+                    식단관리 중이신 샐럽님들이라면
+                    올해 11월 11일은 딱딱한 과자대신
+                    따~땃한 #웜랩 어때요? 👀
+                    
+                  </a>
+                </li>
+
+                <li class="link_item">
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/">
+                    <img src="./images/sns_img_009.jpg">
+                  </a>
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/" class="item_fade fade_off">
+                    #샐러디 #라이어게임 #이벤트 📁
+                    
+                    😉 A양 : 닭가슴살, 스윗포테이토, 견과류 조합이에요!
+                    🙂 B군 : 기본 드레싱은 크리미칠리 드레싱이에요!
+                    😁 C양 : 다이어터도 부담없이 먹을 수 있어요!
+                    
+                  </a>
+                </li>
+
+                <li class="link_item">
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/">
+                    <img src="./images/sns_img_010.jpg">
+                  </a>
+                  <a href="https://www.instagram.com/reel/Cko67Jzg4IR/" class="item_fade fade_off">
+
+                    #로스트닭다리살 랩 그리고 샐러디! 🥗
+                    오동통 닭다리살에 크리미 할라피뇨 드레싱 조합으로
+                    마지막 한 입까지 맛있게 즐겨요 😉😉
+
+                  </a>
+                </li>
+
+              </ul>
+          </div>
+        </section>
+        <footer>
+          <div class="footer_menu_wrap">
+            
+            <ul class="footer_menu_box">
+              <li><a href="#">이용약관</a></li>
+              <li><a href="#">개인정보 처리방침</a></li>
+            </ul>
+    
+          </div>
+    
+          <div class="footer_wrap">
+    
+            <ul class="footer_content">
+    
+              <li class="footer_left">
+                <ul class="footer_logo_sns">
+                  <li class="footer_logo"><a href="./index.html"><strong class="footer_logo">SALADY</strong></a></li>
+                  <li class="footer_icon">
+                    <ul>
+                      <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                      <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                      <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    </ul>
+                  </li>
+                </ul>
+    
+                <ul class="footer_address">
+                  <li>㈜샐러디</li>
+                  <li>사업자등록번호 : 000-00-00000</li>
+                  <li>포토폴리오용으로 제작된 사이트입니다.</li>
+                  <li>COPYRIGHT(C) 2022 ㈜샐러디. CO.LTD ALL RIGHT RESERVED.</li>
+                </ul>
+              </li>
+    
+    
+              <ul class="footer_right">
+                <li>
+                  <strong>브랜드</strong>
+                  <ul>
+                    <li><a href="#">샐러디</a></li>
+                    <li><a href="#">샐러디 키친</a></li>
+                    <li><a href="#">샐러디 팜</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>메뉴</strong>
+                  <ul>
+                    <li><a href="#">웜볼</a></li>
+                    <li><a href="#">샐러디</a></li>
+                    <li><a href="#">샌드&랩</a></li>
+                    <li><a href="#">토핑&드레싱</a></li>
+                    <li><a href="#">음료&사이드</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>가맹점</strong>
+                  <ul>
+                    <li><a href="#">가맹 안내</a></li>
+                    <li><a href="#">가맹 신청</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>주문</strong>
+                  <ul>
+                    <li><a href="#">매장 주문</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>새소식</strong>
+                  <ul>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">이벤트</a></li>
+                  </ul>
+                </li>
+              </ul>
+    
+            </ul>
+    
+          </div>
+      </footer>
+
+    </main>
+    <!-- 푸터 영역 시작 -->
+
+          <!-- <ul class="footer_app">
+            <li><a href="#"><i class="kakao_icon"></i></a></li>
+            <li><a href="#"><i class="app_icon"></i></a></li>
+          </ul> -->
+
+</body>
+</html>

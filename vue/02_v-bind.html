@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-bind</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <style>
+        .blue_style{color:cadetblue}
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1 v-bind:class="sColorName + '_style'">Hello~~</h1>
+        <input type="text" :value="sDate">
+    </div>
+
+    <script>
+        var gDate_app = new Vue({
+            el:'#main',
+            data:{
+                sColorName : 'blue',
+                sDate : '년도 : ' + new Date().getFullYear()
+            }
+        });
+    </script>
+</body>
+</html>
