@@ -21,7 +21,7 @@ const store = document.querySelector('#store');
 
 
 
-// 스와이프
+// 메인배너 스와이프
 var banner_slide = new Swiper(".banner_wrap", {
 	loop : true,   // 슬라이드 반복 여부
 	loopAdditionalSlides : 1,
@@ -541,3 +541,20 @@ map.setCenter(new kakao.maps.LatLng(37.4971636070215, 127.03023053922148));
 // 	console.log(message)
     
 // });
+
+
+
+// 메인배너 스와이프
+var sns_slide_wrap = new Swiper(".sns_slide_wrap", {
+	loop : true,   // 슬라이드 반복 여부
+	loopAdditionalSlides : 1,
+	autoplay: true,
+	navigation: {
+		nextEl: ".banner_btn_next",
+		prevEl: ".banner_btn_prev",
+	},
+	pagination: {
+		el: ".banner_pagination",
+		type: "fraction",
+	}
+});
