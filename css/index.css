@@ -1162,8 +1162,9 @@ button>span:hover .frc_ico {
 
 footer {
     width: 100%;
-    height: auto;
+    height: 300px;
     overflow: hidden;
+    position:relative;
 }
 
 /* 푸터 상단 */
@@ -1368,11 +1369,217 @@ footer {
     background-image: url(../images/ico_app_back.png);
 } */
 
+/* SNS */
+@media screen and (max-width:1140px) {
 
-/* PC , 테블릿 가로 (~ 1140px)*/
+    /* SNS 영역 시작 */
+
+/* #sns {
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5;
+    overflow: hidden;
+} */
+.sns_content {
+    width: 800px;
+    /* height: auto;
+    position:relative;
+    padding: 0px 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); */
+}
+
+.sns_title {
+    /* display: block; */
+    width: 210px;
+    /* height: 100px;
+    line-height: 100px;*/
+    font-size: 76px;
+    /*text-align: center;
+    margin: 0px auto 25px;
+    z-index: 6;
+    color: #333;
+    position:relative; */
+}
+
+
+.sns_title::after {
+    /* content: "";
+    display: block;
+    width: 20px;
+    height: 20px; 
+    position:absolute;
+    right: 0px; */
+    bottom: 26px;
+    /* background-color: #226140; */
+}
+/* 
+
+.sns_link_wrap {
+    display:flex;
+    justify-content: center;
+    width: calc(20%-4px);
+    flex-wrap: wrap;
+}
+
+.link_item {
+    display: block;
+    width: 20%;
+    border: 1px solid #fff;
+    position:relative;
+}
+
+.link_item a {
+    display: block;
+    width: 100%;
+    z-index:6;
+}
+
+.link_item a img {
+    display: block;
+    width: inherit;
+}
+
+.item_fade {
+    display: block; 
+    overflow:hidden; 
+    width: 100%;
+    padding: 10%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    background-color: rgba(0,0,0,.6);
+    z-index:3;
+    transition-duration: .3s;
+} */
+
+/* .fade_off {
+    opacity: 0;
+    height: 0px;
+    visibility: hidden;
+}
+
+.fade_on {
+    opacity: 1;
+    height: 100%;
+    visibility: visible;
+} */
+
+}
+
+/* 모바일 가로, 테블릿 세로 (해상도 600px ~ 800px)*/
+@media screen and (max-width:800px) {
+
+/* SNS 영역 시작 */
+
+/* #sns {
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5;
+    overflow: hidden;
+} */
+.sns_content {
+    width: 100%;
+    /* height: auto;
+    position:relative;
+    padding: 0px 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); */
+}
+
+.sns_title {
+    /* display: block; */
+    width: 180px;
+    /* height: 100px;
+    line-height: 100px;*/
+    font-size: 64px;
+    /*text-align: center;
+    margin: 0px auto 25px;
+    z-index: 6;
+    color: #333;
+    position:relative; */
+}
+
+
+.sns_title::after {
+    /* content: "";
+    display: block;
+    width: 20px;
+    height: 20px; 
+    position:absolute;
+    right: 0px; */
+    bottom: 32px;
+    /* background-color: #226140; */
+}
+/* 
+
+.sns_link_wrap {
+    display:flex;
+    justify-content: center;
+    width: calc(20%-4px);
+    flex-wrap: wrap;
+}
+
+.link_item {
+    display: block;
+    width: 20%;
+    border: 1px solid #fff;
+    position:relative;
+}
+
+.link_item a {
+    display: block;
+    width: 100%;
+    z-index:6;
+}
+
+.link_item a img {
+    display: block;
+    width: inherit;
+}
+
+.item_fade {
+    display: block; 
+    overflow:hidden; 
+    width: 100%;
+    padding: 10%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    background-color: rgba(0,0,0,.6);
+    z-index:3;
+    transition-duration: .3s;
+} */
+
+/* .fade_off {
+    opacity: 0;
+    height: 0px;
+    visibility: hidden;
+}
+
+.fade_on {
+    opacity: 1;
+    height: 100%;
+    visibility: visible;
+} */
+
+}
+
+/* 모바일 가로, 테블릿 세로 (해상도 600px ~ 800px)*/
+@media screen and (max-width:600px) {
+
+}
 
 /* 푸터 */
-
+/* PC , 테블릿 가로 (~ 1140px)*/
 @media screen and (max-width:1140px) { 
 
 /* 푸터 시작 */
@@ -1568,11 +1775,11 @@ footer {
 
 /* 푸터 시작 */
 
-/* footer {
+footer {
     width: 100%;
-    height: auto;
+    height: 240px;
     overflow: hidden;
-} */
+}
 
 /* 푸터 상단 */
 
@@ -1724,11 +1931,11 @@ footer {
 
 /* 푸터 시작 */
 
-/* footer {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-} */
+footer {
+/*     width: 100%; */
+    height: 320px;
+    /* overflow: hidden; */
+} 
 
 /* 푸터 상단 */
 
@@ -1890,11 +2097,11 @@ footer {
     
 /* 푸터 시작 */
 
-/* footer {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-} */
+footer {
+    /* width: 100%; */
+    height: 320px;
+    /* overflow: hidden; */
+}
 
 /* 푸터 상단 */
 
