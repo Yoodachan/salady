@@ -18,20 +18,48 @@
         body {
             font-family: 'Noto Sans KR', sans-serif;
         }
+        #id {
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
     <div id="app">
     TEST TEXT
+        <v-app>
+            <v-main>
+                <v-container>
+                    <!-- 카드 UI 사용을 선언하는 v-card 엘리먼트 -->
+                    <v-card max-width="400">
+                        <!-- 카드 상단에 이미지 배치 -->
+                        <v-img src="./image.png" aspect-ratio="2"></v-img>
+                        <!-- 카드 중간에 텍스트 배치 -->
+                        <v-card-text>
+                            <div>
+                                <!-- 제목의 타이포그래피 스타일을 title으로 설정 -->
+                                <!-- 하단의 margin을 2로 설정 -->
+                                <h2 class="title primary--text mb-2">카드 UI</h2>
+                                <p class="mb-0">카드 디자인에 출력될 텍스트를 입력합니다.</p>
+                            </div>
+                        </v-card-text>
+                        <!-- 카드 하단에 버튼 배치 -->
+                        <v-card-actions>
+                            <!-- 버튼 색상은 붉은색으로 설정 -->
+                            <v-btn color="red white--text"> 확인 </v-btn>
+                            <!-- outline으로 버튼의 배경색 제거 -->
+                            <v-btn outlined color="red"> 취소 </v-btn>
+                            <v-btn color="#9c27b0" dark> 취소 </v-btn>
+                        </v-card-actions>
+                    </v-card>
+                </v-container>
+            </v-main>
+        </v-app>
     </div>
     <script>
         new Vue({
             el: '#app',
-            data: ,
-            method: ,
-            computed: ,
-            new Vuetify()
+            vuetify: new Vuetify()
         });
     </script>
 </body>
