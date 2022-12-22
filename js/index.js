@@ -309,6 +309,7 @@ var slide_warm = new Swiper("#menu_warm", {
 	spaceBetween: 30,
 	centeredSlides: true,
 	freeMode: true,
+	allowTouchMove : false,
 	navigation: {
 		nextEl: '.menu_btn_next',
 		prevEl: '.menu_btn_prev',
@@ -326,6 +327,7 @@ var slide_salady = new Swiper("#menu_salady", {
 	spaceBetween: 30,
 	centeredSlides: true,
 	freeMode: true,
+	allowTouchMove : false,
 	navigation: {
 		nextEl: '.menu_btn_next',
 		prevEl: '.menu_btn_prev',
@@ -343,6 +345,7 @@ var slide_wrap = new Swiper("#menu_wrap", {
 	spaceBetween: 30,
 	centeredSlides: true,
 	freeMode: true,
+	allowTouchMove : false,
 	navigation: {
 		nextEl: '.menu_btn_next',
 		prevEl: '.menu_btn_prev',
@@ -360,6 +363,7 @@ var slide_sand = new Swiper("#menu_sand", {
 	spaceBetween: 30,
 	centeredSlides: true,
 	freeMode: true,
+	allowTouchMove : false,
 	navigation: {
 		nextEl: '.menu_btn_next',
 		prevEl: '.menu_btn_prev',
