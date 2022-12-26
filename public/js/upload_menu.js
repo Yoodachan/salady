@@ -50,18 +50,18 @@ upload_btn.addEventListener('click', function () {
 	const img_file = p_img.files[0];
 
 	var storageRef = storage.ref();
-	var 저장할경로 = storageRef.child('image/'+ img_file.name );
-	var 업로드 = 저장할경로.put(img_file);
-	업로드.on( 'state_changed', 
+	var upload_url = storageRef.child('image/'+ img_file.name );
+	var upload = upload_url.put(img_file);
+	upload .on( 'state_changed', 
     // 변화시 동작하는 함수 
     null, 
     //에러시 동작하는 함수
     (error) => {
-      console.error('실패사유는', error);
+      console.error('에러내역', error);
     }, 
     // 성공시 동작하는 함수
     () => {
-      업로드.snapshot.ref.getDownloadURL().then((url) => {
+      upload .snapshot.ref.getDownloadURL().then((url) => {
 		const img_url = url;
 		db.collection('menu/product/warmbol').add({
 			p_cate : cate_val,
