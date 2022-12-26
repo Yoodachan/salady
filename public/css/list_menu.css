@@ -32,7 +32,7 @@ body {
   text-align: center;
   padding: 100px 0px 0px 20px;
   font-size: 70px;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 .menu_title_comment {
@@ -103,98 +103,132 @@ body {
   position:relative;
 }
 
-.product_before,
-.product_after {
+.prd_before_wrap,
+.prd_after_wrap {
   width: 360px;
   height: 320px;
   text-align: center;
+  
 }
 
-.product_before {
+.prd_before_wrap {
   z-index: 2;
 }
 
-.product_after {
+.prd_after_wrap {
   z-index: 3;
   position:absolute;
   top:0px;
   left: 0px;
-  background-color: #226140;
   padding: 30px;
+  background-color: #226140;
 }
 
 
-.view_off {
-
+.prd_view_off {
   visibility: visible;
   z-index: 1;
   opacity: 0;
 }
 
-.product_img {
+.prd_img {
   display: block;
   width: 180px;
   height: 180px;
   margin: 20px auto 0px;
 }
-.product_name {
-  display: block;
-  width: 100%;
-  text-align: center;
-  font-size: 22px;
-  margin-top: 5px;
-}
 
-.name_before {
-  color: #292929;
-}
-.name_after {
-  color: #fff;
-}
-
-.product_global {
+.prd_text_wrap_before,
+.prd_text_wrap_after {
   display: block;
   width: 100%;
   font-size: 16px;
   margin: 5px 0px;
+  overflow: hidden;
+  transition-duration: .3s;
 }
 
-.global_before {
+.prd_text_wrap_before {
   color: #666;
 }
 
-.name_and_global_after {
+.prd_text_wrap_after {
   color: #fff;
   margin-top: 10px;
 }
 
-.product_kcal {
+.text_down {
+  transform: translateY(200%);
+  opacity:0;
+}
+
+.text_down_hidden {
+  transform: translateY(200%);
+  opacity:0;
+}
+.prd_name_before,
+.prd_name_after {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 22px;
+}
+.prd_name_before {
+  color: #292929;
+}
+.prd_name_after {
+  color: #fff;
+}
+
+
+.prd_kcal {
   display: block;
   width: 100%;
   font-size: 18px;
   color:#226140;
 }
 
-.product_comment {
+.prd_comment {
   display: block;
   width: 100%;
   color: #c5e698;
+  transition-duration: .6s;
 }
 
-.product_after i {
+
+.prd_link_icon {
   display: block;
   width: 60px;
   height: 60px;
-  position: absolute;
-  bottom: 10%;
-  left: 50%;;
   color: #fff;
   z-index: 3;
   background-color: #ffc300;
-  font-size: 24px;
+  font-size: 26px;
   line-height: 60px;
   text-align: center;
   border-radius: 50%;
+  position:absolute;
+  bottom: 10%;
+  left: 50%;
+  transform:translate(-50%, 0%);
+  box-shadow: #444 1px 1px 3px;
+  transition-duration: .3s;
+  visibility: visible;
+}
+
+.text_scale {
+  visibility: hidden;
+  scale: 0%;
+  left: 45%;
+  transform:translate(-50%,-200%);
+}
+
+
+
+.fa-magnifying-glass::before {
+  position: absolute;
+  top: 16px;
+  left: 50%;
   transform:translate(-50%,0%);
 }
 

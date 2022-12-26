@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <title>샐러디 | 메뉴 </title>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <!-- CSS only -->
@@ -11,10 +11,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/header_and_footer.css" />
-    <link rel="stylesheet" href="./css/list.css" />
+    <link rel="stylesheet" href="./css/list_menu.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
     <script src="https://kit.fontawesome.com/73110e26f5.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-    <script defer src="./js/list.js"></script>
+    <script defer src="./js/list_menu.js"></script>
   </head>
   <body>
 
@@ -107,34 +111,34 @@
             <li><a href="#">샐러디</a></li>
             <li><a href="#">샌드</a></li>
             <li><a href="#">랩</a></li>
-            <li><a href="#">웜랩</a></li>
           </ul>
 
           <ul class="menu_list">
-            <li class="product">
+            
+            <!-- <li class="product">
 
-              <div class="product_before">
-                <img class="product_img" src="./images/warm_bowl_001.jpg" title="칠리베이컨 웜볼" >
-                <strong class="product_name name_before"> 칠리베이컨 웜볼 </strong>
-                <span class="product_global global_befre"> Chilli Bacon Warm Bowl </span>
-                <span class="product_kcal"> 222 kcal</span>
+              <div class="prd_before_wrap">
+                <img class="prd_img" src="./images/warm_bowl_001.jpg" title="칠리베이컨 웜볼" >
+                <span class="prd_text_wrap_before"> 
+                  <strong class="prd_name_before"> 칠리베이컨 웜볼 </strong>
+                  Chilli Bacon Warm Bowl 
+                </span>
+                <span class="prd_kcal"> 222 kcal</span>
               </div>
 
-              <a  href="" class="product_after">
-                <strong class="product_name name_and_global_after"> 칠리베이컨 웜볼 </strong>
-                <span class="product_global name_and_global_after"> Chilli Bacon Warm Bowl </span>
-                <span class="product_comment"> 매콤달콤한 감칠맛이 매력적인 샐러디 NO.1 베스트 메뉴 </span>
-                <i class="fa-solid fa-magnifying-glass"></i>
+              <a href="#" class="prd_after_wrap prd_view_off">
+                <span class="prd_text_wrap_after text_down"> 
+                  <strong class="prd_name_after"> 칠리베이컨 웜볼 </strong>
+                  Chilli Bacon Warm Bowl 
+                </span>
+                <span class="prd_comment text_down_hidden"> 매콤달콤한 감칠맛이 매력적인 샐러디 NO.1 베스트 메뉴 </span>
+                <span class="prd_link_icon text_scale">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
               </a>
-            </li>
 
-            <li class="product"></li>
-            <li class="product"></li>
-            <li class="product"></li>
-            <li class="product"></li>
-            <li class="product"></li>
-            <li class="product"></li>
-            <li class="product"></li>
+            </li> -->
+
           </ul>
           
         </div>
@@ -223,55 +227,6 @@
 
       </div>
     </footer>
-
-
-    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
-    <script>
-      var firebaseConfig = {
-          apiKey: "AIzaSyBjsPigEMqitLCm-xKxx8eJsdsKhITcsZs",
-          authDomain: "salady-98dad.firebaseapp.com",
-          projectId: "salady-98dad",
-          storageBucket: "salady-98dad.appspot.com",
-          messagingSenderId: "284991245491",
-          appId: "1:284991245491:web:f8915a89f96d8f4f2734c6",
-          measurementId: "G-7M6R0H7RKY"
-      };
-
-      firebase.initializeApp(firebaseConfig);
-
-      
-      const db = firebase.firestore();
-
-      db.collection('menu/product/warmbol').get().then((snapshot)=>{
-        snapshot.forEach(( doc ) => {
-          const list = document.querySelector('.container')
-
-          let temp = document.createElement('div')
-          temp.classList.add('product');
-
-          temp.innerHTML = `
-                              <div class="thumbnail" style="background-image: url('https://via.placeholder.com/350')"></div>
-                              <div class="flex-grow-1 p-4">
-                                <h5 class="p_name"> 상품명 ${doc.data().p_name} </h5>
-                                <p class="p_kcal"> 칼로리  ${doc.data().p_kcal} </p>
-                                <p class="p_kcal"> 탄수화물 ${doc.data().p_cal} </p>
-                                <p class="p_kcal"> 당류 ${doc.data().p_sugars} </p>
-                                <p class="p_kcal"> 단백질 ${doc.data().p_protein} </p>
-                                <p class="p_kcal"> 지방 ${doc.data().p_fat} </p>
-                                <p class="p_kcal"> 포화지방 ${doc.data().p_sat} </p>
-                                <p class="p_kcal"> 나트륨 ${doc.data().p_mg} </p>
-                                <p class="float-end">♥0</p>
-                              </div>`
-
-          list.append(temp)
-
-        })
-      })
-      
-    </script>
 
   </body>
 </html>
