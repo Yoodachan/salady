@@ -4,22 +4,81 @@ const banner = document.querySelector('#banner');
 const menu = document.querySelector('#menu');
 const franchise = document.querySelector('#franchise');
 const store = document.querySelector('#store')
+const sns = document.querySelector('#sns')
+const footer = document.querySelector('#footer')
 
-const current = document.getElementsByClassName('swiper-pagination-current')[0];
-const total = document.getElementsByClassName('swiper-pagination-total')[0];
+const main = document.querySelector('#main')
+
+const section = document.querySelectorAll('section')
+const section_num = (section.length) - 1;
 
 
 // //마우스 휠시 위 아래 구분해서 콘솔에 표기해줌
 
-// let wheel_cooltime;
+// 변수 생성
+let wheel_cooltime;
 
-// addEventListener('wheel', function (e) {
-// 	clearTimeout(wheel_cooltime); // 이전 휠 이벤트 제거
-// 	wheel_cooltime = setTimeout ( function () {
-// 		const mouse_direction = e.deltaY > 0 ? "Scroll Down" : "Scroll Up";
-// 		console.log(e.deltaY+mouse_direction)
-// 	}, 300 )
-// });
+section_height = banner.getBoundingClientRect().height;
+
+console.log( screen )
+banner_rect = banner.getBoundingClientRect();
+menu_rect = menu.getBoundingClientRect();
+franchise_rect = franchise.getBoundingClientRect();
+store_rect = store.getBoundingClientRect();
+sns_rect = sns.getBoundingClientRect();
+footer_rect = footer.getBoundingClientRect();
+// console.log(screen)
+// console.log(section_height);
+// console.log(banner_rect);
+// console.log(menu_rect);
+// console.log(franchise_rect);
+// console.log(store_rect);
+// console.log(sns_rect);
+// console.log(footer_rect);
+// console.log(section_height * section_num)
+
+console.log("높이" + window.pageYOffset)
+
+console.log("테스트" + window.innerHeight);
+
+const section_max = section_height * section_num;
+
+
+addEventListener('wheel', function (e) {
+	clearTimeout(wheel_cooltime); // 이전 휠 이벤트 제거
+	wheel_cooltime = setTimeout ( function () {
+		const window_y = window.pageYOffset
+		const screen = main.getBoundingClientRect().y
+		const mouse_direction = e.deltaY > 0 ? "Scroll Down" : "Scroll Up";
+
+		if ( (mouse_direction == "Scroll Up") && (window_y <= section_max  )  ) {
+			window.scrollBy( {top: -section_height, left: 0 ,behavior:'smooth'} );
+			console.log(window_y);
+			console.log(screen)
+		}
+
+		if ( (mouse_direction == "Scroll Up") && (window_y > section_max  )  ) {
+			window.scrollBy( {top: -300, left: 0 ,behavior:'smooth'} );
+			console.log(window_y);
+			console.log(screen)
+		}
+
+		if ( (mouse_direction == "Scroll Down") && (window_y < section_max  ) ) {
+			window.scrollBy( {top: section_height, left: 0 ,behavior:'smooth'} );
+			console.log(window_y);
+			console.log(screen)
+		}
+		if ( (mouse_direction == "Scroll Down") && (window_y == section_max  ) ) {
+			window.scrollBy( {top: 300, left: 0 ,behavior:'smooth' } );
+			console.log(window_y);
+			console.log(screen)
+		}
+	}, 800 )
+});
+
+
+
+const menu_cate = document.getElementsByClassName('menu_cate')[0];
 
 
 
@@ -60,8 +119,6 @@ gnb_left.addEventListener('click', function () {
 const model_move = document.getElementsByClassName('gnb_model')[0];
 
 // // 모델 애니메이션
-
-
 
 // // nav 메뉴
 // // mouseleave
@@ -567,3 +624,5 @@ var sns_slide_wrap = new Swiper(".sns_slide_wrap", {
 		type: "fraction",
 	}
 });
+
+

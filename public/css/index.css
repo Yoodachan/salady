@@ -1,7 +1,8 @@
+
 /* 메인 페이지 풀스크린 설정 */
 body {
     background-color: #f5f5f5;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 html,body,#main {
     width:100%;
@@ -235,6 +236,17 @@ html,body,#main {
     z-index: 7;
     background-color: #fff;
 }
+
+.left_item_anime_off {
+    opacity:0;
+    transform:translate(-150%,0%)
+}
+
+.left_item_anime_on {
+    opacity:1;
+    transform:translate(0%,0%)
+}
+
 .cate_item {
     display: block;
     margin: 30px 0px;
