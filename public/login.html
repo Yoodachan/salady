@@ -18,6 +18,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
     <script src="https://kit.fontawesome.com/73110e26f5.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script defer src="./js/firecorn.js"></script>
     <script defer src="./js/login.js"></script>
   </head>
   <body>
@@ -105,12 +106,12 @@
 
             <label>
               <span>아이디</span>
-              <input type="text" class="u_id" placeholder="로그인 아이디 입력">
+              <input type="text" id="u_id" placeholder="로그인 아이디 입력">
             </label>
 
             <label>
               <span>비밀번호</span>
-              <input type="password" class="u_pwd" placeholder="로그인 비밀번호 입력">
+              <input type="password" id="u_pwd" placeholder="로그인 비밀번호 입력">
             </label>
 
           </div>
@@ -118,7 +119,7 @@
             <input type="checkbox" value="y">
             <span>로그인 아이디 저장</span>
           </label>
-          <button type="button" class="login_btn">로그인</button>
+          <button type="button" id="login_btn">로그인</button>
           <ul class="login_find_wrap">
             <li><a href="#">아이디 찾기</a></li>
             <li><a href="#">비밀번호 찾기</a></li>
@@ -128,6 +129,87 @@
 
       </section>
     </main>
+
+    <footer>
+      <div class="footer_menu_wrap">
+        
+        <ul class="footer_menu_box">
+          <li><a href="#">이용약관</a></li>
+          <li><a href="#">개인정보 처리방침</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer_wrap">
+
+        <ul class="footer_content">
+
+          <li class="footer_left">
+            <ul class="footer_logo_sns">
+              <li class="footer_logo"><a href="./index.html"><strong class="footer_logo">SALADY</strong></a></li>
+              <li class="footer_icon">
+                <ul>
+                  <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                  <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                </ul>
+              </li>
+            </ul>
+
+            <ul class="footer_address">
+              <li>㈜샐러디</li>
+              <li>사업자등록번호 : 000-00-00000</li>
+              <li>포토폴리오용으로 제작된 사이트입니다.</li>
+              <li>COPYRIGHT(C) 2022 ㈜샐러디. CO.LTD ALL RIGHT RESERVED.</li>
+            </ul>
+          </li>
+
+
+          <ul class="footer_right">
+            <li>
+              <strong>브랜드</strong>
+              <ul>
+                <li><a href="#">샐러디</a></li>
+                <li><a href="#">샐러디 키친</a></li>
+                <li><a href="#">샐러디 팜</a></li>
+              </ul>
+            </li>
+            <li>
+              <strong>메뉴</strong>
+              <ul>
+                <li><a href="#">웜볼</a></li>
+                <li><a href="#">샐러디</a></li>
+                <li><a href="#">샌드&랩</a></li>
+                <li><a href="#">토핑&드레싱</a></li>
+                <li><a href="#">음료&사이드</a></li>
+              </ul>
+            </li>
+            <li>
+              <strong>가맹점</strong>
+              <ul>
+                <li><a href="#">가맹 안내</a></li>
+                <li><a href="#">가맹 신청</a></li>
+              </ul>
+            </li>
+            <li>
+              <strong>주문</strong>
+              <ul>
+                <li><a href="#">매장 주문</a></li>
+              </ul>
+            </li>
+            <li>
+              <strong>새소식</strong>
+              <ul>
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">이벤트</a></li>
+              </ul>
+            </li>
+          </ul>
+
+        </ul>
+
+      </div>
+    </footer>
 
 
 

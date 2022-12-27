@@ -1,94 +1,355 @@
-var firebaseConfig = {
-	apiKey: "AIzaSyBjsPigEMqitLCm-xKxx8eJsdsKhITcsZs",
-	authDomain: "salady-98dad.firebaseapp.com",
-	projectId: "salady-98dad",
-	storageBucket: "salady-98dad.appspot.com",
-	messagingSenderId: "284991245491",
-	appId: "1:284991245491:web:f8915a89f96d8f4f2734c6",
-	measurementId: "G-7M6R0H7RKY"
-};
+const query_string = new URLSearchParams(window.location.search);
 
-firebase.initializeApp(firebaseConfig);
+const url_cate = query_string.get('p_cate');
 
+const cate_all = document.getElementsByClassName('cate_all')[0];
+const cate_warm = document.getElementsByClassName('cate_warm')[0];
+const cate_salady = document.getElementsByClassName('cate_salady')[0];
+const cate_sand = document.getElementsByClassName('cate_sand')[0];
+const cate_wrap = document.getElementsByClassName('cate_wrap')[0];
+const cate_item = document.querySelectorAll('.cate_item');
 
-const db = firebase.firestore();
-db.collection('menu/product/warmbol').get().then((snapshot)=>{
-  snapshot.forEach(( doc ) => {
-	var menu_list = document.querySelector('.menu_list')
+function cate_load () {
+	if (url_cate == "wrap") {
+		// cate_item.forEach((result) => {
+		// 	result.classList.remove('cate_select')
+		// })
+		cate_wrap.classList.remove('cate_item');
+		cate_wrap.classList.add('cate_select');
+		db.collection('menu/product/warmbol').where("p_cate", "==" , "wrap" ).get().then((snapshot)=>{
 
-	let temp = document.createElement('li')
-	temp.classList.add('product');
-	temp.innerHTML = 
-	`
-	<div class="prd_before_wrap">
-	  <img class="prd_img" src="${doc.data().p_img} " title="${doc.data().p_name}" >
-	  <span class="prd_text_wrap_before"> 
-		<strong class="prd_name_before"> ${doc.data().p_name} </strong>
-		${doc.data().p_global} 
-	  </span>
-	  <span class="prd_kcal"> ${doc.data().p_kcal} kcal</span>
-	</div>
-
-	<a href="#" class="prd_after_wrap prd_view_off">
-	  <span class="prd_text_wrap_after text_down"> 
-		<strong class="prd_name_after"> ${doc.data().p_name} </strong>
-		${doc.data().p_global} 
-	  </span>
-	  <span class="prd_comment text_down_hidden"> ${doc.data().p_comment} </span>
-	  <span class="prd_link_icon text_scale">
-		<i class="fa-solid fa-magnifying-glass"></i>
-	  </span>
-	</a>
-	`
-	menu_list.append(temp);
-
-	var product = document.querySelectorAll('.product');
-	var prd_before_wrap = document.querySelectorAll('.prd_before_wrap');
-	var prd_name_before = document.querySelectorAll('.prd_name_before');
-	var prd_text_wrap_before = document.querySelectorAll('.prd_text_wrap_before');
-	var prd_name_after = document.querySelectorAll('.prd_name_after');
-
-	var prd_after_wrap = document.querySelectorAll('.prd_after_wrap');
-	var prd_text_wrap_after = document.querySelectorAll('.prd_text_wrap_after');
-	var prd_comment = document.querySelectorAll('.prd_comment');
-	var prd_link_icon = document.querySelectorAll('.prd_link_icon');
-
-	product.forEach( (e,i) => {
-		console.log(product.length)
-	
-		e.addEventListener('mouseenter', function () {
-	
-		prd_after_wrap[i].classList.remove('prd_view_off');
-		prd_text_wrap_after[i].classList.remove('text_down');
-		prd_comment[i].classList.remove('text_down_hidden');
-		prd_link_icon[i].classList.remove('text_scale');
+			//값 다 가져옴
+		  snapshot.forEach(( doc ) => {
 		
-		});
-	
-		e.addEventListener('mouseleave', function () {
-
-		prd_after_wrap[i].classList.add('prd_view_off');
-		prd_text_wrap_after[i].classList.add('text_down');
-		prd_comment[i].classList.add('text_down_hidden');
-		prd_link_icon[i].classList.add('text_scale');
-
+			var menu_list = document.querySelector('.menu_list')
+		
+			let temp = document.createElement('li')
+			temp.classList.add('product');
+			temp.innerHTML = 
+			`
+			<div class="prd_before_wrap">
+			  <img class="prd_img" src="${doc.data().p_img} " title="${doc.data().p_name}" >
+			  <span class="prd_text_wrap_before"> 
+				<strong class="prd_name_before"> ${doc.data().p_name} </strong>
+				${doc.data().p_global} 
+			  </span>
+			  <span class="prd_kcal"> ${doc.data().p_kcal} kcal</span>
+			</div>
+		
+			<a href="./detail.html?id=${doc.id}&p_cate=${doc.data().p_cate}" class="prd_after_wrap prd_view_off">
+			  <span class="prd_text_wrap_after text_down"> 
+				<strong class="prd_name_after"> ${doc.data().p_name} </strong>
+				${doc.data().p_global} 
+			  </span>
+			  <span class="prd_comment text_down_hidden"> ${doc.data().p_comment} </span>
+			  <span class="prd_link_icon text_scale">
+				<i class="fa-solid fa-magnifying-glass"></i>
+			  </span>
+			</a>
+			`
+			menu_list.append(temp);
+		
+			const product = document.querySelectorAll('.product');
+			const prd_after_wrap = document.querySelectorAll('.prd_after_wrap');
+			const prd_text_wrap_after = document.querySelectorAll('.prd_text_wrap_after');
+			const prd_comment = document.querySelectorAll('.prd_comment');
+			const prd_link_icon = document.querySelectorAll('.prd_link_icon');
+		
+			product.forEach( (e,i) => {
+			
+				e.addEventListener('mouseenter', function () {
+			
+				prd_after_wrap[i].classList.remove('prd_view_off');
+				prd_text_wrap_after[i].classList.remove('text_down');
+				prd_comment[i].classList.remove('text_down_hidden');
+				prd_link_icon[i].classList.remove('text_scale');
+				
+				});
+			
+				e.addEventListener('mouseleave', function () {
+		
+				prd_after_wrap[i].classList.add('prd_view_off');
+				prd_text_wrap_after[i].classList.add('text_down');
+				prd_comment[i].classList.add('text_down_hidden');
+				prd_link_icon[i].classList.add('text_scale');
+		
+				})
+			
+			});
+		
+		  })
 		})
+	}
+	if (url_cate == "salady") {
+		cate_salady.classList.remove('cate_item');
+		cate_salady.classList.add('cate_select');
+		db.collection('menu/product/warmbol').where("p_cate", "==" , "salady" ).get().then((snapshot)=>{
+
+			//값 다 가져옴
+		  snapshot.forEach(( doc ) => {
+		
+			var menu_list = document.querySelector('.menu_list')
+		
+			let temp = document.createElement('li')
+			temp.classList.add('product');
+			temp.innerHTML = 
+			`
+			<div class="prd_before_wrap">
+			  <img class="prd_img" src="${doc.data().p_img} " title="${doc.data().p_name}" >
+			  <span class="prd_text_wrap_before"> 
+				<strong class="prd_name_before"> ${doc.data().p_name} </strong>
+				${doc.data().p_global} 
+			  </span>
+			  <span class="prd_kcal"> ${doc.data().p_kcal} kcal</span>
+			</div>
+		
+			<a href="./detail.html?id=${doc.id}&p_cate=${doc.data().p_cate}" class="prd_after_wrap prd_view_off">
+			  <span class="prd_text_wrap_after text_down"> 
+				<strong class="prd_name_after"> ${doc.data().p_name} </strong>
+				${doc.data().p_global} 
+			  </span>
+			  <span class="prd_comment text_down_hidden"> ${doc.data().p_comment} </span>
+			  <span class="prd_link_icon text_scale">
+				<i class="fa-solid fa-magnifying-glass"></i>
+			  </span>
+			</a>
+			`
+			menu_list.append(temp);
+		
+			const product = document.querySelectorAll('.product');
+			const prd_after_wrap = document.querySelectorAll('.prd_after_wrap');
+			const prd_text_wrap_after = document.querySelectorAll('.prd_text_wrap_after');
+			const prd_comment = document.querySelectorAll('.prd_comment');
+			const prd_link_icon = document.querySelectorAll('.prd_link_icon');
+		
+			product.forEach( (e,i) => {
+			
+				e.addEventListener('mouseenter', function () {
+			
+				prd_after_wrap[i].classList.remove('prd_view_off');
+				prd_text_wrap_after[i].classList.remove('text_down');
+				prd_comment[i].classList.remove('text_down_hidden');
+				prd_link_icon[i].classList.remove('text_scale');
+				
+				});
+			
+				e.addEventListener('mouseleave', function () {
+		
+				prd_after_wrap[i].classList.add('prd_view_off');
+				prd_text_wrap_after[i].classList.add('text_down');
+				prd_comment[i].classList.add('text_down_hidden');
+				prd_link_icon[i].classList.add('text_scale');
+		
+				})
+			
+			});
+		
+		  })
+		})
+	}
+	if (url_cate == "warm_bowl") {
+		cate_warm.classList.remove('cate_item');
+		cate_warm.classList.add('cate_select');
+		db.collection('menu/product/warmbol').where("p_cate", "==" , "warm_bowl" ).get().then((snapshot)=>{
+
+			//값 다 가져옴
+		  snapshot.forEach(( doc ) => {
+		
+			var menu_list = document.querySelector('.menu_list')
+		
+			let temp = document.createElement('li')
+			temp.classList.add('product');
+			temp.innerHTML = 
+			`
+			<div class="prd_before_wrap">
+			  <img class="prd_img" src="${doc.data().p_img} " title="${doc.data().p_name}" >
+			  <span class="prd_text_wrap_before"> 
+				<strong class="prd_name_before"> ${doc.data().p_name} </strong>
+				${doc.data().p_global} 
+			  </span>
+			  <span class="prd_kcal"> ${doc.data().p_kcal} kcal</span>
+			</div>
+		
+			<a href="./detail.html?id=${doc.id}&p_cate=${doc.data().p_cate}" class="prd_after_wrap prd_view_off">
+			  <span class="prd_text_wrap_after text_down"> 
+				<strong class="prd_name_after"> ${doc.data().p_name} </strong>
+				${doc.data().p_global} 
+			  </span>
+			  <span class="prd_comment text_down_hidden"> ${doc.data().p_comment} </span>
+			  <span class="prd_link_icon text_scale">
+				<i class="fa-solid fa-magnifying-glass"></i>
+			  </span>
+			</a>
+			`
+			menu_list.append(temp);
+		
+			const product = document.querySelectorAll('.product');
+			const prd_after_wrap = document.querySelectorAll('.prd_after_wrap');
+			const prd_text_wrap_after = document.querySelectorAll('.prd_text_wrap_after');
+			const prd_comment = document.querySelectorAll('.prd_comment');
+			const prd_link_icon = document.querySelectorAll('.prd_link_icon');
+		
+			product.forEach( (e,i) => {
+			
+				e.addEventListener('mouseenter', function () {
+			
+				prd_after_wrap[i].classList.remove('prd_view_off');
+				prd_text_wrap_after[i].classList.remove('text_down');
+				prd_comment[i].classList.remove('text_down_hidden');
+				prd_link_icon[i].classList.remove('text_scale');
+				
+				});
+			
+				e.addEventListener('mouseleave', function () {
+		
+				prd_after_wrap[i].classList.add('prd_view_off');
+				prd_text_wrap_after[i].classList.add('text_down');
+				prd_comment[i].classList.add('text_down_hidden');
+				prd_link_icon[i].classList.add('text_scale');
+		
+				})
+			
+			});
+		
+		  })
+		})
+	}
+	if (url_cate == "sand") {
+		cate_sand.classList.remove('cate_item');
+		cate_sand.classList.add('cate_select');
+		db.collection('menu/product/warmbol').where("p_cate", "==" , "sand" ).get().then((snapshot)=>{
+
+			//값 다 가져옴
+		  snapshot.forEach(( doc ) => {
+		
+			var menu_list = document.querySelector('.menu_list')
+		
+			let temp = document.createElement('li')
+			temp.classList.add('product');
+			temp.innerHTML = 
+			`
+			<div class="prd_before_wrap">
+			  <img class="prd_img" src="${doc.data().p_img} " title="${doc.data().p_name}" >
+			  <span class="prd_text_wrap_before"> 
+				<strong class="prd_name_before"> ${doc.data().p_name} </strong>
+				${doc.data().p_global} 
+			  </span>
+			  <span class="prd_kcal"> ${doc.data().p_kcal} kcal</span>
+			</div>
+		
+			<a href="./detail.html?id=${doc.id}&p_cate=${doc.data().p_cate}" class="prd_after_wrap prd_view_off">
+			  <span class="prd_text_wrap_after text_down"> 
+				<strong class="prd_name_after"> ${doc.data().p_name} </strong>
+				${doc.data().p_global} 
+			  </span>
+			  <span class="prd_comment text_down_hidden"> ${doc.data().p_comment} </span>
+			  <span class="prd_link_icon text_scale">
+				<i class="fa-solid fa-magnifying-glass"></i>
+			  </span>
+			</a>
+			`
+			menu_list.append(temp);
+		
+			const product = document.querySelectorAll('.product');
+			const prd_after_wrap = document.querySelectorAll('.prd_after_wrap');
+			const prd_text_wrap_after = document.querySelectorAll('.prd_text_wrap_after');
+			const prd_comment = document.querySelectorAll('.prd_comment');
+			const prd_link_icon = document.querySelectorAll('.prd_link_icon');
+		
+			product.forEach( (e,i) => {
+			
+				e.addEventListener('mouseenter', function () {
+			
+				prd_after_wrap[i].classList.remove('prd_view_off');
+				prd_text_wrap_after[i].classList.remove('text_down');
+				prd_comment[i].classList.remove('text_down_hidden');
+				prd_link_icon[i].classList.remove('text_scale');
+				
+				});
+			
+				e.addEventListener('mouseleave', function () {
+		
+				prd_after_wrap[i].classList.add('prd_view_off');
+				prd_text_wrap_after[i].classList.add('text_down');
+				prd_comment[i].classList.add('text_down_hidden');
+				prd_link_icon[i].classList.add('text_scale');
+		
+				})
+			
+			});
+		
+		  })
+		})
+	}
 	
-	});
+	if (url_cate == null ) {
+		cate_all.classList.remove('cate_item');
+		cate_all.classList.add('cate_select');
+		db.collection('menu/product/warmbol').orderBy("p_id").get().then((snapshot)=>{
 
-  })
-})
+			//값 다 가져옴
+		  snapshot.forEach(( doc ) => {
+		
+			var menu_list = document.querySelector('.menu_list')
+		
+			let temp = document.createElement('li')
+			temp.classList.add('product');
+			temp.innerHTML = 
+			`
+			<div class="prd_before_wrap">
+			  <img class="prd_img" src="${doc.data().p_img} " title="${doc.data().p_name}" >
+			  <span class="prd_text_wrap_before"> 
+				<strong class="prd_name_before"> ${doc.data().p_name} </strong>
+				${doc.data().p_global} 
+			  </span>
+			  <span class="prd_kcal"> ${doc.data().p_kcal} kcal</span>
+			</div>
+		
+			<a href="./detail.html?id=${doc.id}&p_cate=${doc.data().p_cate}" class="prd_after_wrap prd_view_off">
+			  <span class="prd_text_wrap_after text_down"> 
+				<strong class="prd_name_after"> ${doc.data().p_name} </strong>
+				${doc.data().p_global} 
+			  </span>
+			  <span class="prd_comment text_down_hidden"> ${doc.data().p_comment} </span>
+			  <span class="prd_link_icon text_scale">
+				<i class="fa-solid fa-magnifying-glass"></i>
+			  </span>
+			</a>
+			`
+			menu_list.append(temp);
+		
+			const product = document.querySelectorAll('.product');
+			const prd_after_wrap = document.querySelectorAll('.prd_after_wrap');
+			const prd_text_wrap_after = document.querySelectorAll('.prd_text_wrap_after');
+			const prd_comment = document.querySelectorAll('.prd_comment');
+			const prd_link_icon = document.querySelectorAll('.prd_link_icon');
+		
+			product.forEach( (e,i) => {
+			
+				e.addEventListener('mouseenter', function () {
+			
+				prd_after_wrap[i].classList.remove('prd_view_off');
+				prd_text_wrap_after[i].classList.remove('text_down');
+				prd_comment[i].classList.remove('text_down_hidden');
+				prd_link_icon[i].classList.remove('text_scale');
+				
+				});
+			
+				e.addEventListener('mouseleave', function () {
+		
+				prd_after_wrap[i].classList.add('prd_view_off');
+				prd_text_wrap_after[i].classList.add('text_down');
+				prd_comment[i].classList.add('text_down_hidden');
+				prd_link_icon[i].classList.add('text_scale');
+		
+				})
+			
+			});
+		
+		  })
+		})
 
+	}
+}
 
-      // <h5 class="p_name"> 상품명 ${doc.data().p_name} </h5>
-	  //<h5 class="p_name"> 글로벌 ${doc.data().p_global} </h5>
-	  //<h5 class="p_name"> 설명 ${doc.data().p_comment} </h5>
-      // <p class="p_kcal"> 칼로리  ${doc.data().p_kcal} </p>
-      // <p class="p_kcal"> 탄수화물 ${doc.data().p_cal} </p>
-      // <p class="p_kcal"> 당류 ${doc.data().p_sugars} </p>
-      // <p class="p_kcal"> 단백질 ${doc.data().p_protein} </p>
-      // <p class="p_kcal"> 지방 ${doc.data().p_fat} </p>
-      // <p class="p_kcal"> 포화지방 ${doc.data().p_sat} </p>
-      // <p class="p_kcal"> 나트륨 ${doc.data().p_mg} </p>
-      // <p class="float-end">♥0</p>
-
+cate_load();

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>샐러디 | 메뉴 </title>
+    <title>샐러디 | 상세페이지 </title>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <!-- CSS only -->
@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/header_and_footer.css" />
-    <link rel="stylesheet" href="./css/list_menu.css" />
+    <link rel="stylesheet" href="./css/detail.css" />
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
@@ -19,10 +19,9 @@
     <script src="https://kit.fontawesome.com/73110e26f5.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script defer src="./js/firecorn.js"></script>
-    <script defer src="./js/list_menu.js"></script>
+    <script defer src="./js/detail.js"></script>
   </head>
   <body>
-
     <header id="header" class="header_off">
       <!-- 헤더 상부 -->
       <nav id="nav" class="nav_off">
@@ -95,18 +94,15 @@
         <button class="nav_mbtn" type="button" ><span class="mbtn_img mbtn_img_off"></span></button> 
       </div>
     </header>
-
     <main id="main">
       <section id="content">
-        <div class="menu_wrap">
-          <div class="menu_title_box">
-            <h2 class="menu_title"> ALL </h2>
-            <p class="menu_title_comment">
-              샐러디의 다양한 메뉴를 즐겨보세요!
-            </p>
+        <div class="detail_wrap">
+          <div class="detail_title_box">
+            <h2 class="detail_title">
+            </h2>
           </div>
 
-          <ul class="menu_cate">
+          <ul class="detail_cate">
             <li class="cate_item cate_all"><a href="./list_menu.html">ALL</a></li>
             <li class="cate_item cate_warm"><a href="./list_menu.html?p_cate=warm_bowl">웜볼</a></li>
             <li class="cate_item cate_salady"><a href="./list_menu.html?p_cate=salady">샐러디</a></li>
@@ -114,14 +110,12 @@
             <li class="cate_item cate_wrap"><a href="./list_menu.html?p_cate=wrap">랩</a></li>
           </ul>
 
-          <ul class="menu_list">
-            
-          </ul>
-          
-        </div>
+
+          <div class="product_wrap">
+         
+          </div>
 
       </section>
-      </div>
     </main>
 
     <footer>
@@ -204,6 +198,8 @@
 
       </div>
     </footer>
+
+
 
   </body>
 </html>

@@ -3,7 +3,11 @@
 const banner = document.querySelector('#banner');
 const menu = document.querySelector('#menu');
 const franchise = document.querySelector('#franchise');
-const store = document.querySelector('#store');
+const store = document.querySelector('#store')
+
+const current = document.getElementsByClassName('swiper-pagination-current')[0];
+const total = document.getElementsByClassName('swiper-pagination-total')[0];
+
 
 // //마우스 휠시 위 아래 구분해서 콘솔에 표기해줌
 
@@ -108,6 +112,7 @@ nav.addEventListener('mouseenter', function () {
 	model_move.classList.add('model_on');
 
 });
+
 header.addEventListener('mouseleave', function () {
 	let now_scroll = window.scrollY;
 

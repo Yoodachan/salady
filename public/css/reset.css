@@ -48,25 +48,42 @@
 
 /* ---------------------------------------- */
 
+
+@font-face {
+  font-family: 'PuradakGentleGothicR';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.1/PuradakGentleGothicR.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body,h1,h2,h3,h4,h5,p,div,dl,dt,dd{
     margin: 0;
     padding: 0;
 }
+
 dt,strong,body,i,em,p,div,ul,li,dl,dt,dd,input,button,textarea {
   font-family: 'Noto Sans KR',sans-serif;
 }
+
 h1,h2,h3,h4,h5 {
-    font-family: 'Do Hyeon', serif;
+  font-family: 'Do Hyeon', serif;
 }
-ul,li{
+
+ul,li {
     margin:0;
     padding:0;
     list-style:none;
 }
-a{
+
+a {
     text-decoration:none;
     color: inherit;
 }
+
+p:hover {
+  color: none;
+}
+
 address,em {
     font-style:normal
 }
@@ -84,6 +101,10 @@ input,button {
 button {
     appearance: none;
     cursor: pointer;
+}
+button:focus {
+  border: none;
+  outline: 1px solid #999;
 }
 
 table,tr,th,td {
