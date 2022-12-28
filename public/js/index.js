@@ -1,16 +1,5 @@
 
 
-const banner = document.querySelector('#banner');
-const menu = document.querySelector('#menu');
-const franchise = document.querySelector('#franchise');
-const store = document.querySelector('#store')
-const sns = document.querySelector('#sns')
-const footer = document.querySelector('#footer')
-
-const main = document.querySelector('#main')
-
-const section = document.querySelectorAll('section')
-const section_num = (section.length) - 1;
 
 
 // //마우스 휠시 위 아래 구분해서 콘솔에 표기해줌
@@ -18,15 +7,6 @@ const section_num = (section.length) - 1;
 // 변수 생성
 let wheel_cooltime;
 
-section_height = banner.getBoundingClientRect().height;
-
-console.log( screen )
-banner_rect = banner.getBoundingClientRect();
-menu_rect = menu.getBoundingClientRect();
-franchise_rect = franchise.getBoundingClientRect();
-store_rect = store.getBoundingClientRect();
-sns_rect = sns.getBoundingClientRect();
-footer_rect = footer.getBoundingClientRect();
 // console.log(screen)
 // console.log(section_height);
 // console.log(banner_rect);
@@ -37,14 +17,32 @@ footer_rect = footer.getBoundingClientRect();
 // console.log(footer_rect);
 // console.log(section_height * section_num)
 
-console.log("높이" + window.pageYOffset)
+// console.log("높이" + window.pageYOffset)
 
-console.log("테스트" + window.innerHeight);
-
-const section_max = section_height * section_num;
+// console.log("테스트" + window.innerHeight);
 
 
 addEventListener('wheel', function (e) {
+	const banner = document.querySelector('#banner');
+	const menu = document.querySelector('#menu');
+	const franchise = document.querySelector('#franchise');
+	const store = document.querySelector('#store')
+	const sns = document.querySelector('#sns')
+	const footer = document.querySelector('#footer')
+
+	const main = document.querySelector('#main')
+
+	const section = document.querySelectorAll('section')
+	const section_num = (section.length) - 1;
+	section_height = banner.getBoundingClientRect().height;
+	banner_rect = banner.getBoundingClientRect();
+	menu_rect = menu.getBoundingClientRect();
+	franchise_rect = franchise.getBoundingClientRect();
+	store_rect = store.getBoundingClientRect();
+	sns_rect = sns.getBoundingClientRect();
+	footer_rect = footer.getBoundingClientRect();
+	const section_max = section_height * section_num;
+	
 	clearTimeout(wheel_cooltime); // 이전 휠 이벤트 제거
 	wheel_cooltime = setTimeout ( function () {
 		const window_y = window.pageYOffset
