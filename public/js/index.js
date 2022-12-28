@@ -20,9 +20,9 @@ let wheel_cooltime;
 // console.log("높이" + window.pageYOffset)
 
 // console.log("테스트" + window.innerHeight);
+const main = document.querySelector('#main')
 
-
-addEventListener('wheel', function (e) {
+main.addEventListener('wheel', function (e) {
 	const banner = document.querySelector('#banner');
 	const menu = document.querySelector('#menu');
 	const franchise = document.querySelector('#franchise');
@@ -45,31 +45,40 @@ addEventListener('wheel', function (e) {
 	
 	clearTimeout(wheel_cooltime); // 이전 휠 이벤트 제거
 	wheel_cooltime = setTimeout ( function () {
-		const window_y = window.pageYOffset
-		const screen = main.getBoundingClientRect().y
+		const window_y = window.pageYOffset;
+		const screen = main.getBoundingClientRect().y;
 		const mouse_direction = e.deltaY > 0 ? "Scroll Down" : "Scroll Up";
+		let floor = Math.floor(( main.scrollTop / (main.scrollHeight - main.clientHeight)) * 100);
 
 		if ( (mouse_direction == "Scroll Up") && (window_y <= section_max  )  ) {
 			window.scrollBy( {top: -section_height, left: 0 ,behavior:'smooth'} );
 			console.log(window_y);
-			console.log(screen)
+			console.log(screen);
+			console.log(window.scrollY);
+			console.log(floor)
 		}
 
 		if ( (mouse_direction == "Scroll Up") && (window_y > section_max  )  ) {
 			window.scrollBy( {top: -300, left: 0 ,behavior:'smooth'} );
 			console.log(window_y);
-			console.log(screen)
+			console.log(screen);
+			console.log(window.scrollY);
+			console.log(floor)
 		}
 
 		if ( (mouse_direction == "Scroll Down") && (window_y < section_max  ) ) {
 			window.scrollBy( {top: section_height, left: 0 ,behavior:'smooth'} );
 			console.log(window_y);
-			console.log(screen)
+			console.log(screen);
+			console.log(window.scrollY);
+			console.log(floor)
 		}
 		if ( (mouse_direction == "Scroll Down") && (window_y == section_max  ) ) {
 			window.scrollBy( {top: 300, left: 0 ,behavior:'smooth' } );
 			console.log(window_y);
-			console.log(screen)
+			console.log(screen);
+			console.log(window.scrollY);
+			console.log(floor)
 		}
 	}, 800 )
 });
