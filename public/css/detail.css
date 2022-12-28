@@ -19,6 +19,9 @@
 }
 
 .detail_title_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 320px;
   background-size:cover;
@@ -27,11 +30,9 @@
 .detail_title {
   display: block;
   width: 100%;
-  height: 200px;
   color: #fff;
   margin: 0 auto;
   text-align: center;
-  padding: 100px 0px 0px 20px;
   font-size: 32px;
   font-weight: normal;
 }
@@ -197,3 +198,313 @@
   border-right: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
 }
+
+
+
+@media screen and (max-width:1140px) {
+  
+.detail_title_box {
+  height: 250px;
+}
+
+.detail_title {
+  font-size: 28px;
+}
+
+.detail_title_comment {
+  height: 70px;
+  line-height: 70px;
+  font-size: 16px;
+}
+
+.detail_cate {
+  width: 800px;
+  top: 210px;
+}
+
+.product_content {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.chart_content {
+  width: 800px;
+  margin: 0 auto;
+}
+  
+  }
+  
+@media screen and (max-width:800px) {
+
+.detail_title_box {
+  height: 250px;
+}
+
+.detail_title {
+  font-size: 24px;
+}
+
+.detail_title_comment {
+  height: 70px;
+  line-height: 70px;
+  font-size: 16px;
+}
+
+.detail_cate {
+  width: 100%;
+  top: 210px;
+}
+
+.product_content {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.prd_title {
+  font-size: 42px;
+}
+
+.chart_content {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.chart_header_wrap,
+.chart_data_wrap {
+  height: 50px;
+}
+
+.chart_header_wrap th {
+  font-size: 14px;
+}
+
+.chart_data_wrap td {
+  font-size: 14px;
+}
+  
+
+}
+
+@media screen and (max-width:600px) {
+  
+
+.detail_title_box {
+  height: 250px;
+}
+
+.detail_title {
+  font-size: 20px;
+}
+
+.detail_title_comment {
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px;
+}
+
+.detail_cate {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  top: 220px;
+}
+
+.detail_cate li {
+  font-size: 14px;
+}
+
+.detail_cate li:nth-of-type(1)::after,
+.detail_cate li:nth-of-type(2)::after,
+.detail_cate li:nth-of-type(3)::after,
+.detail_cate li:nth-of-type(4)::after {
+  content: '';
+  width: 1px;
+  height: 16px;
+  background-color: #ddd;
+  position:absolute;
+  right: 0px;
+  top: 18px;
+}
+
+.product_wrap {
+  padding-top: 70px;
+}
+
+.prd_title {
+  font-size: 36px;
+}
+
+.prd_img {
+  width: 100%;
+}
+
+.prd_comment {
+  width: 100%;
+  font-size: 14px;
+  color: #999;
+  padding: 20px;
+}
+
+.product_chart {
+  height: 550px;
+  padding: 60px 0px;
+  
+}
+
+
+.chart_content {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.chart_header_wrap,
+.chart_data_wrap {
+  height: 50px;
+}
+
+tbody {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.chart_header_wrap th {
+  display: block;
+  font-size: 14px;
+  min-width: 100px;
+  height: 40px;
+  line-height: 40px;
+  
+}
+
+.chart_data_wrap td {
+  display: block;
+  font-size: 14px;
+  min-width: 200px;
+  height: 40px;
+  line-height: 40px;
+}
+
+  
+
+  
+  
+}
+
+@media screen and (max-width:400px) {
+  
+.detail_title_box {
+  height: 150px;
+}
+
+.detail_title {
+  font-size: 16px;
+}
+
+.detail_title_comment {
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px;
+}
+
+.detail_cate {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  top: 120px;
+}
+
+.detail_cate li {
+  font-size: 12px;
+  padding: 0px 14px;
+}
+
+.detail_cate li:nth-of-type(1)::after,
+.detail_cate li:nth-of-type(2)::after,
+.detail_cate li:nth-of-type(3)::after,
+.detail_cate li:nth-of-type(4)::after {
+  content: '';
+  width: 1px;
+  height: 16px;
+  background-color: #ddd;
+  position:absolute;
+  right: 0px;
+  top: 18px;
+}
+
+.product_wrap {
+  padding-top: 50px;
+}
+
+.prd_title {
+  font-size: 28px;
+}
+
+.prd_semi_title {
+  font-size: 14px;
+}
+
+
+.prd_img {
+  width: 100%;
+  height: auto;
+}
+
+.prd_comment {
+  width: 100%;
+  font-size: 12px;
+  color: #999;
+  padding: 20px;
+}
+
+.product_chart {
+  height: 500px;
+  padding: 30px 0px;
+}
+
+.chart_title {
+  margin-bottom: 30px;
+}
+
+
+.chart_content {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.chart_header_wrap,
+.chart_data_wrap {
+  height: 50px;
+}
+
+tbody {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.chart_header_wrap th {
+  display: block;
+  font-size: 14px;
+  min-width: 100px;
+  height: 40px;
+  line-height: 40px;
+  
+}
+
+.chart_data_wrap td {
+  display: block;
+  font-size: 14px;
+  min-width: 200px;
+  height: 40px;
+  line-height: 40px;
+}
+
+  
+  
+}
+
+  
+  
