@@ -104,7 +104,7 @@ button {
 }
 button:focus {
   border: none;
-  outline: 1px solid #999;
+  outline: none;
 }
 
 table,tr,th,td {
