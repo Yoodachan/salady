@@ -1,82 +1,43 @@
-
+const scroll_btn = document.getElementsByClassName('scroll_up_btn')[0];
+const order_btn = document.getElementById('order_btn');
 
 // //마우스 휠시 위 아래 구분해서 콘솔에 표기해줌
 
 // 변수 생성
 let wheel_cooltime;
 
-// console.log(screen)
-// console.log(section_height);
-// console.log(banner_rect);
-// console.log(menu_rect);
-// console.log(franchise_rect);
-// console.log(store_rect);
-// console.log(sns_rect);
-// console.log(footer_rect);
-// console.log(section_height * section_num)
-
-// console.log("높이" + window.pageYOffset)
-
-// console.log("테스트" + window.innerHeight);
 const main = document.querySelector('#main')
 
-main.addEventListener('wheel', function (e) {
-	const banner = document.querySelector('#banner');
-	const menu = document.querySelector('#menu');
-	const franchise = document.querySelector('#franchise');
-	const store = document.querySelector('#store')
-	const sns = document.querySelector('#sns')
-	const footer = document.querySelector('#footer')
+const section = document.querySelectorAll('section')
+const section_num = (section.length) - 1;
+const section_height = banner.getBoundingClientRect().height;
 
-	const main = document.querySelector('#main')
-
-	const section = document.querySelectorAll('section')
-	const section_num = (section.length) - 1;
-	section_height = banner.getBoundingClientRect().height;
-	banner_rect = banner.getBoundingClientRect();
-	menu_rect = menu.getBoundingClientRect();
-	franchise_rect = franchise.getBoundingClientRect();
-	store_rect = store.getBoundingClientRect();
-	sns_rect = sns.getBoundingClientRect();
-	footer_rect = footer.getBoundingClientRect();
+main.addEventListener('wheel', (e) => {
+	
 	const section_max = section_height * section_num;
 	
 	clearTimeout(wheel_cooltime); // 이전 휠 이벤트 제거
-	wheel_cooltime = setTimeout ( function () {
-		const window_y = window.pageYOffset;
-		const screen = main.getBoundingClientRect().y;
-		const mouse_direction = e.deltaY > 0 ? "Scroll Down" : "Scroll Up";
-		let floor = Math.floor(( main.scrollTop / (main.scrollHeight - main.clientHeight)) * 100);
+	wheel_cooltime = setTimeout (() => {
+		// 해상도가 800 이상일시에만 풀페이지 스크롤이 작동
+		if ( window.innerWidth > 800 ) {
 
-		if ( (mouse_direction == "Scroll Up") && (window_y <= section_max  )  ) {
-			window.scrollBy( {top: -section_height, left: 0 ,behavior:'smooth'} );
-			console.log(window_y);
-			console.log(screen);
-			console.log(window.scrollY);
-			console.log(floor)
-		}
+			const window_y = window.pageYOffset;
+			const mouse_direction = e.deltaY > 0 ? "Scroll Down" : "Scroll Up";
 
-		if ( (mouse_direction == "Scroll Up") && (window_y > section_max  )  ) {
-			window.scrollBy( {top: -300, left: 0 ,behavior:'smooth'} );
-			console.log(window_y);
-			console.log(screen);
-			console.log(window.scrollY);
-			console.log(floor)
-		}
-
-		if ( (mouse_direction == "Scroll Down") && (window_y < section_max  ) ) {
-			window.scrollBy( {top: section_height, left: 0 ,behavior:'smooth'} );
-			console.log(window_y);
-			console.log(screen);
-			console.log(window.scrollY);
-			console.log(floor)
-		}
-		if ( (mouse_direction == "Scroll Down") && (window_y == section_max  ) ) {
-			window.scrollBy( {top: 300, left: 0 ,behavior:'smooth' } );
-			console.log(window_y);
-			console.log(screen);
-			console.log(window.scrollY);
-			console.log(floor)
+			if ( (mouse_direction == "Scroll Up") && (window_y <= section_max  )  ) {
+				window.scrollBy( {top: -section_height, left: 0 ,behavior:'smooth'} );
+			}
+	
+			if ( (mouse_direction == "Scroll Up") && (window_y > section_max  )  ) {
+				window.scrollBy( {top: -300, left: 0 ,behavior:'smooth'} );
+			}
+	
+			if ( (mouse_direction == "Scroll Down") && (window_y < section_max  ) ) {
+				window.scrollBy( {top: section_height, left: 0 ,behavior:'smooth'} );
+			}
+			if ( (mouse_direction == "Scroll Down") && (window_y == section_max  ) ) {
+				window.scrollBy( {top: 300, left: 0 ,behavior:'smooth' } );
+			}
 		}
 	}, 800 )
 });
@@ -84,38 +45,93 @@ main.addEventListener('wheel', function (e) {
 
 
 
-
-
-
-
-const scroll_btn = document.getElementsByClassName('scroll_up_btn')[0];
-const order_btn = document.getElementById('order_btn');
-
-window.addEventListener('scroll',
-function() {
+// 높이에 따른 헤더바 스타일 변경
+header.addEventListener('mouseleave', function () {
 	let now_scroll = window.scrollY;
 
-	if ( now_scroll >= 700 ) {
+if (now_scroll >= section_height ) {
+	
+// 헤더 on/off
+header.classList.remove('header_on');
+header.classList.add('header_off');
 
-		//버튼 on/off
-		mbtn_img.classList.remove('mbtn_img_off');
-		mbtn_img.classList.add('mbtn_img_on');
+// 네브 on/off
+nav.classList.remove('nav_off');
+nav.classList.add('nav_on');
 
-		//로고 on/off
-		logo_img.classList.remove('logo_hover_off');
-		logo_img.classList.add('logo_hover_on');
+//로고 on/off
+logo_img.classList.remove('logo_hover_off');
+logo_img.classList.add('logo_hover_on');
 
-		// 네브 on/off
-		// if (header.classList.contains('header_on')) {
-			nav.classList.remove('nav_off');
-			nav.classList.add('nav_on');
+//버튼 on/off
+mbtn_img.classList.remove('mbtn_img_off');
+mbtn_img.classList.add('mbtn_img_on');
 
-		// }
+// 모델 애니메이션
+model_move.classList.remove('model_off');
+model_move.classList.add('model_on');
+
+}
+
+});
+
+
+
+
+// 스크롤 애니메이션 적용
+
+window.addEventListener('scroll', () => {
+	const menu_title_text = document.getElementsByClassName('menu_title_text')[0];
+	const menu_cate = document.getElementsByClassName('menu_cate')[0];
+	const menu_slide = document.getElementsByClassName('menu_slide_wrap')[0];
+	const franchise_title_text = document.getElementsByClassName('franchise_title_text')[0];
+	const store_title_text = document.getElementsByClassName('store_title_text')[0];
+	const sns_title_text = document.getElementsByClassName('sns_title_text')[0];
+	// 현재 스크롤 높이
+	let now_scroll = window.scrollY;
+	//섹션 한개당 넓이 section_height
+	console.log (now_scroll)
+	if (now_scroll == (section_height*1) ) {
+		menu_title_text.classList.remove('menu_text_off');
+		menu_title_text.classList.add('menu_text_on');
+
+		menu_cate.classList.remove('menu_cate_anime_off');
+		menu_cate.classList.add('menu_cate_anime_on');
+
+		menu_slide.classList.remove('menu_slide_anime_off');
+		menu_slide.classList.add('menu_slide_anime_on');
+	}
+	if (now_scroll < (section_height*1)) {
+		menu_title_text.classList.remove('menu_text_on');
+		menu_title_text.classList.add('menu_text_off');
+
+		menu_cate.classList.remove('menu_cate_anime_on');
+		menu_cate.classList.add('menu_cate_anime_off');
+
+		menu_slide.classList.remove('menu_slide_anime_on');
+		menu_slide.classList.add('menu_slide_anime_off');
+	}
+	//현재 스크롤 >= 섹션 1개 높이
+	// 현재 화면 스크롤이 섹션 1개 높이랑 같거나 클때
+	// 네브바 디자인을 변경함
+	if ( now_scroll >= section_height ) {
+
+	//버튼 on/off
+	mbtn_img.classList.remove('mbtn_img_off');
+	mbtn_img.classList.add('mbtn_img_on');
+
+	//로고 on/off
+	logo_img.classList.remove('logo_hover_off');
+	logo_img.classList.add('logo_hover_on');
+
+	// 네브 on/off
+	nav.classList.remove('nav_off');
+	nav.classList.add('nav_on');
 
 	}
-
-	if ( now_scroll < 700 ) {
-
+	// 현재 화면 스크롤이 섹션 1개 높이랑 같거나 클때
+	// 네브바 디자인을 원상복구
+	if ( now_scroll < section_height ) {
 		// 네브 on/off
 		if (header.classList.contains('header_off')) {
 			nav.classList.add('nav_off');
@@ -131,29 +147,38 @@ function() {
 		}
 	}
 
-
-	if ( now_scroll >= 400 ) {
+	// 현재 화면 스크롤이 섹션 1개 높이랑 같거나 클때
+	// 스크롤탑 버튼을 생성함
+	if ( now_scroll >= section_height ) {
 		scroll_btn.classList.remove('scroll_off');
 		scroll_btn.classList.add('scroll_on');
 		order_btn.classList.remove('order_off');
 		order_btn.classList.add('order_on');
 	}
 
-	if ( now_scroll < 400 ) {
+
+	// 현재 화면 스크롤이 섹션 1개 크기보다 작을때
+	// 스크롤탑 버튼을 집어넣음
+	if ( now_scroll < section_height ) {
 		scroll_btn.classList.remove('scroll_on');
 		scroll_btn.classList.add('scroll_off');
 		order_btn.classList.remove('order_on');
 		order_btn.classList.add('order_off');
 	}
 
-	if ( (now_scroll > 800 && now_scroll < 1600) ) {
+	// 현재 화면 스크롤이 섹션 1개 높이보다 크면서 동시에 섹션 3개 곱한거보단 작을때
+	// 주문버튼 색상을 변경함
+	
+	if ( (now_scroll > section_height && now_scroll < (section_height*3) ) ) {
 		order_btn.classList.remove('order_color_off');
 		order_btn.classList.add('order_color_on');
-	}
-
-	if ( !(now_scroll > 800 && now_scroll < 1600) ) {
+	} 
+	if ( !(now_scroll > section_height && now_scroll < (section_height*3) ) ) {
+	// 현재 화면 스크롤이 섹션 1개 높이보다 크면서 동시에 섹션 3개 곱한거보단 작을때
+	// 주문버튼 색상을 원복
 		order_btn.classList.remove('order_color_on');
 		order_btn.classList.add('order_color_off');
+
 	}
 })
 
@@ -168,7 +193,7 @@ function() {
 const menu_cate = document.getElementsByClassName('menu_cate')[0];
 
 // 메인배너 스와이프
-var banner_slide = new Swiper(".banner_wrap", {
+const banner_slide = new Swiper(".banner_wrap", {
 	loop : true,   // 슬라이드 반복 여부
 	loopAdditionalSlides : 1,
 	autoplay: false,
@@ -186,7 +211,7 @@ var banner_slide = new Swiper(".banner_wrap", {
 
 // 슬라이더
 
-var slide_warm = new Swiper("#menu_warm", {
+const slide_warm = new Swiper("#menu_warm", {
 	slidesPerView: 1,
 	spaceBetween: 30,
 	centeredSlides: true,
@@ -204,7 +229,7 @@ var slide_warm = new Swiper("#menu_warm", {
 	}
   });
 
-var slide_salady = new Swiper("#menu_salady", {
+const slide_salady = new Swiper("#menu_salady", {
 	slidesPerView: 1,
 	spaceBetween: 30,
 	centeredSlides: true,
@@ -222,7 +247,7 @@ var slide_salady = new Swiper("#menu_salady", {
 	}
 });
 
-var slide_wrap = new Swiper("#menu_wrap", {
+const slide_wrap = new Swiper("#menu_wrap", {
 	slidesPerView: 1,
 	spaceBetween: 30,
 	centeredSlides: true,
@@ -240,7 +265,7 @@ var slide_wrap = new Swiper("#menu_wrap", {
 	}
 });
 
-var slide_sand = new Swiper("#menu_sand", {
+const slide_sand = new Swiper("#menu_sand", {
 	slidesPerView: 1,
 	spaceBetween: 30,
 	centeredSlides: true,
@@ -327,8 +352,8 @@ for (let i = 0; i < fade_num; i++) {
 // 카카오 지도
 
 
-var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
-var options = { //지도를 생성할 때 필요한 기본 옵션
+const container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+const options = { //지도를 생성할 때 필요한 기본 옵션
 	center: new kakao.maps.LatLng(37.504057731674656, 127.0488437873566), //지도의 중심좌표.
 	level: 3 //지도의 레벨(확대, 축소 정도)
 };
@@ -430,7 +455,7 @@ map.setCenter(new kakao.maps.LatLng(37.4971636070215, 127.03023053922148));
 
 
 // 메인배너 스와이프
-var sns_slide_wrap = new Swiper(".sns_slide_wrap", {
+const sns_slide_wrap = new Swiper(".sns_slide_wrap", {
 	loop : true,   // 슬라이드 반복 여부
 	loopAdditionalSlides : 1,
 	autoplay: true,

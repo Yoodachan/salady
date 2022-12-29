@@ -79,10 +79,7 @@ a {
     text-decoration:none;
     color: inherit;
 }
-a:hover,
-p:hover {
-  color: inherit;
-}
+
 
 address,em {
     font-style:normal

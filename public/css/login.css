@@ -6,6 +6,10 @@ body {
   padding: 160px;
 }
 
+a:hover {
+  color: #226140;
+}
+
 .login_wrap {
   width: 450px;
   /* height: 600px; */

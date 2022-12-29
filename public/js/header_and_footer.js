@@ -69,6 +69,9 @@ nav.addEventListener('mouseenter', function () {
 	model_move.classList.remove('model_off');
 	model_move.classList.add('model_on');
 
+	//GNB 색변경
+	gnb_wrap.classList.add('gnb_on');
+	gnb_wrap.classList.remove('gnb_off');
 	}
 
 });
@@ -81,7 +84,7 @@ header.addEventListener('mouseleave', function () {
 	header.classList.remove('header_on');
 	header.classList.add('header_off');
 
-/// 네브 on/off
+	// 네브 on/off
 	nav.classList.remove('nav_off');
 	nav.classList.add('nav_on');
 
@@ -96,8 +99,8 @@ header.addEventListener('mouseleave', function () {
 	// 모델 애니메이션
 	model_move.classList.remove('model_off');
 	model_move.classList.add('model_on');
-	}
 
+	}
 	else {
 
 	// 헤더 on/off
@@ -120,6 +123,11 @@ header.addEventListener('mouseleave', function () {
 	nav.classList.add('nav_off');
 	nav.classList.remove('nav_on');
 
+	//GNB 색변경
+	gnb_wrap.classList.add('gnb_off');
+	gnb_wrap.classList.remove('gnb_on');
+	
+
 	}
 
 });
@@ -134,6 +142,8 @@ nav_mbtn.addEventListener('mouseenter', () => {
 	if (header.classList.contains('header_on')) {
 		header.classList.remove('header_on');
 		header.classList.add('header_off');
+
+		
 	}
 });
 

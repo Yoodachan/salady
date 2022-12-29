@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <!-- 매니페스트 파일 연결, 테마색상 변경 -->
-  <!-- <link rel="manifest" href="manifest.json"> -->
+  <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#ffffff">
 
   <!-- 뷰포트, 파비콘 설정-->
@@ -40,7 +40,7 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
-  <!-- <link rel="manifest" href="./manifest.json" crossorigin="use-credentials" /> -->
+  <link rel="manifest" href="./manifest.json" crossorigin="use-credentials" />
 
   <script>
     if ('serviceWorker' in navigator) {
@@ -94,7 +94,7 @@
       </nav>
 
       <!-- 헤더 하부 -->
-      <div class="gnb_wrap">
+      <div class="gnb_wrap gnb_off">
         <!-- 새소식 메뉴 -->
         <div class="gnb_left">
         </div>
@@ -289,9 +289,9 @@
         <section id="menu">
           <div class="menu_content">
             <h3 class="menu_title">
-              MENU STORY
+              <span class="menu_title_text menu_text_off">MENU STORY</span>
             </h3>
-            <ul class="menu_cate">
+            <ul class="menu_cate menu_cate_anime_off">
 
               <li class="cate_item">
                 <button class="cate_btn cate_btn_on" type="button">
@@ -323,7 +323,7 @@
 
             </ul>
 
-            <div class="menu_slide_wrap">
+            <div class="menu_slide_wrap menu_slide_anime_off">
               <div class="menu_slide_box">
 
                 <div id="menu_warm" class="menu_list menu_on">

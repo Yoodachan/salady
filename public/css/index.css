@@ -216,8 +216,23 @@ html,body,#main {
     z-index: 9;
     position:relative;
 }
+.menu_title_text {
+    display: block;
+    transition-duration: 1.2s;
+}
 
-.menu_title::after {
+.menu_text_off {
+    opacity: 0;
+    transform: translate(0%,-100%);
+}
+
+.menu_text_on {
+    opacity: 1;
+    transform: translate(0%,0%);
+}
+
+
+.menu_title_text::after {
     content: "";
     display: block;
     width: 20px;
@@ -232,20 +247,23 @@ html,body,#main {
     display: block;
     width: 35%;
     height: 580px;
-    transition-duration: .6s;
+    transition-duration: 1.2s;
     z-index: 7;
     background-color: #fff;
 }
 
-.left_item_anime_off {
+.menu_cate_anime_off {
     opacity:0;
-    transform:translate(-150%,0%)
+    transform:translate(-150%,0%);
 }
 
-.left_item_anime_on {
+.menu_cate_anime_on {
     opacity:1;
-    transform:translate(0%,0%)
+    transition-delay: 1.2s;
+    transform:translate(0%,0%);
 }
+
+
 
 .cate_item {
     display: block;
@@ -292,7 +310,21 @@ html,body,#main {
     overflow: hidden;
     top: 10%;
     left: 36.5%;
+    transition-duration: 1.2s;
 }
+
+
+.menu_slide_anime_off {
+    opacity:0;
+    transform:translate(100%,0%);
+}
+
+.menu_slide_anime_on {
+    opacity:1;
+    transition-delay: 2.4s;
+    transform:translate(0%,0%);
+}
+
 
 .menu_slide_box {
     width: 100%;
@@ -1274,7 +1306,12 @@ footer {
 
 }
 
-
+/* body */
+@media screen and (max-width: 800px) {
+body {
+    overflow:unset;
+}
+}
 /* menu */
 
 /* PC , 테블릿 가로 (~ 1140px)*/

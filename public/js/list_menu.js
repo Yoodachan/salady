@@ -17,7 +17,7 @@ const cate_item = document.querySelectorAll('.cate_item');
 
 function cate_load () {
 	if (url_cate == "wrap") {
-		title_img.style.background = "url(./images/list_title_img_003.png)";
+		title_img.style.backgroundImage = "url(./images/list_title_img_003.png)";
 		menu_title.innerHTML = "랩/웜랩";
 		menu_comment.innerHTML = "또띠아로 돌돌 말아낸 맛있고 간편한 랩/웜랩과 <br/> 씹을수록 고소한 귀리번이 매력적인 샌드";
 		cate_wrap.classList.remove('cate_item');
@@ -87,7 +87,7 @@ function cate_load () {
 		})
 	}
 	if (url_cate == "salady") {
-		title_img.style.background = "url(./images/list_title_img_002.png)";
+		title_img.style.backgroundImage = "url(./images/list_title_img_002.png)";
 		menu_title.innerHTML = "샐러디";
 		menu_comment.innerHTML = "누구나 맛있게 즐길 수 있도록 <br/> 100% 국내산 프리미엄 채소로만 구성된 샐러디";
 		cate_salady.classList.remove('cate_item');
@@ -157,7 +157,7 @@ function cate_load () {
 		})
 	}
 	if (url_cate == "warm_bowl") {
-		title_img.style.background = "url(./images/list_title_img_001.png)";
+		title_img.style.backgroundImage = "url(./images/list_title_img_001.png)";
 		menu_title.innerHTML = "웜볼";
 		menu_comment.innerHTML = "신선한 채소 베이스 위에 따끈한 통곡물 밥이 더해져 <br/> 더욱 든든하게 즐길 수 있는 웜볼";
 		cate_warm.classList.remove('cate_item');
@@ -227,7 +227,7 @@ function cate_load () {
 		})
 	}
 	if (url_cate == "sand") {
-		title_img.style.background = "url(./images/list_title_img_003.png)";
+		title_img.style.backgroundImage = "url(./images/list_title_img_003.png)";
 		menu_title.innerHTML = "샌드";
 		menu_comment.innerHTML = "또띠아로 돌돌 말아낸 맛있고 간편한 랩/웜랩과 <br/> 씹을수록 고소한 귀리번이 매력적인 샌드";
 		cate_sand.classList.remove('cate_item');
@@ -298,7 +298,7 @@ function cate_load () {
 	}
 	
 	if (url_cate == null ) {
-		title_img.style.background = "url(./images/list_title_img_001.png)";
+		title_img.style.backgroundImage = "url(./images/list_title_img_001.png)";
 		menu_title.innerHTML = "ALL";
 		menu_comment.innerHTML = "샐러디의 다양한 메뉴를 즐겨보세요!";
 		cate_all.classList.remove('cate_item');

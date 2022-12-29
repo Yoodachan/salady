@@ -123,7 +123,7 @@
     top: 0px;
     right: 0px;
     margin: 25px;
-    z-index: 999;
+    z-index: 19;
 }
 
 .login_btn,
@@ -180,7 +180,13 @@
     font-size: 16px;
     color: #fff;
     transition-duration: .3s;
-    background-color: #333333;
+}
+
+.gnb_off {
+    background-color: none;
+}
+.gnb_on {
+    background-color: #333;
 }
 
 /* 헤더 하부 왼쪽 */
