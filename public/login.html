@@ -18,7 +18,9 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
     <script src="https://kit.fontawesome.com/73110e26f5.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    
     <script defer src="./js/firecorn.js"></script>
+    <script defer src="./js/header_and_footer.js"></script>
     <script defer src="./js/login.js"></script>
   </head>
   <body>
@@ -32,13 +34,30 @@
         <!-- 중앙 메뉴 및 SNS 60% -->
         <ul class="nav_menu">
           <li class="brand"><a href="#">브랜드</a></li>
-          <li class="list"><a href="#">메뉴</a></li>
+          <li class="list"><a href="./list_menu.html">메뉴</a></li>
           <li class="franchise"><a href="#">가맹점</a></li>
           <li class="order"><a href="#">주문</a></li>
           <li class="news"><a href="#">새소식</a></li>
         </ul>
         <!-- 우측 메뉴바 20% -->
         <div class="nav_right">
+          <strong id="user_name">
+          </strong>
+          <a href="./login.html" title="login" class="login_btn">
+            <i class="fa-solid fa-door-closed"></i>
+            <span>로그인</span>
+          </a>
+          <a href="./mypage.html" title="mypage" class="mypage_btn">
+            <i class="fa-solid fa-user"></i>
+            <span>내정보</span>
+           </a>
+           <a href="./order.html" title="order" class="order_btn">
+            <i class="fa-solid fa-plate-wheat"></i>
+            <span>장바구니</span>
+           </a>
+          <div class="nav_mbtn_wrap">
+            <button class="nav_mbtn" type="button" ><span class="mbtn_img mbtn_img_off"></span></button> 
+          </div>
         </div>
       </nav>
 
@@ -59,11 +78,11 @@
           <!-- 메뉴 메뉴 -->
           <li>
             <ul class="list">
-              <li><a href="#">웜볼</a></li>
-              <li><a href="#">샐러디</a></li>
-              <li><a href="#">샌드&랩</a></li>
-              <li><a href="#">토핑&드레싱</a></li>
-              <li><a href="#">음료&사이드</a></li>
+              <li><a href="./list_menu.html"> 전체 </a></li>
+              <li><a href="./list_menu.html?p_cate=warm_bowl"> 웜볼 </a></li>
+              <li><a href="./list_menu.html?p_cate=salady"> 샐러디 </a></li>
+              <li><a href="./list_menu.html?p_cate=sand"> 샌드 </a></li>
+              <li><a href="./list_menu.html?p_cate=wrap"> 랩&웜랩 </a></li>
             </ul>
           </li>
           <!-- 가맹점 메뉴 -->
@@ -90,15 +109,117 @@
         <div class="gnb_right"></div>
 
       </div>
-      <div class="nav_mbtn_wrap">
-        <button class="nav_mbtn" type="button" ><span class="mbtn_img mbtn_img_off"></span></button> 
-      </div>
+      <article>
+        <div class="all_menu all_menu_off">
+  
+          <div class="menu_logo_wrap">
+            <a href="./index.html" class="menu_logo">
+            </a>
+          </div>
+          <div class="menu_close_wrap">
+            <button type="button" class="close_btn">
+              <i class="fa-solid fa-x"></i>
+            </button>
+          </div>
+  
+          <div class="all_menu_content">
+            <ul class="all_menu_cate">
+              <li class="all_menu_cate_select select_color_off">
+                <span class="all_menu_cate_selected"></span>
+                <a href="#">브랜드</a>
+              </li>
+              <li class="all_menu_cate_select select_color_off">
+                <span class="all_menu_cate_selected"></span>
+                <a href="./list_menu.html">메뉴</a>
+              </li>
+              <li class="all_menu_cate_select select_color_off">
+                <span class="all_menu_cate_selected"></span>
+                <a href="#">가맹점</a>
+              </li>
+              <li class="all_menu_cate_select select_color_off">
+                <span class="all_menu_cate_selected"></span>
+                <a href="#">주문</a>
+              </li>
+              <li class="all_menu_cate_select select_color_off">
+                <span class="all_menu_cate_selected"></span>
+                <a href="#">새소식</a>
+              </li>
+            </ul>
+  
+            <div class="all_menu_cate_item_wrap">
+              
+              <ul class="all_menu_cate_item cate_off">
+                <li class="all_menu_cate_brand">
+                  <strong>브랜드</strong>
+                  <ul>
+                    <li><a href="#"> 샐러디 </a></li>
+                    <li><a href="#"> 샐러디 키친 </a></li>
+                    <li><a href="#"> 샐러디 팜 </a></li>
+                  </ul>
+                </li>
+              </ul>
+  
+              <ul class="all_menu_cate_item cate_off">
+                <li class="all_menu_cate_list">
+                  <strong>메뉴</strong>
+                  <ul>
+                    <li><a href="./list_menu.html?p_cate=warm_bowl"> 웜볼 </a></li>
+                    <li><a href="./list_menu.html?p_cate=salady"> 샐러디 </a></li>
+                    <li><a href="./list_menu.html?p_cate=sand"> 샌드 </a></li>
+                    <li><a href="./list_menu.html?p_cate=warm"> 랩&웜랩 </a></li>
+                  </ul>
+                </li>
+              </ul>
+  
+              <ul class="all_menu_cate_item cate_off">
+                <li class="all_menu_cate_fran">
+                  <strong>가맹점</strong>
+                  <ul>
+                    <li><a href="#">가맹 안내</a></li>
+                    <li><a href="#">가맹 신청</a></li>
+                  </ul>
+                </li>
+              </ul>
+  
+              <ul class="all_menu_cate_item cate_off">
+                <li class="all_menu_cate_order">
+                  <strong>주문</strong>
+                  <ul>
+                    <li><a href="#">매장 주문</a></li>
+                  </ul>
+                </li>
+              </ul>
+  
+              <ul class="all_menu_cate_item cate_off">
+                <li class="all_menu_cate_news">
+                  <strong>새소식</strong>
+                  <ul>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">이벤트</a></li>
+                  </ul>
+                </li>
+              </ul>
+  
+  
+  
+  
+  
+  
+  
+  
+            </div>
+          </div>
+  
+  
+        </div>
+      </article>
+
     </header>
 
     <main id="main">
       <section id="content">
         <div class="login_wrap">
-          <h2 class="login_title"><a href="#" class="login_logo"></a></h2>
+          <h2 class="login_title"><a href="./index.html" class="login_logo"></a></h2>
           <span class="login_text">
             샐러디 회원으로 로그인하시면 <br> 제공하는 다양한 서비스를 이용할 수 있습니다.
           </span>
@@ -111,19 +232,19 @@
 
             <label>
               <span>비밀번호</span>
-              <input type="password" id="u_pwd" placeholder="로그인 비밀번호 입력">
+              <input type="password" id="pwd" placeholder="로그인 비밀번호 입력">
             </label>
 
           </div>
-          <label class="login_save">
-            <input type="checkbox" value="y">
-            <span>로그인 아이디 저장</span>
+          <label class="login_save_wrap">
+            <input type="checkbox" value="y" class="login_save">
+            <span class="login_save_text">로그인 아이디 저장</span>
           </label>
           <button type="button" id="login_btn">로그인</button>
           <ul class="login_find_wrap">
             <li><a href="#">아이디 찾기</a></li>
             <li><a href="#">비밀번호 찾기</a></li>
-            <li><a href="#">회원가입</a></li>
+            <li><a href="./join.html">회원가입</a></li>
           </ul>
         </div>
 

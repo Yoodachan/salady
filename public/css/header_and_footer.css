@@ -76,7 +76,7 @@
 
 .nav_menu {
     display: flex;
-    width: 60%;
+    width: 55%;
     height: 100px;
     line-height: 40px;
     justify-content: center;
@@ -103,11 +103,15 @@
 
 
 .nav_right {
+    display: flex;
+    justify-content: right;
+    align-items: center;
     position: absolute;
     top: 0px;
     right: 0px;
-    width: 20%;
+    width: 25%;
     height: 100px;
+    padding-right: 80px;
 }
 
 .nav_mbtn_wrap {
@@ -120,7 +124,24 @@
     right: 0px;
     margin: 25px;
     z-index: 999;
-    
+}
+
+.login_btn,
+.mypage_btn,
+.order_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    margin: 0px 2px;
+    text-align: center;
+}
+
+.nav_right>a span {
+    display: block;
+    margin-left: 5px;
+    font-weight: bold;
 }
 
 .nav_mbtn {
@@ -587,6 +608,8 @@ footer {
 /* PC , 테블릿 가로 (~ 1140px)*/
 @media screen and (max-width:1140px) {
 
+    
+
 
     .menu_close_wrap,
     .menu_logo_wrap {
@@ -614,7 +637,7 @@ footer {
         justify-content: center;
         width: 100%;
         height: 800px;
-        margin: 100px auto;
+        margin: 70px auto;
         padding: 60px 200px;
     }
     
@@ -703,6 +726,53 @@ footer {
         
 /* 모바일 가로, 테블릿 세로 (해상도 600px ~ 800px)*/
 @media screen and (max-width:800px) {
+
+
+.menu_close_wrap,
+.menu_logo_wrap {
+    width: 100px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.close_btn {
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+    margin: 0px 25px;
+}
+
+.menu_logo {
+    width: 100px;
+    height: 50px;
+    margin: 0px;
+    background-size: 50px, 50px;
+}
+
+.all_menu_content {
+    display: flex;
+    justify-content: left;
+    text-align: left;
+    width: 100%;
+    height: 800px;
+    margin: 50px auto;
+    padding: 60px 0px 60px 30px;
+}
+
+.all_menu_cate_item_wrap {
+    display: none;
+}
+
+.all_menu_cate_select {
+    display: flex;
+    justify-content: left;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 24px;
+    text-align: left;
+    position:relative;
+}
+
 }
     
 
@@ -828,6 +898,23 @@ footer {
 
 .gnb_depth {
     font-size: 14px;
+}
+
+.select {
+    position: relative;
+    color:#226140;
+}
+
+.select::after {
+    position: absolute;
+    bottom: -25px;
+    left: 5%;
+    content: "";
+    width: 15px;
+    height:15px;
+    border: 2px;
+    background-color: #333333;
+    transform: rotate(45deg);
 }
 
 } 

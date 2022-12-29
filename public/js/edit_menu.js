@@ -59,10 +59,7 @@ upload_btn.addEventListener('click', function () {
 			p_sat : sat_val,
 			p_mg : mg_val,
 			p_comment : comment_val,	
-		    p_img : img_url,
-			// 작성자 uid
-			uid : JSON.parse(localStorage.getItem('user')).uid,
-			user_name : JSON.parse(localStorage.getItem('user')).displayName
+		    p_img : img_url
 		  }).then((result) => {
 			//성공시 실행
 			console.log(result)

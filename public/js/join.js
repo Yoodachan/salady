@@ -845,15 +845,15 @@ join_btn.addEventListener('click', () => {
 
     const join_id = u_id.value;
     const join_pwd = pwd.value;
-    const join_name = u_name.value;
 
 
     firebase.auth().createUserWithEmailAndPassword( join_id,join_pwd ).then(( result )=>{
         //result = 유저정보
         console.log(result)
         console.log(result.user)
-        result.user.updateProfile({displayName : join_name })  
-        location.href = "list_menu.html"  
+        result.user.updateProfile( {displayName : u_name.value } )
+        location.href = "index.html"  
+        alert(u_name.value)
     }).catch( () => {
         alert("가입 실패");
         location.href = "join.html"  

@@ -84,7 +84,7 @@ body {
   color: #999
 } 
 
-.login_save {
+.login_save_wrap {
   width: 300px;
   display: flex;
   margin: 10px auto 20px;
@@ -94,7 +94,40 @@ body {
   line-height: 30px;
 }
 
-.login_btn {
+.login_save {
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  border: 1px solid #999;
+  position: relative;
+  margin-top: 5px;
+  transition-duration: .6s;
+  cursor: pointer;
+}
+.login_save::after {
+  display: none;
+  content: "";
+  width: 8px;
+  border-top: 3px solid #226140;
+  border-left: 3px solid #226140;
+  height: 13px;
+  transform: rotate(220deg);
+  position:absolute;
+  left: 5px;
+  top: 1px;
+}
+
+.login_save:checked::after {
+  display: block;
+}
+
+.login_save_text {
+  display: block;
+  margin-left: 10px;
+}
+
+
+#login_btn {
   background-color: #226140;
   display: block;
   border: none;
