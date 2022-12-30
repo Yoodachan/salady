@@ -29,14 +29,6 @@ header.addEventListener('mouseleave', function () {
 	logo_img.classList.remove('logo_hover_off');
 	logo_img.classList.add('logo_hover_on');
 
-	//버튼 on/off
-	mbtn_img.classList.remove('mbtn_img_off');
-	mbtn_img.classList.add('mbtn_img_on');
-
-	// 모델 애니메이션
-	// model_move.classList.remove('model_off');
-	// model_move.classList.add('model_on');
-
 	}
 	else {
 
@@ -48,13 +40,6 @@ header.addEventListener('mouseleave', function () {
 	logo_img.classList.add('logo_hover_off');
 	logo_img.classList.remove('logo_hover_on');
 
-	//버튼 on/off
-	mbtn_img.classList.add('mbtn_img_off');
-	mbtn_img.classList.remove('mbtn_img_on');
-
-	// 모델 애니메이션
-	// model_move.classList.add('model_off');
-	// model_move.classList.remove('model_on');
 
 	// 네브 on/off
 	nav.classList.add('nav_off');
@@ -83,6 +68,11 @@ nav_mbtn.addEventListener('mouseenter', () => {
 		if (nav.classList.contains('nav_on') && (window.scrollY < section_height) ) {
 			nav.classList.remove('nav_on');
 			nav.classList.add('nav_off');
+
+			logo_img.classList.remove('logo_hover_on');
+			logo_img.classList.add('logo_hover_off');
+
+
 		}
 
 		
@@ -173,10 +163,6 @@ nav.classList.add('nav_on');
 //로고 on/off
 logo_img.classList.remove('logo_hover_off');
 logo_img.classList.add('logo_hover_on');
-
-//버튼 on/off
-mbtn_img.classList.remove('mbtn_img_off');
-mbtn_img.classList.add('mbtn_img_on');
 
 // 모델 애니메이션
 // model_move.classList.remove('model_off');

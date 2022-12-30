@@ -142,7 +142,7 @@ html,body,#main {
 }
 
 .order_on {
-    bottom: 110px;
+    bottom: 100px;
 }
 
 .fa-leaf {
@@ -673,7 +673,7 @@ button>span:hover .frc_ico {
 
 .store_content {
     width: 1140px;
-    height: 100%;
+    height: auto;
     position:relative;
     padding: 100px 30px;
     top: 50%;
@@ -1402,6 +1402,15 @@ footer {
 }
 }
 
+@media screen and (max-width:600px) {
+    .order_off {
+        bottom: 90px;
+    }
+    .order_on {
+        bottom: 120px;
+    }  
+}
+
 
 /* article */
 
@@ -1459,8 +1468,10 @@ body {
     overflow:unset;
 }
 }
-/* menu */
 
+/* banner */
+
+/* menu */
 /* PC , 테블릿 가로 (~ 1140px)*/
 @media screen and (max-width:1140px) {
 
@@ -1539,7 +1550,7 @@ body {
     justify-content: none;
     flex-wrap: nowrap;
     width: 100%;
-    height: auto;
+    height: 800px;
 }
 
 .menu_title {
@@ -1947,6 +1958,7 @@ body {
 /* 프랜차이즈 시작 */
 .franchise_content {
     width: 100%;
+    height: 800px;
 }
 
 .franchise_title {
@@ -2090,6 +2102,7 @@ body {
 .store_content {
     width: 100%;
     padding: 100px 30px; 
+    height: 800px;
 }
 
 .store_title {
@@ -2232,6 +2245,7 @@ body {
 
 .sns_content {
     width: 100%;
+    height: 800px;
 }
 
 .sns_title {
