@@ -243,18 +243,21 @@
     display: block;
 }
 
-.news li:hover,.list li:hover,
-.brand li:hover,.franchise li:hover,
-.order li:hover {
+.nav_menu_item li:hover {
     transition-duration: .2s;
     color:#226140;
 }
+
 .select {
+    color:#226140;
+}
+
+.select_item {
     position: relative;
     color:#226140;
 }
 
-.select::after {
+.select_item::after {
     position: absolute;
     bottom: -20px;
     left: 5%;
