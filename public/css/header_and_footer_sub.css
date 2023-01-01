@@ -130,18 +130,6 @@ a:hover {
     z-index: 19;
 }
 
-.login_btn,
-.mypage_btn,
-.order_btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80px;
-    height: 80px;
-    margin: 0px 2px;
-    text-align: center;
-}
-
 .nav_right>a span {
     display: block;
     margin-left: 5px;

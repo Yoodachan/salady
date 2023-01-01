@@ -11,6 +11,7 @@
 
 .header_on {
     height: 420px;
+    transition-delay: .3s;
 }
 
 .header_off {
@@ -121,7 +122,7 @@
     line-height: 35px;
     text-align: center;
     color: #fff;
-    background-color: #666;
+    background-color: #333;
     border-radius: 50%;
     overflow: hidden;
 }
@@ -160,6 +161,7 @@
     font-size: 16px;
     color: #fff;
     transition-duration: .3s;
+    transition: 0.6s;
 }
 
 .gnb_off {
@@ -578,147 +580,156 @@ footer {
 /* fixed menu */
 
 /* PC , 테블릿 가로 (~ 1140px)*/
-@media screen and (max-width:1140px) {
-
-    
-
-
-    .menu_close_wrap,
-    .menu_logo_wrap {
-        width: 120px;
-        height: 70px;
-        margin: 0 auto;
-    }
-    
-    .close_btn {
-        width: 50px;
-        height: 50px;
-        font-size: 16px;
-        margin: 10px 35px;
-    }
-    
-    .menu_logo {
-        width: 120px;
-        height: 70px;
-        margin: 0px;
-        background-size: 70px,70px;
-    }
-    
-    .all_menu_content {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        height: 800px;
-        margin: 70px auto;
-        padding: 60px 200px;
-    }
-    
-    .all_menu_cate {
-        width: 50%;
-        height: 600px;
-    }
-    
-    .all_menu_cate_select {
-        display: flex;
-        justify-content: left;
-        font-size: 32px;
-        font-weight: bold;
-        margin-top: 32px;
-        text-align: left;
-        position:relative;
-    }
-    
-    .select_color_on {
-        color: #fff;
-    }
-    
-    .select_color_off {
-        color: #ccc;
-    }
-    
-    .all_menu_cate_selected {
-        display: block;
-        transition-duration: .3s;
-        width: 12px;
-        height: 12px;
-    }
-    
-    .selected_off {
-        margin:0;
-    
-    }
-    .selected_on {
-        background-color: #226140;
-        margin-right:20px;
-    
-    }
-    
-    
-    .all_menu_cate_item_wrap {
-        width: 50%;
-        height: 600px;
-        padding: 40px 0px;
-        position:relative;
-    }
-    
-    .all_menu_cate_item {
-        position:absolute;
-        top: 40px;
-        left: 0px;
-        overflow: hidden;
-        transition-duration: .3s;
-    }
-    .cate_on {
-        opacity: 1;
-        height: auto;
-    }
-    
-    .cate_off {
-        opacity: 0;
-        height: 1px;
-    }
-    
-    .all_menu_cate_item_wrap ul>li {
-        font-size: 24px;
-        font-weight: bold;
-        margin-top: 24px;
-        text-align: left;
-        color: #fff;
-    }
-    
-    .all_menu_cate_item_wrap ul>li>ul>li {
-        font-size: 20px;
-        font-weight: bold;
-        margin-top: 20px;
-        text-align: left;
-        color: #ccc;
-    }
-    
-} 
-        
-/* 모바일 가로, 테블릿 세로 (해상도 600px ~ 800px)*/
-@media screen and (max-width:800px) {
-
+@media screen and (max-width:1400px) {
 
 .menu_close_wrap,
 .menu_logo_wrap {
-    width: 100px;
-    height: 50px;
+    width: 120px;
+    height: 70px;
     margin: 0 auto;
+    position:fixed;
+}
+
+.menu_close_wrap {
+    top: 0px;
+    right: 0px;
 }
 
 .close_btn {
     width: 50px;
     height: 50px;
     font-size: 16px;
-    margin: 0px 25px;
+    position: absolute;
+    right: 40px;
 }
 
 .menu_logo {
-    width: 100px;
-    height: 50px;
+    width: 120px;
+    height: 70px;
     margin: 0px;
-    background-size: 50px, 50px;
+    background-size: 70px,70px;
+}
+
+.all_menu_content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 800px;
+    margin: 70px auto;
+    padding: 60px 200px;
+}
+
+.all_menu_cate {
+    width: 50%;
+    height: 600px;
+}
+
+.all_menu_cate_select {
+    display: flex;
+    justify-content: left;
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 32px;
+    text-align: left;
+    position:relative;
+}
+
+.select_color_on {
+    color: #fff;
+}
+
+.select_color_off {
+    color: #ccc;
+}
+
+.all_menu_cate_selected {
+    display: block;
+    transition-duration: .3s;
+    width: 12px;
+    height: 12px;
+}
+
+.selected_off {
+    margin:0;
+
+}
+.selected_on {
+    background-color: #226140;
+    margin-right:20px;
+
+}
+
+
+.all_menu_cate_item_wrap {
+    width: 50%;
+    height: 600px;
+    padding: 40px 0px;
+    position:relative;
+}
+
+.all_menu_cate_item {
+    position:absolute;
+    top: 40px;
+    left: 0px;
+    overflow: hidden;
+    transition-duration: .3s;
+}
+.cate_on {
+    opacity: 1;
+    height: auto;
+}
+
+.cate_off {
+    opacity: 0;
+    height: 1px;
+}
+
+.all_menu_cate_item_wrap ul>li {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 24px;
+    text-align: left;
+    color: #fff;
+}
+
+.all_menu_cate_item_wrap ul>li>ul>li {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: left;
+    color: #ccc;
+}
+
+} 
+        
+/* 모바일 가로, 테블릿 세로 (해상도 600px ~ 800px)*/
+@media screen and (max-width:1140px) {
+.menu_close_wrap,
+.menu_logo_wrap {
+    width: 120px;
+    height: 70px;
+    margin: 0 auto;
+    position:fixed;
+}
+
+.menu_close_wrap {
+    top: 0px;
+    right: 0px;
+}
+
+.close_btn {
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+    position: absolute;
+    right: 40px;
+}
+
+.menu_logo {
+    width: 120px;
+    height: 70px;
+    margin: 0px;
+    background-size: 70px,70px;
 }
 
 .all_menu_content {
@@ -753,9 +764,7 @@ footer {
 /* 헤더 */
 
 /* PC , 테블릿 가로 (~ 1140px)*/
-@media screen and (max-width:1140px) {
-
-/* 헤더 영역 */
+@media screen and (max-width:1400px) {
 
 .header_on {
     height: 390px;
@@ -763,155 +772,102 @@ footer {
 
 .header_off {
     height: 70px;
-    overflow: hidden;
 }
 
 
 #nav {
-    position: relative;
     height: 70px;
-    transition-duration: .6s;
-    
 }
 
 #nav h1 {
-    position: absolute;
-    display: block;
-    width: 20%;
-    height: 70px;
-    top: 0px;
-    left: 0px;
-    padding: 0px 30px;
-    margin: 0px auto;
-}
-
-#nav h1 a {
-    display: block;
-}
-
-.logo_img {
-    display: block;
-    content: "";
     width: 70px;
     height: 70px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 70px,70px;
-    margin: 0px auto;
-    transition-duration: .3s;
+    margin-left: 30px;
 }
-
-
-.nav_menu {
-    display: flex;
-    width: 60%;
+.logo_img {
+    width: 70px;
     height: 70px;
-    line-height: 40px;
-    justify-content: center;
-    padding: 15px 0px;
-    font-size: 18px;
-    margin: 0 auto;
-}
-
-.nav_menu>li {
-    display: block;
-    width: 15%;
-    height: 40px;
-    margin: 0px 20px;
-    text-align: left;
-    padding: 0px;
-    font-family: 'Do Hyeon','Noto Sans KR',sans-serif;
-}
-
-.nav_menu>li>a {
-    display: inline;
-    height: 40px;
-}
-
-
-
-.nav_right {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    width: 20%;
-    height: 70px;
+    background-size: 70px, 70px;
+    transition-duration: .6s;
 }
 
 .nav_mbtn_wrap {
-    position:absolute;
+    position:fixed;
+    width: 120px;
+    height: 50px;
+    top: 10px;
+    right: 30px;
     display: flex;
     justify-content: right;
-    width: 50px;
-    height: 50px;
-    top: 0px;
-    right: 0px;
-    margin: 10px 30px;
-    z-index: 11;
+    border-radius: 25px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    z-index: 14;
 }
 
+
 .nav_mbtn {
+    position:absolute;
     display: block;
     width: 100%;    
     background: none;
     border: none;
+    left: 70px;
+    top: 10px;
 }
+
 
 .mbtn_img {
     display: block;
     width: 24px;
     height: 24px;
-    margin: 0 auto;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 24px 24px;
     transition-duration: .6s;
+    background-image: url(../images/ico_menu_hover.png);
 }
 
-.gnb_depth {
-    font-size: 14px;
+
+.user_info {
+    display: block;
+    position:absolute;
+    left: 20px;
+    top: 7px;
+    width: 35px;
+    height: 35px;
+    color:  #333;
+    font-size: 16px;
+    line-height: 35px;
+    text-align: center;
+    color: #fff;
+    background-color: #333;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
-.select {
-    position: relative;
-    color:#226140;
+.nav_menu {
+    width: 800px;
+    height: 70px;
+    font-size:18px;
+    padding: 20px;
+    line-height: 30px;
+}
+.nav_menu>li {
+    display: block;
+    width: 25%;
+    height: 30px;
+    text-align: left;
+    font-family: 'Do Hyeon','Noto Sans KR',sans-serif;
 }
 
-.select::after {
-    position: absolute;
-    bottom: -25px;
-    left: 5%;
-    content: "";
-    width: 15px;
-    height:15px;
-    border: 2px;
-    background-color: #333333;
-    transform: rotate(45deg);
+.nav_menu>li>a {
+    display: inline;
 }
-
 } 
     
 /* 모바일 가로, 테블릿 세로 (해상도 600px ~ 800px)*/
-@media screen and (max-width:800px) {
-
-     
-/* 헤더 영역 */
-
-
-#nav {
-    height: 50px; 
-}
-
-#nav h1 {
-    height: 50px;
-    padding: 0px 10px;
-}
-
-.logo_img {
-    width: 50px;
-    height: 50px;
-    background-size: 50px ,50px;
-}
+@media screen and (max-width:1140px) {
 
 .gnb_wrap {
     display: none;
@@ -920,33 +876,93 @@ footer {
 .nav_menu {
     display: none;
 }
-
-
-.nav_right {
-    height: 50px;
-}
+    
 
 .nav_mbtn_wrap {
-    position:absolute;
+    position:fixed;
+    width: 120px;
+    height: 50px;
+    top: 10px;
+    right: 30px;
     display: flex;
     justify-content: right;
-    width: 30px;
-    height: 30px;
-    top: 0px;
-    right: 0px;
-    margin: 10px 30px;
-    z-index: 11;
+    border-radius: 25px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    z-index: 14;
 }
+
+
+.nav_mbtn {
+    position:absolute;
+    display: block;
+    width: 100%;    
+    background: none;
+    border: none;
+    left: 70px;
+    top: 10px;
+}
+
 
 .mbtn_img {
     display: block;
     width: 24px;
     height: 24px;
-    margin: 0 auto;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 24px 24px;
     transition-duration: .6s;
+    background-image: url(../images/ico_menu_hover.png);
+}
+
+
+.user_info {
+    display: block;
+    position:absolute;
+    left: 20px;
+    top: 7px;
+    width: 35px;
+    height: 35px;
+    color:  #333;
+    font-size: 16px;
+    line-height: 35px;
+    text-align: center;
+    color: #fff;
+    background-color: #333;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.nav_menu {
+    width: 800px;
+    height: 70px;
+    font-size:18px;
+    padding: 20px;
+    line-height: 30px;
+}
+.nav_menu>li {
+    display: block;
+    width: 25%;
+    height: 30px;
+    text-align: left;
+    font-family: 'Do Hyeon','Noto Sans KR',sans-serif;
+}
+
+.nav_menu>li>a {
+    display: inline;
+}
+
+     
+/* 헤더 영역 */
+
+
+
+.gnb_wrap {
+    display: none;
+}
+
+.nav_menu {
+    display: none;
 }
 
 }

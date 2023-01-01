@@ -1,3 +1,12 @@
+window.onload = function () {
+	let banner_item = document.querySelectorAll('.banner_item');
+	banner_item.forEach( (q,i) => {
+		banner_item[i].classList.remove(`item_0${i}_off`);
+		banner_item[i].classList.add(`item_0${i}_on`);
+});
+}
+
+
 const scroll_btn = document.getElementsByClassName('scroll_up_btn')[0];
 const order_btn = document.getElementById('order_btn');
 
@@ -57,7 +66,7 @@ header.addEventListener('mouseleave', function () {
 
 // 네브 사이드 메뉴 버튼
 
-const nav_mbtn = document.getElementsByClassName('nav_mbtn_wrap')[0];
+const nav_mbtn = document.getElementsByClassName('nav_mbtn')[0];
 const close_btn = document.getElementsByClassName('close_btn')[0];
 const all_menu = document.getElementsByClassName('all_menu')[0];
 
@@ -78,6 +87,9 @@ nav_mbtn.addEventListener('mouseenter', () => {
 		
 	}
 });
+
+
+// 히든메뉴 온오프
 
 nav_mbtn.addEventListener('click', () => {
 		all_menu.classList.remove('all_menu_off');
@@ -164,10 +176,6 @@ nav.classList.add('nav_on');
 logo_img.classList.remove('logo_hover_off');
 logo_img.classList.add('logo_hover_on');
 
-// 모델 애니메이션
-// model_move.classList.remove('model_off');
-// model_move.classList.add('model_on');
-
 }
 
 });
@@ -197,12 +205,26 @@ window.addEventListener('scroll', () => {
 	const sns_title_text = document.getElementsByClassName('sns_title_text')[0];
 	const sns_link_wrap = document.getElementsByClassName('sns_link_wrap')[0];
 	const sns_slide = document.getElementsByClassName('sns_slide_wrap')[0];
+
+	let banner_item = document.querySelectorAll('.banner_item');
 	
 	
 	// 현재 스크롤 높이
 	//섹션 한개당 넓이 section_height
 	let now_scroll = window.scrollY;
-
+	// 배너 애니메이션
+	if ( now_scroll == 0 ) {
+		banner_item.forEach( (q,i) => {
+			banner_item[i].classList.remove(`item_0${i}_off`);
+			banner_item[i].classList.add(`item_0${i}_on`);
+		})
+	}
+	if  (now_scroll > 0 ) {
+		banner_item.forEach( (q,i) => {
+			banner_item[i].classList.remove(`item_0${i}_on`);
+			banner_item[i].classList.add(`item_0${i}_off`);
+		})
+	}
 	// 메뉴 애니메이션
 	if ( (now_scroll >= (section_height*1)) && (now_scroll < (section_height*2)) ) {
 		menu_title_text.classList.remove('menu_text_off');
@@ -407,20 +429,6 @@ window.addEventListener('scroll', () => {
 const menu_cate = document.getElementsByClassName('menu_cate')[0];
 
 // 메인배너 스와이프
-const banner_slide = new Swiper(".banner_wrap", {
-	loop : true,   // 슬라이드 반복 여부
-	loopAdditionalSlides : 1,
-	autoplay: false,
-	navigation: {
-		nextEl: ".banner_btn_next",
-		prevEl: ".banner_btn_prev",
-	},
-	pagination: {
-		el: ".banner_pagination",
-		type: "fraction",
-	}
-});
-
 
 
 // 슬라이더
