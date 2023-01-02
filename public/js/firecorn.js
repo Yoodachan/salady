@@ -18,24 +18,41 @@ const storage = firebase.storage();
 const get_name = localStorage.getItem('user');
 const user_name = document.getElementById('user_name');
 
+
+const log_name = document.getElementsByClassName('log_name')[0];
+const log_check = document.getElementsByClassName('log_check')[0];
+const log_list = document.getElementsByClassName('log_list')[0];
+const log_info = document.getElementsByClassName('log_info')[0];
+const log_out = document.getElementsByClassName('log_out')[0];
+
 //로그인 여부 확인
 firebase.auth().onAuthStateChanged((user)=>{
+	// 로그인 했을 경우
 	if (user) {
 		console.log(user)
 		console.log(user.uid);
 		console.log(user.displayName);
+		console.log(user.photoURL);
 		localStorage.setItem('user',JSON.stringify(user))
-		user_name.innerHTML = JSON.parse(get_name).displayName;
+		log_name.innerHTML = JSON.parse(get_name).displayName +"님";
+		log_name.setAttribute("href","javascript:void(0)")
+		log_check.innerHTML = "로그아웃"	
+		log_check.removeAttribute("href")
+		log_check.classList.add('log_out');
+	}
+	else {
+		log_name.innerHTML = "회원가입"
+		log_check.innerHTML = "로그인"	
 	}
 });
 
 
-
-
-//logout
-
-// const logout = document.getElementById('logout');
-// logout.addEventListener('click', function () {
-// 	logout.auth().signOut();
-// 	localStorage.removeItem('user')
-// })
+log_check.addEventListener('click', ()=>{
+if (log_check.classList.contains('log_out')) {
+	firebase.auth().signOut()
+	localStorage.removeItem('user')
+	log_check.classList.remove('log_out');
+	log_name.createAttribute("href")
+	log_name.setAttribute("href","./login.html")
+}
+})

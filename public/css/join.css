@@ -32,9 +32,8 @@ body {
 }
 
 #main {
-  width: 450px;
-  margin: 160px auto 100px;
-
+  width: 400px;
+  margin: 130px auto;
 }
 
 .join_wrap {
@@ -45,19 +44,10 @@ body {
   border-radius: 30px 0px;
   padding: 60px 30px;
 }
-  
-.common_title {
-  display: block;
-  position:relative;
-  width: 100%;
-  height: 60px;
-  margin: 50px auto;
-}
 
 .form_title {
   width: 100%;
   margin: 0 auto;
-
 }
 
 .join_logo {
@@ -72,41 +62,33 @@ body {
 }
 
 input {
-  padding: 0px 10px;
+  width: 100%;
+  display: block;
+  margin: 0px auto;
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
+}
+input:focus {
+  outline: none;
+  z-index:3;
 }
 
 label {
   display: block;
   width: 100%;
   text-align: left;
-  margin: 0 auto;
+  margin: 0 auto 5px;
   color: #666;
+}
+.info_input input {
+  padding: 0px 10px;
 }
 input::placeholder {
   font-size: 16px;
   padding: 0px 10px;
   color:#999;
-}
-
-/* 인풋 박스 크기 */
-#u_name,#u_id,#pwd,#re_pwd,#mobile,
-#birth,#ps_code,
-#addr1,#addr2,#addr3 {
-  display: block;
-  margin: 0px auto;
-  width: 100%;
-  height: 50px;
-  font-size: 20px;
-}
-
-/* 인풋 박스 포커스 */
-#u_name:focus,#u_id:focus,
-#pwd:focus,#re_pwd:focus,
-#mobile:focus,
-#birth:focus,#ps_code:focus,
-#addr1:focus,#addr2:focus,#addr3:focus {
-  outline: none;
-  z-index:3;
+  line-height: 50px;
 }
 
 /* 알림 공간 */
@@ -133,6 +115,55 @@ input::placeholder {
   z-index: 1;
 }
 
+.profil_wrap label {
+  width: 120px;
+  height: 120px;
+  margin: 10px auto;
+  border-radius: 50%;
+  background-color: #f2f2f2;
+  position: relative;
+  z-index: 10;
+}
+
+.profil_wrap input {
+  width: 120px;
+  height: 120px;
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+  z-index: 10;
+}
+.profil_wrap label>i {
+  display: block;
+  width: 120px;
+  height: 120px;
+  line-height: 30px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 70px;
+  position: absolute;
+  top: 40%;
+  left: 0px;
+  z-index: 5;
+}
+
+.profil_wrap label span {
+  display: block;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  background-color: #999;
+  color: #f2f2f2;
+  border-radius: 50%;
+  bottom: 0px;
+  right: 0px;
+  position: absolute;
+  text-align: center;
+  font-size: 14px;
+  z-index: 5;
+}
 
 #postal_btn {
   position: absolute;
@@ -140,14 +171,9 @@ input::placeholder {
   right:2px;
 }
 
-#d_name,#d_mobile,
-#d_birth {
+#d_id,#d_name,
+#d_mobile,#d_birth {
   top: 12px;
-  right: 10px;
-}
-
-#d_id{
-  bottom: 10px;
   right: 10px;
 }
 
@@ -412,7 +438,6 @@ input::placeholder {
   font-size: 18px;
   top: 0px;
   transition: all 0.3s;
-
   border: 1px solid #f0f0f0;
   background-color: #f0f0f0;
   color:#666666;
@@ -439,4 +464,164 @@ input::placeholder {
   border: 1px solid #e2e2e2;
   background-color: #ad9582;
   color: #fff;
+}
+
+
+
+@media screen and (max-width:400px) {
+#main {
+  width: 100%;
+  margin: 100px auto;
+}
+.join_wrap {
+  width: 100%;
+  border-radius: 30px;
+  padding: 60px 20px;
+}
+
+.join_logo {
+width: 100px;
+height: 100px;
+background-size: 100px, 100px;
+}
+
+input {
+  width: 100%;
+  display: block;
+  margin: 0px auto;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+}
+
+label {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin: 0 auto 5px;
+  color: #666;
+}
+.info_input input {
+  padding: 0px 5px;
+}
+
+input::placeholder {
+  font-size: 13px;
+  padding: 0px 5px;
+  line-height: 40px;
+  color:#999;
+}
+
+/* 알림 공간 */
+#name_text_wrap,#id_text_wrap,
+#pwd_text_wrap,#re_pwd_text_wrap,
+#mobile_text_wrap,
+#birth_text_wrap,.clear_txt,.err_txt {
+  margin: 3px auto;
+  font-size: 12px;
+}
+
+#postal_btn {
+  position: absolute;
+  top: 31px;
+  right:2px;
+}
+
+#d_id,#d_name,
+#d_mobile,#d_birth {
+  top: 7px;
+  right: 10px;
+}
+#d_pwd,#d_re_pwd {
+  top: 7px;
+  right: 50px;
+}
+
+#pwd_eye_on,
+#pwd_eye_off,
+#re_pwd_eye_on,
+#re_pwd_eye_off {
+  top: -2px;
+}
+
+
+#postal_btn {
+  display: block;
+  width: 80px;
+  height: 36px;
+  text-align: center;
+  line-height: 36px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #fff;
+  color:#999;
+  border: 1px solid #e2e2e2;
+  border-radius: 4px;
+  cursor:pointer;
+  transition:all 0.3s;
+} 
+
+
+
+.priv_text,.medie_text,
+.age_text,.marketing_text {
+  display: block;
+  width: 260px;
+  height: 32px;
+  position: absolute;
+  top: 0px;
+  left: 30px;
+  font-size: 11px;
+  /* border: 2px solid red; */
+  line-height: 26px;
+}
+
+.apply_wrap label button {
+  appearance: none;
+  border: none;
+  text-decoration: underline;
+  background-color: white;
+  font-size: 11px;
+  color: #666666;
+  cursor: pointer;
+}
+
+
+
+
+.sign_off {
+  display: block;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  appearance: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  top: 0px;
+  transition: all 0.3s;
+  border: 1px solid #f0f0f0;
+  background-color: #f0f0f0;
+  color:#666666;
+}
+
+
+.sign_on {
+  display: block;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  appearance: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  top: 0px;
+  transition: all 0.3s;
+
+  border: 1px solid #f0f0f0;
+  background-color: #fff;
+  color:#000;
+}
+
+
 }

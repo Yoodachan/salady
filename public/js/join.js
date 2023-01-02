@@ -842,22 +842,71 @@ join_btn.addEventListener('click', () => {
         apply_marketing_hidden.disabled = false;
     }
 
+    let join_id = u_id.value;
+    let join_pwd = pwd.value;
+    var p_profil = document.getElementById('p_profil');
+    
+        // 프사가 없으면
+    // if (!(p_profil.value)) {
+        firebase.auth().createUserWithEmailAndPassword( join_id,join_pwd ).then(( result )=>{
+            //result = 유저정보
+            console.log(result)
+            console.log(result.user)
+            result.user.updateProfile( {displayName : u_name.value } )
+            location.href = "index.html"  
+            alert(u_name.value)
+        }).catch( () => {
+            alert("가입 실패");
+            location.href = "join.html"  
+        });
+    // }
+        // 프사가 있으면
+    // if ( p_profil.value ) {
+    //     const img_file = p_profil.files[0];
+    //     var storageRef = storage.ref();
+    //     var upload_url = storageRef.child('image/'+ img_file.name );
+    //     var upload = upload_url.put(img_file);
 
-    const join_id = u_id.value;
-    const join_pwd = pwd.value;
+    //     upload .on( 'state_changed', 
+    //     // 변화시 동작하는 함수 
+    //     null, 
+    //     //에러시 동작하는 함수
+    //     (error) => {
+    //     console.error('에러내역', error);
+    //     }, 
+    //     // 성공시 동작하는 함수
+    //     () => {
+    //     upload .snapshot.ref.getDownloadURL().then((url) => {
+    //         const img_url = url;
+    //         firebase.auth().createUserWithEmailAndPassword( join_id,join_pwd ).then(( result )=>{
+    //             //result = 유저정보
+    //             console.log(result)
+    //             console.log(result.user)
+    //             result.user.updateProfile( {
+    //                 displayName : u_name.value,
+    //                 photoURL : img_url
+    //             } )
+    //             location.href = "index.html"  
+    //             alert(u_name.value)
+    //         }).catch((err) => {
+    //             //실패시 실행
+    //             console.log(err)
+    //             alert("업로드 실패")
+    //         });
+    //     }
+    //     ).catch((err) => {
+    //     //실패시 실행
+    //     console.log(err)
+    //     alert("업로드 실패")
+    //     })
+    //     }
+    //     )
+
+    // }
 
 
-    firebase.auth().createUserWithEmailAndPassword( join_id,join_pwd ).then(( result )=>{
-        //result = 유저정보
-        console.log(result)
-        console.log(result.user)
-        result.user.updateProfile( {displayName : u_name.value } )
-        location.href = "index.html"  
-        alert(u_name.value)
-    }).catch( () => {
-        alert("가입 실패");
-        location.href = "join.html"  
-    });
+
+    
 
 })
 

@@ -38,7 +38,6 @@ html,body,#main {
     width: 1140px;
     margin: 0 auto;
     padding-top: 100px;
-
 }
 
 .banner_item_wrap {
@@ -813,8 +812,10 @@ button>span:hover .frc_ico {
 .location_box{
     width: 100%;
     height: 170px;
+    border: none;
     border-bottom: 1px solid #f2f2f2;
     padding: 10px;
+    background-color: #fff;
 }
 .box_name {
     display: block;
@@ -884,6 +885,12 @@ button>span:hover .frc_ico {
     left: 0px;
     top: 0px;
 }
+.box_address span {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 30px;
+}
 
 .box_btn {
     display: block;
@@ -897,6 +904,62 @@ button>span:hover .frc_ico {
     text-align: center;
     margin-bottom: 5px;
 }
+
+.map_mark_wrap {
+    width: 280px;
+    height: 150px;
+    font-size: 16px;
+    color: #333;
+    margin: 0 auto;
+    border-radius: 2px;
+    border: 1px solid #333;
+    background-color: #fff;
+}
+.map_mark_title {
+    display: block;
+    text-align: left;
+    padding-left: 15px;
+    width: 278px;
+    height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    background-color: #f2f2f2;
+}
+
+.map_mark_content {
+    padding: 10px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.map_mark_address {
+    position: relative;
+    padding: 10px 0px 10px 30px;
+    color: #226140;
+}
+.map_mark_address::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/call_icon_1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    position:absolute;
+    left: 0px;
+    top: 5px;
+}
+
+.map_mark_detail {
+    display: block;
+    border: 1px solid #ddd;
+    text-align: center;
+    width: 150px;
+    height: 30px;
+    color: #333;
+    background-color: #fff;
+}
+
 
 .mobile_store_wrap {
     transition-duration: 1.2s;
@@ -1319,104 +1382,104 @@ footer {
 @media screen and (max-width:1140px) {
 /* 배너 시작 */
 
-#banner,
-.banner_wrap {
-    position:relative;
-    width: 100%;
-    height: 100%; 
+.banner_content {
+    width: 800px;
+    padding-top: 70px;
 }
 
-.banner_wrap {
-    overflow: hidden;
-    z-index: 3;
+.banner_item_wrap {
+    position: relative;
+    width: 800px;
 }
 
-.banner_wrap>.swiper-wrapper>.swiper-slide {
-    background: #fff;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
 }
 
-.banner_wrap .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    /* overflow: hidden; */
-    object-fit: cover;
-}
-
-
-.banner_btn_wrap {
-    position: absolute;
-    left: 50%;
-    bottom: 32px;
-    width: 160px;
-    height: 50px;
-    border-radius: 50px;
-    background-color:rgba(0,0,0,.6);
-    z-index: 1;
-}
-
-.banner_btn_wrap button {
-    background: none;
-    border: none;
-}
-
-.banner_btn_wrap i {
-    display: block;
-    position: absolute;
-    top: 20%;
-    width: 30px;
-    height: 30px;
-    color: #fff;
-    font-size: 24px;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.bn_ico_prev {
-    left: 12px;
-    background-image: url(../images/ico_arrow_left.svg);
-}
-
-.bn_ico_next {
-    right: 12px;
-    background-image: url(../images/ico_arrow_right.svg);
-}
-
-.banner_wrap .swiper-pagination-current {
-    color: #fff;
-}
-
-.banner_pagination {
-    position: absolute;
-    text-align: center;
-    height: 30px;
-    line-height: 30px;
-    color: #999999;
-    font-weight: bold;
-    top: 10px;
-}
+@media screen and (max-width:800px) {
+    /* 배너 시작 */
+    
+    .banner_content {
+        width: 100%;
+        height: 800px;
+        padding-top: 100px;
+    }
+    
+    .banner_item_wrap {
+        position: relative;
+        width: 100%;
+    }
+    
 }
 
 @media screen and (max-width:600px) {
-    .order_off {
-        bottom: 90px;
-    }
-    .order_on {
-        bottom: 120px;
-    }  
+/* 배너 시작 */
+.banner_item:nth-of-type(1) {
+    width: 60%;
+    height: 40%;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%,0%);
 }
+
+.banner_item:nth-of-type(2) {
+    width: 30%;
+    height: 30%;
+    top: 40%;
+    left: 5%;
+}
+
+.banner_item:nth-of-type(3) {
+    width: 30%;
+    height: 30%;
+    top: 40%;
+    right: 5%;
+}
+
+.banner_item:nth-of-type(4) {
+    width: 50%;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,0%);
+}
+    
+}
+
+@media screen and (max-width:400px) {
+/* 배너 시작 */
+
+.banner_item:nth-of-type(1) {
+    width: 60%;
+    height: 30%;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%,0%);
+}
+.banner_item:nth-of-type(2) {
+    width: 40%;
+    height: 30%;
+    top: 55%;
+    left: 5%;
+}
+
+.banner_item:nth-of-type(3) {
+    width: 40%;
+    height: 30%;
+    top: 55%;
+    right: 5%;
+}
+.banner_item:nth-of-type(4) {
+    width: 50%;
+    height: 30%;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%,0%);
+}
+        
+}
+
+
+
+
 
 
 /* article */
@@ -1474,6 +1537,15 @@ footer {
 body {
     overflow:unset;
 }
+}
+
+@media screen and (max-width:600px) {
+    .order_off {
+        bottom: 90px;
+    }
+    .order_on {
+        bottom: 120px;
+    }  
 }
 
 
@@ -1557,6 +1629,7 @@ body {
     flex-wrap: nowrap;
     width: 100%;
     height: 800px;
+    padding: 100px 30px 0px 30px;
 }
 
 .menu_title {
@@ -1965,6 +2038,7 @@ body {
 .franchise_content {
     width: 100%;
     height: 800px;
+    padding: 150px 30px 100px 30px;
 }
 
 .franchise_title {
@@ -2252,6 +2326,7 @@ body {
 .sns_content {
     width: 100%;
     height: 800px;
+    padding: 100px 30px;
 }
 
 .sns_title {

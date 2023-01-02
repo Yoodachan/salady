@@ -29,7 +29,6 @@ upload_btn.addEventListener('click', function () {
 	const sat_val =Number(p_sat.value);
 	const mg_val = Number(p_mg.value);
 	const comment_val = p_comment.value;
-	const img_url = p_img.value;
 	const img_file = p_img.files[0];
 
 	var storageRef = storage.ref();

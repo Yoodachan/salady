@@ -32,11 +32,11 @@
   <!-- 회원가입 css -->
   <link rel="stylesheet" href="./css/join.css">
   <!-- 헤더 & 푸터 css -->
-  <link rel="stylesheet" href="./css/header_and_footer.css">
+  <link rel="stylesheet" href="./css/header_and_footer_sub.css">
 
   <!-- 회원가입 js -->
   <script defer src="./js/firecorn.js"></script>
-  <script defer src="./js/header_and_footer.js"></script>
+  <script defer src="./js/header_and_footer_sub.js"></script>
   <script defer src="./js/join.js"></script>
   <!-- 헤더 & 푸터 js -->
   <!-- <script defer src="./js/header_and_footer.js"></script> -->
@@ -48,49 +48,38 @@
   <header id="header" class="header_off">
     <!-- 헤더 상부 -->
     <nav id="nav" class="nav_off">
-      <!-- 좌측 로고 20% -->
       <h1 id="logo" title="logo">
         <a href="./index.html"><span class="logo_img logo_hover_off"></span></a>
       </h1>
-      <!-- 중앙 메뉴 및 SNS 60% -->
+
       <ul class="nav_menu">
-        <li class="brand"><a href="#">브랜드</a></li>
-        <li class="list"><a href="./list_menu.html">메뉴</a></li>
-        <li class="franchise"><a href="#">가맹점</a></li>
-        <li class="order"><a href="#">주문</a></li>
-        <li class="news"><a href="#">새소식</a></li>
+        <li id="brand_menu" class="nav_menu_cate"><a href="#">브랜드</a></li>
+        <li id="list_menu" class="nav_menu_cate"><a href="./list_menu.html">메뉴</a></li>
+        <li id="franchise_menu" class="nav_menu_cate"><a href="#">가맹점</a></li>
+        <li id="order_menu" class="nav_menu_cate"><a href="#">주문</a></li>
+        <li id="news_menu" class="nav_menu_cate"><a href="#">새소식</a></li>
       </ul>
-      <!-- 우측 메뉴바 20% -->
-      <div class="nav_right">
-        <strong id="user_name">
-        </strong>
-        <a href="./login.html" title="login" class="login_btn">
-          <i class="fa-solid fa-door-closed"></i>
-          <span>로그인</span>
-        </a>
-        <a href="./mypage.html" title="mypage" class="mypage_btn">
-          <i class="fa-solid fa-user"></i>
-          <span>내정보</span>
-         </a>
-         <a href="./order.html" title="order" class="order_btn">
-          <i class="fa-solid fa-plate-wheat"></i>
-          <span>장바구니</span>
-         </a>
-        <div class="nav_mbtn_wrap">
-          <button class="nav_mbtn" type="button" ><span class="mbtn_img mbtn_img_off"></span></button> 
-        </div>
+
+      <div class="nav_mbtn_wrap">
+        <button class="nav_mbtn" type="button" ><span class="mbtn_img mbtn_img_off"></span></button>
+        <button type="button" class="user_info"> <i class="fa-solid fa-user"></i></a>
+        <ul class="user_info_menu info_menu_off">
+          <!-- 로그인 로그아웃 -->
+          <li><a href="./join.html" class="log_name"></a></li>
+          <li><a href="./login.html" class="log_check"></a></li>
+          <li><a href="javascript:void(0)" class="log_list">주문내역</a></li>
+          <li><a href="javascript:void(0)" class="log_info">내정보</a></li>
+        </ul>
       </div>
     </nav>
 
     <!-- 헤더 하부 -->
-    <div class="gnb_wrap">
+    <div class="gnb_wrap gnb_on">
       <!-- 새소식 메뉴 -->
-      <div class="gnb_left">
-      </div>
       <ul class="gnb_depth">
         <!-- 브랜드 메뉴 -->
         <li>
-          <ul class="brand">
+          <ul class="nav_menu_item">
             <li><a href="#">샐러디</a></li>
             <li><a href="#">샐러디 키친</a></li>
             <li><a href="#">샐러디 팜</a></li>
@@ -98,7 +87,7 @@
         </li>
         <!-- 메뉴 메뉴 -->
         <li>
-          <ul class="list">
+          <ul class="nav_menu_item">
             <li><a href="./list_menu.html"> 전체 </a></li>
             <li><a href="./list_menu.html?p_cate=warm_bowl"> 웜볼 </a></li>
             <li><a href="./list_menu.html?p_cate=salady"> 샐러디 </a></li>
@@ -108,26 +97,25 @@
         </li>
         <!-- 가맹점 메뉴 -->
         <li>
-          <ul class="franchise">
+          <ul class="nav_menu_item">
             <li><a href="#">가맹 안내</a></li>
             <li><a href="#">가맹 신청</a></li>
           </ul>
         </li>
         <!-- 주문 메뉴 -->
         <li>
-          <ul class="order">
+          <ul class="nav_menu_item">
             <li><a href="#">매장 주문</a></li>
           </ul>
         </li>
         <!-- 새소식 -->
         <li>
-          <ul class="news">
+          <ul class="nav_menu_item">
             <li><a href="#">공지사항</a></li>
             <li><a href="#">이벤트</a></li>
           </ul>
         </li>
       </ul>
-      <div class="gnb_right"></div>
 
     </div>
     <article>
@@ -241,22 +229,30 @@
     <section class="join_wrap">
       <div id="join_form">
         <section class="form_title">
-          <a href="./index.html"><span class="logo_img logo_hover_off"></span></a>
+          <a href="./index.html" class="join_logo"></a>
         </section>
-        <p class="name_wrap">
+
+        <!-- <section class="profil_wrap">
+          <label for="u_profil">
+            <input id="p_profil" type="file" name="u_profil"/>
+            <i class="fa-solid fa-user"></i>
+            <span><i class="fa-solid fa-camera"></i></span>
+          </label>
+      </section> -->
+
+        <section class="name_wrap">
             <label for="u_name">이름</label>
-            <div class="name_bt_wrap">
+            <div class="name_bt_wrap info_input">
                 <input id="u_name" name="u_name" class="n_border" type="text" placeholder="한글 2~20자">
                 <button id="d_name" class="off_view" type="button" title="입력한 내용 삭제"><i class="fa-solid fa-x"></i></button>
             </div>
             <span id="name_text_wrap"  class="err_txt"> 
-
             </span>
-        </p>
+        </section>
 
         <section class="id_wrap">
             <label for="u_id">이메일 아이디</label>
-            <div class="id_bt_wrap">
+            <div class="id_bt_wrap info_input">
                 <input id="u_id" name="u_id" class="n_border" type="text" placeholder=" @ 포함하여 작성">
                 <button id="d_id" class="off_view" type="button" title="입력한 내용 삭제"><i class="fa-solid fa-x"></i></button>
             </div>
@@ -266,7 +262,7 @@
 
         <section class="psw_wrap">
             <label for="pwd">비밀번호</label>
-            <div class="pwd_bt_wrap">
+            <div class="pwd_bt_wrap info_input">
                 <input id="pwd" name="pwd" class="n_border" type="password" placeholder="영어,숫자,특수문자 조합 8~24자">
                 <button id="d_pwd" class="off_view" type="button" title="입력한 내용 삭제"><i class="fa-solid fa-x"></i></button>
                 <button id="pwd_eye_on" class="on_view"  type="button"><i class="fa-solid fa-eye"></i></button>
@@ -275,7 +271,7 @@
             <span id="pwd_text_wrap"  class="err_txt"></span>
 
             <label for="re_pwd">비밀번호 확인</label>
-            <div class="re_pwd_bt_wrap">
+            <div class="re_pwd_bt_wrap info_input">
                 <input id="re_pwd" name="re_pwd" class="n_border" type="password" placeholder="비밀번호 확인">
                 <button id="d_re_pwd" class="off_view" type="button" title="입력한 내용 삭제"><i class="fa-solid fa-x"></i></button>
                 <button id="re_pwd_eye_on" class="on_view"  type="button"><i class="fa-solid fa-eye"></i></button>
@@ -286,7 +282,7 @@
 
         <section class="mobile_wrap">
             <label for="mobile">연락처</label>
-            <div class="mobile_bt_wrap">
+            <div class="mobile_bt_wrap info_input">
                 <input id="mobile" name="mobile" class="n_border" type="text" placeholder="휴대폰 번호 입력 (&#34;-&#34;제외 11자리 입력)">
                 <button id="d_mobile" class="off_view" type="button" title="입력한 내용 삭제"><i class="fa-solid fa-x"></i></button>
             </div>
@@ -296,14 +292,14 @@
 
         <section class="birth_wrap">
           <label for="birth">생년월일</label>
-          <div class="birth_bt_wrap">
+          <div class="birth_bt_wrap info_input">
             <input type="text" name="birth" id="birth" class="n_border" placeholder="ex) 20221006"/>
             <button id="d_birth" class="off_view" type="button" title="입력한 내용 삭제"><i class="fa-solid fa-x"></i></button>
           </div>
           <span id="birth_text_wrap"  class="err_txt"></span>
       </section>
 
-        <section class="postal_wrap">
+        <section class="postal_wrap info_input">
             <label for="ps_code">주소</label>
             <input type="text" name="ps_code" id="ps_code" class="n_border" placeholder="우편 번호"  readonly>
             <button id="postal_btn" type="button" >주소 검색</button>

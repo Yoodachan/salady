@@ -306,6 +306,7 @@ function cate_load () {
 		db.collection('menu/product/warmbol').orderBy("p_id").get().then((snapshot)=>{
 
 			//값 다 가져옴
+			
 		  snapshot.forEach(( doc ) => {
 		
 			var menu_list = document.querySelector('.menu_list')
@@ -371,3 +372,21 @@ function cate_load () {
 }
 
 cate_load();
+
+
+const admin_upload = document.getElementsByClassName('admin_upload')[0];
+
+
+
+//로그인 여부 확인
+firebase.auth().onAuthStateChanged((user)=>{
+	// 로그인 했을 경우
+	if (user) {
+		admin_upload.classList.remove('admin_view_off')
+		admin_upload.classList.add('admin_view_on')
+	}
+	else {
+		admin_upload.classList.remove('admin_view_on')
+		admin_upload.classList.add('admin_view_off')
+	}
+});

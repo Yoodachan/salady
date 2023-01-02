@@ -23,7 +23,6 @@
 
 const header = document.getElementById('header');
 const nav = document.getElementById('nav');
-const nav_menu = document.getElementsByClassName('nav_menu')[0];
 const logo_img = document.getElementsByClassName('logo_img')[0];
 const mbtn_img = document.getElementsByClassName('mbtn_img')[0];
 const gnb_wrap = document.getElementsByClassName('gnb_wrap')[0];
@@ -31,7 +30,24 @@ const gnb_depth = document.getElementsByClassName('gnb_depth')[0];
 const nav_menu_cate = document.querySelectorAll('.nav_menu_cate');
 const nav_menu_item = document.querySelectorAll('.nav_menu_item');
 
-nav.addEventListener('mouseenter', ()=> {
+
+let news_menu = document.getElementById('news_menu');
+let news_item = document.getElementsByClassName('news')[0];
+
+let list_menu = document.getElementById('list_menu');
+let list_item = document.getElementsByClassName('list')[0];
+
+let brand_menu = document.getElementById('brand_menu');
+let brand_item = document.getElementsByClassName('brand')[0];
+
+let franchise_menu = document.getElementById('franchise_menu');
+let franchise_item = document.getElementsByClassName('franchise')[0];
+
+let order_menu = document.getElementById('order_menu');
+let order_item = document.getElementsByClassName('order')[0];
+
+
+nav.addEventListener('mouseenter', function () {
 	let d_width = document.body.clientWidth;
 
 	if (d_width > 1140 ) {
@@ -58,41 +74,9 @@ nav.addEventListener('mouseenter', ()=> {
 
 });
 
-nav_menu.addEventListener('mouseenter', ()=> {
-	let d_width = document.body.clientWidth;
-
-	if (d_width > 1140 ) {
-	// 헤더 on/off
-	header.classList.remove('header_off');
-	header.classList.add('header_on');
-
- 	// 네브 on/off
-	nav.classList.remove('nav_off');
-	nav.classList.add('nav_on');
-
-	//로고 on/off
-	logo_img.classList.remove('logo_hover_off');
-	logo_img.classList.add('logo_hover_on');
-
-	//버튼 on/off
-	mbtn_img.classList.remove('mbtn_img_off');
-	mbtn_img.classList.add('mbtn_img_on');
-
-	//GNB 색변경
-	gnb_wrap.classList.add('gnb_on');
-	gnb_wrap.classList.remove('gnb_off');
-	}
-
-})
-
-const section = document.querySelectorAll('section')
-const section_num = (section.length) - 1;
-const section_height = banner.getBoundingClientRect().height;
 
 header.addEventListener('mouseleave', function () {
-	let now_scroll = window.scrollY;
 
-	if (now_scroll >= section_height ) {
 	// 헤더 on/off
 	header.classList.remove('header_on');
 	header.classList.add('header_off');
@@ -104,34 +88,12 @@ header.addEventListener('mouseleave', function () {
 	//로고 on/off
 	logo_img.classList.remove('logo_hover_off');
 	logo_img.classList.add('logo_hover_on');
-
-	}
-	else {
-
-	// 헤더 on/off
-	header.classList.remove('header_on');
-	header.classList.add('header_off');
-
-	//로고 on/off
-	logo_img.classList.add('logo_hover_off');
-	logo_img.classList.remove('logo_hover_on');
-
-
-	// 네브 on/off
-	nav.classList.add('nav_off');
-	nav.classList.remove('nav_on');
-
-	//GNB 색변경
-	gnb_wrap.classList.add('gnb_off');
-	gnb_wrap.classList.remove('gnb_on');
-	
-
-	}
 
 });
 
 
 // 네브 사이드 메뉴 버튼
+
 
 const nav_mbtn_wrap = document.getElementsByClassName('nav_mbtn_wrap')[0];
 const nav_mbtn = document.getElementsByClassName('nav_mbtn')[0];
@@ -144,14 +106,6 @@ nav_mbtn_wrap.addEventListener('mouseenter', () => {
 	if (header.classList.contains('header_on')) {
 		header.classList.remove('header_on');
 		header.classList.add('header_off');
-		if (nav.classList.contains('nav_on') && (window.scrollY < section_height) ) {
-			nav.classList.remove('nav_on');
-			nav.classList.add('nav_off');
-
-			logo_img.classList.remove('logo_hover_on');
-			logo_img.classList.add('logo_hover_off');
-
-		}
 	}
 });
 
@@ -166,6 +120,7 @@ user_info.addEventListener('click', ()=> {
 	}
 })
 
+
 // 히든메뉴 온오프
 
 nav_mbtn.addEventListener('click', () => {
@@ -177,8 +132,6 @@ close_btn.addEventListener('click', () => {
 		all_menu.classList.remove('all_menu_on');
 		all_menu.classList.add('all_menu_off');
 });
-
-
 
 
 const all_menu_cate_select = document.querySelectorAll('.all_menu_cate_select');

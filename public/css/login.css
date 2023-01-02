@@ -3,7 +3,7 @@ body {
 }
 #main {
   width: 100%;
-  padding: 160px;
+  padding: 160px 0px;
 }
 
 a:hover {
@@ -11,7 +11,7 @@ a:hover {
 }
 
 .login_wrap {
-  width: 450px;
+  width: 400px;
   /* height: 600px; */
   margin: 0 auto;
   padding: 60px;
@@ -53,7 +53,7 @@ a:hover {
 .login_form label {
   display: flex;
   justify-content: left;
-  width: 300px;
+  width: 280px;
   height: 50px;
   font-size: 16px;
   color: #666;
@@ -72,7 +72,7 @@ a:hover {
 
 .login_form input {
   display: block;
-  width: 220px;
+  width: 200px;
   height: 46px;
   border: none;
   padding: 0px 5px;
@@ -89,7 +89,7 @@ a:hover {
 } 
 
 .login_save_wrap {
-  width: 300px;
+  width: 280px;
   display: flex;
   margin: 10px auto 20px;
   color: #666;
@@ -137,7 +137,7 @@ a:hover {
   border: none;
   color: #fff;
   font-size: 18px;
-  width: 300px;
+  width: 280px;
   height: 50px;
   margin: 0 auto;
   border-radius: 2px;
@@ -145,7 +145,7 @@ a:hover {
 
 .login_find_wrap {
   display: flex;
-  width: 300px;
+  width: 280px;
   justify-content: center;
   margin: 20px auto;
 }
@@ -170,6 +170,7 @@ a:hover {
   content: "";
   position:absolute;
   background-color: #999;
+  top: 3px;
 }
 .login_find_wrap li:nth-of-type(2)::before {
   left: -5px;
@@ -179,3 +180,76 @@ a:hover {
   right: -5px;
 }
 
+@media screen and (max-width:400px) {
+/* store & location 시작 */
+.login_wrap {
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: rgba(153, 153, 153, 0.466) 1px 1px 3px;
+}
+.login_form label {
+  display: flex;
+  justify-content: left;
+  width: 100%;
+  height: 40px;
+  font-size: 14px;
+  color: #666;
+  margin: 10px auto;
+  font-weight: 300;
+  line-height: 36px;
+  border: 1px solid #f2f2f2;
+}
+
+.login_form label span {
+  width: 30%;
+  height: 40px;
+}
+
+.login_form input {
+  width: 70%;
+  height: 36px;
+}
+
+.login_save_wrap {
+  width: 100%;
+  font-size: 14px;
+  height: 30px;
+  line-height: 30px;
+}
+
+#login_btn {
+  width: 100%;
+  font-size: 14px;
+  height: 40px;
+}
+
+.login_find_wrap {
+  width: 100%;
+}
+
+.login_find_wrap li {
+  font-size: 14px;
+}
+
+.login_find_wrap li:nth-of-type(2)::before,
+.login_find_wrap li:nth-of-type(2)::after {
+  width: 1px;
+  height: 16px;
+  content: "";
+  position:absolute;
+  background-color: #999;
+}
+
+.login_find_wrap li:nth-of-type(2)::before {
+  left: -5px;
+}
+
+.login_find_wrap li:nth-of-type(2)::after {
+  right: -9px;
+}
+
+}
+  

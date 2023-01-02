@@ -17,89 +17,6 @@ let wheel_cooltime;
 
 const main = document.querySelector('#main')
 
-const section = document.querySelectorAll('section')
-const section_num = (section.length) - 1;
-const section_height = banner.getBoundingClientRect().height;
-
-
-header.addEventListener('mouseleave', function () {
-	let now_scroll = window.scrollY;
-
-	if (now_scroll >= section_height ) {
-	// 헤더 on/off
-	header.classList.remove('header_on');
-	header.classList.add('header_off');
-
-	// 네브 on/off
-	nav.classList.remove('nav_off');
-	nav.classList.add('nav_on');
-
-	//로고 on/off
-	logo_img.classList.remove('logo_hover_off');
-	logo_img.classList.add('logo_hover_on');
-
-	}
-	else {
-
-	// 헤더 on/off
-	header.classList.remove('header_on');
-	header.classList.add('header_off');
-
-	//로고 on/off
-	logo_img.classList.add('logo_hover_off');
-	logo_img.classList.remove('logo_hover_on');
-
-
-	// 네브 on/off
-	nav.classList.add('nav_off');
-	nav.classList.remove('nav_on');
-
-	//GNB 색변경
-	gnb_wrap.classList.add('gnb_off');
-	gnb_wrap.classList.remove('gnb_on');
-	
-
-	}
-
-});
-
-
-// 네브 사이드 메뉴 버튼
-
-const nav_mbtn = document.getElementsByClassName('nav_mbtn')[0];
-const close_btn = document.getElementsByClassName('close_btn')[0];
-const all_menu = document.getElementsByClassName('all_menu')[0];
-
-nav_mbtn.addEventListener('mouseenter', () => {
-	if (header.classList.contains('header_on')) {
-		header.classList.remove('header_on');
-		header.classList.add('header_off');
-		if (nav.classList.contains('nav_on') && (window.scrollY < section_height) ) {
-			nav.classList.remove('nav_on');
-			nav.classList.add('nav_off');
-
-			logo_img.classList.remove('logo_hover_on');
-			logo_img.classList.add('logo_hover_off');
-
-
-		}
-
-		
-	}
-});
-
-
-// 히든메뉴 온오프
-
-nav_mbtn.addEventListener('click', () => {
-		all_menu.classList.remove('all_menu_off');
-		all_menu.classList.add('all_menu_on');
-});
-
-close_btn.addEventListener('click', () => {
-		all_menu.classList.remove('all_menu_on');
-		all_menu.classList.add('all_menu_off');
-});
 
 
 
@@ -128,13 +45,13 @@ location_hover.addEventListener('mouseleave', function () {
 main.addEventListener('wheel', (e) => {
 	if (( store_bleen == false ) && ( location_bleen  == false )) {
 
-		const section_max = section_height * section_num;
+		let section_max = section_height * section_num;
 		clearTimeout(wheel_cooltime); // 이전 휠 이벤트 제거
 		wheel_cooltime = setTimeout (() => {
 			// 해상도가 800 이상일시에만 풀페이지 스크롤이 작동
 			if ( (window.innerWidth > 800 ) ) {
 				const mouse_direction = e.deltaY > 0 ? "Scroll Down" : "Scroll Up";
-				const window_y = window.pageYOffset;
+				let window_y = window.pageYOffset;
 	
 				if ( (mouse_direction == "Scroll Up") && (window_y <= section_max  )  ) {
 					window.scrollBy( {top: -section_height, left: 0 ,behavior:'smooth'} );
@@ -212,7 +129,8 @@ window.addEventListener('scroll', () => {
 	// 현재 스크롤 높이
 	//섹션 한개당 넓이 section_height
 	let now_scroll = window.scrollY;
-	// 배너 애니메이션
+	if ( window.innerWidth > 800 ) {
+		// 배너 애니메이션
 	if ( now_scroll == 0 ) {
 		banner_item.forEach( (q,i) => {
 			banner_item[i].classList.remove(`item_0${i}_off`);
@@ -345,6 +263,143 @@ window.addEventListener('scroll', () => {
 			sns_slide.classList.add('sns_slide_off')
 		 }
 	}
+	}
+
+	if (window.innerWidth <= 800 ) {
+		// 배너 애니메이션
+		if ( now_scroll == 0 ) {
+			banner_item.forEach( (q,i) => {
+				banner_item[i].classList.remove(`item_0${i}_off`);
+				banner_item[i].classList.add(`item_0${i}_on`);
+			})
+		}
+		if  (now_scroll > 800 ) {
+			banner_item.forEach( (q,i) => {
+				banner_item[i].classList.remove(`item_0${i}_on`);
+				banner_item[i].classList.add(`item_0${i}_off`);
+			})
+		}
+		// 메뉴 애니메이션
+		if ( (now_scroll >= (800)) && (now_scroll < (1600)) ) {
+			menu_title_text.classList.remove('menu_text_off');
+			menu_title_text.classList.add('menu_text_on');
+
+			menu_cate.classList.remove('menu_cate_anime_off');
+			menu_cate.classList.add('menu_cate_anime_on');
+
+			menu_slide.classList.remove('menu_slide_anime_off');
+			menu_slide.classList.add('menu_slide_anime_on');
+		}
+		if ( (now_scroll < (800)) || (now_scroll >= (1600)) ) {
+			menu_title_text.classList.remove('menu_text_on');
+			menu_title_text.classList.add('menu_text_off');
+
+			menu_cate.classList.remove('menu_cate_anime_on');
+			menu_cate.classList.add('menu_cate_anime_off');
+
+			menu_slide.classList.remove('menu_slide_anime_on');
+			menu_slide.classList.add('menu_slide_anime_off');
+		}
+
+		// 프랜차이즈 애니메이션
+		if ( (now_scroll >= (1600)) && (now_scroll < (2400)) ) {
+			franchise_title_text.classList.remove('franchise_title_off');
+			franchise_title_text.classList.add('franchise_title_on');
+
+			franchise_desc_text.classList.remove('franchise_desc_off');
+			franchise_desc_text.classList.add('franchise_desc_on');
+
+			franchise_comment_text.classList.remove('franchise_comment_off');
+			franchise_comment_text.classList.add('franchise_comment_on');
+
+			frc_btn_box_01.classList.remove('frc_btn_off');
+			frc_btn_box_01.classList.add('frc_btn_on');
+			frc_btn_box_02.classList.remove('frc_btn_off');
+			frc_btn_box_02.classList.add('frc_btn_on');
+		}
+		if ( (now_scroll < (1600)) || (now_scroll >= (2400)) ) {
+			franchise_title_text.classList.remove('franchise_title_on');
+			franchise_title_text.classList.add('franchise_title_off');
+
+			franchise_desc_text.classList.remove('franchise_desc_on');
+			franchise_desc_text.classList.add('franchise_desc_off');
+
+			franchise_comment_text.classList.remove('franchise_comment_on');
+			franchise_comment_text.classList.add('franchise_comment_off');
+
+			frc_btn_box_01.classList.remove('frc_btn_on');
+			frc_btn_box_01.classList.add('frc_btn_off');
+			frc_btn_box_02.classList.remove('frc_btn_on');
+			frc_btn_box_02.classList.add('frc_btn_off');
+		}
+
+		// 스토어 애니메이션
+		if ( (now_scroll >= (2400)) && (now_scroll < (3200)) ) {
+			store_title_text.classList.remove('store_title_off');
+			store_title_text.classList.add('store_title_on');
+
+			store_map.classList.remove('map_off');
+			store_map.classList.add('map_on');
+
+			location.classList.remove('location_off');
+			location.classList.add('location_on');
+
+			if (innerWidth <= 800) {
+				store_mobile.classList.remove('store_wrap_off');
+				store_mobile.classList.add('store_wrap_on');
+
+				store_btn.classList.remove('store_btn_off');
+				store_btn.classList.add('store_btn_on');
+			}
+
+		}
+
+		if ( (now_scroll < (2400)) || (now_scroll >= (3200)) ) {
+			store_title_text.classList.remove('store_title_on');
+			store_title_text.classList.add('store_title_off');
+
+			store_map.classList.remove('map_on');
+			store_map.classList.add('map_off');
+
+			location.classList.remove('location_on');
+			location.classList.add('location_off');
+			if (store_mobile.classList.contains('store_wrap_on')) {
+
+				store_mobile.classList.remove('store_wrap_on');
+				store_mobile.classList.add('store_wrap_off');
+
+				store_btn.classList.remove('store_btn_on');
+				store_btn.classList.add('store_btn_off');
+			}
+		}
+
+		// SNS 애니메이션
+		if ( (now_scroll >= (3200)) && (now_scroll < (4000)) ) {
+			sns_title_text.classList.remove('sns_title_off');
+			sns_title_text.classList.add('sns_title_on');
+
+			sns_link_wrap.classList.remove('sns_link_wrap_off');
+			sns_link_wrap.classList.add('sns_link_wrap_on');
+
+			if (innerWidth <= 800) {
+				sns_slide.classList.remove('sns_slide_off');
+				sns_slide.classList.add('sns_slide_on')
+			}
+
+		}
+		if ( (now_scroll < (3200)) || (now_scroll >= (4000)) ) {
+			sns_title_text.classList.remove('sns_title_on');
+			sns_title_text.classList.add('sns_title_off');
+
+			sns_link_wrap.classList.remove('sns_link_wrap_on');
+			sns_link_wrap.classList.add('sns_link_wrap_off');
+
+			if (sns_slide.classList.contains('sns_slide_on')) {
+				sns_slide.classList.remove('sns_slide_on');
+				sns_slide.classList.add('sns_slide_off')
+			}
+		}
+	}
 
 
 	//현재 스크롤 >= 섹션 1개 높이
@@ -367,64 +422,110 @@ window.addEventListener('scroll', () => {
 	}
 	// 현재 화면 스크롤이 섹션 1개 높이랑 같거나 클때
 	// 네브바 디자인을 원상복구
-	if ( now_scroll < section_height ) {
-		// 네브 on/off
-		if (header.classList.contains('header_off')) {
-			nav.classList.add('nav_off');
-			nav.classList.remove('nav_on');
-			// 버튼 on/off
-			mbtn_img.classList.add('mbtn_img_off');
-			mbtn_img.classList.remove('mbtn_img_on');
-
-			// 로고 on/off
-			logo_img.classList.add('logo_hover_off');
-			logo_img.classList.remove('logo_hover_on');
-
-		}
-	}
-
-	// 현재 화면 스크롤이 섹션 1개 높이랑 같거나 클때
-	// 스크롤탑 버튼을 생성함
-	if ( now_scroll >= section_height ) {
-		scroll_btn.classList.remove('scroll_off');
-		scroll_btn.classList.add('scroll_on');
-		order_btn.classList.remove('order_off');
-		order_btn.classList.add('order_on');
-	}
-
-
-	// 현재 화면 스크롤이 섹션 1개 크기보다 작을때
-	// 스크롤탑 버튼을 집어넣음
-	if ( now_scroll < section_height ) {
-		scroll_btn.classList.remove('scroll_on');
-		scroll_btn.classList.add('scroll_off');
-		order_btn.classList.remove('order_on');
-		order_btn.classList.add('order_off');
-	}
-
-	// 현재 화면 스크롤이 섹션 1개 높이보다 크면서 동시에 섹션 3개 곱한거보단 작을때
-	// 주문버튼 색상을 변경함
+	if ( window.innerWidth > 800 ) {
+		if ( now_scroll < section_height ) {
+			// 네브 on/off
+			if (header.classList.contains('header_off')) {
+				nav.classList.add('nav_off');
+				nav.classList.remove('nav_on');
+				// 버튼 on/off
+				mbtn_img.classList.add('mbtn_img_off');
+				mbtn_img.classList.remove('mbtn_img_on');
 	
-	if ( (now_scroll >= (section_height*2)) && (now_scroll < (section_height*3)) ) {
-		order_btn.classList.remove('order_color_off');
-		order_btn.classList.add('order_color_on');
-	} 
-	if ( (now_scroll < (section_height*2)) || (now_scroll >= (section_height*3)) ) {
-	// 현재 화면 스크롤이 섹션 1개 높이보다 크면서 동시에 섹션 3개 곱한거보단 작을때
-	// 주문버튼 색상을 원복
-		order_btn.classList.remove('order_color_on');
-		order_btn.classList.add('order_color_off');
+				// 로고 on/off
+				logo_img.classList.add('logo_hover_off');
+				logo_img.classList.remove('logo_hover_on');
+	
+			}
+		}
+	
+		// 현재 화면 스크롤이 섹션 1개 높이랑 같거나 클때
+		// 스크롤탑 버튼을 생성함
+		if ( now_scroll >= section_height ) {
+			scroll_btn.classList.remove('scroll_off');
+			scroll_btn.classList.add('scroll_on');
+			order_btn.classList.remove('order_off');
+			order_btn.classList.add('order_on');
+		}
+	
+		// 현재 화면 스크롤이 섹션 1개 크기보다 작을때
+		// 스크롤탑 버튼을 집어넣음
+		if ( now_scroll < section_height ) {
+			scroll_btn.classList.remove('scroll_on');
+			scroll_btn.classList.add('scroll_off');
+			order_btn.classList.remove('order_on');
+			order_btn.classList.add('order_off');
+		}
+	
+		// 현재 화면 스크롤이 섹션 1개 높이보다 크면서 동시에 섹션 3개 곱한거보단 작을때
+		// 주문버튼 색상을 변경함
+		
+		if ( (now_scroll >= (section_height*2)) && (now_scroll < (section_height*3)) ) {
+			order_btn.classList.remove('order_color_off');
+			order_btn.classList.add('order_color_on');
+		} 
+		if ( (now_scroll < (section_height*2)) || (now_scroll >= (section_height*3)) ) {
+		// 현재 화면 스크롤이 섹션 1개 높이보다 크면서 동시에 섹션 3개 곱한거보단 작을때
+		// 주문버튼 색상을 원복
+			order_btn.classList.remove('order_color_on');
+			order_btn.classList.add('order_color_off');
+	
+		}
+
+	}
+
+	if ( window.innerWidth <= 800 ) {
+		if ( now_scroll < 800 ) {
+			// 네브 on/off
+			if (header.classList.contains('header_off')) {
+				nav.classList.add('nav_off');
+				nav.classList.remove('nav_on');
+				// 버튼 on/off
+				mbtn_img.classList.add('mbtn_img_off');
+				mbtn_img.classList.remove('mbtn_img_on');
+	
+				// 로고 on/off
+				logo_img.classList.add('logo_hover_off');
+				logo_img.classList.remove('logo_hover_on');
+	
+			}
+		}
+	
+		// 현재 화면 스크롤이 섹션 1개 높이랑 같거나 클때
+		// 스크롤탑 버튼을 생성함
+		if ( now_scroll >= 800 ) {
+			scroll_btn.classList.remove('scroll_off');
+			scroll_btn.classList.add('scroll_on');
+			order_btn.classList.remove('order_off');
+			order_btn.classList.add('order_on');
+		}
+	
+		// 현재 화면 스크롤이 섹션 1개 크기보다 작을때
+		// 스크롤탑 버튼을 집어넣음
+		if ( now_scroll < 800 ) {
+			scroll_btn.classList.remove('scroll_on');
+			scroll_btn.classList.add('scroll_off');
+			order_btn.classList.remove('order_on');
+			order_btn.classList.add('order_off');
+		}
+	
+		// 현재 화면 스크롤이 섹션 1개 높이보다 크면서 동시에 섹션 3개 곱한거보단 작을때
+		// 주문버튼 색상을 변경함
+		
+		if ( (now_scroll >= ( 1100 )) && (now_scroll < ( 2000 )) ) {
+			order_btn.classList.remove('order_color_off');
+			order_btn.classList.add('order_color_on');
+		} 
+		if ( (now_scroll < ( 1100 )) || (now_scroll >= ( 2000 )) ) {
+		// 현재 화면 스크롤이 섹션 1개 높이보다 크면서 동시에 섹션 3개 곱한거보단 작을때
+		// 주문버튼 색상을 원복
+			order_btn.classList.remove('order_color_on');
+			order_btn.classList.add('order_color_off');
+	
+		}
 
 	}
 })
-
-
-
-
-
-
-
-
 
 const menu_cate = document.getElementsByClassName('menu_cate')[0];
 
@@ -612,44 +713,147 @@ marker2.setMap(map);
 marker3.setMap(map);
 marker4.setMap(map);
 
-//강남역
-// 37.4971636070215, 127.03023053922148
 //선릉역
 // 37.504282083362334, 127.04884054063321
-//역삼역
-// 37.50101756352483, 127.0383294193219
+//강남역
+// 37.4971636070215, 127.03023053922148
 //삼성역
 // 37.50856961099675, 127.05669547749909
+//역삼역
+// 37.50101756352483, 127.0383294193219
 
 
 
-var iwContent = '<div style="padding:5px;">Hello World!</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-    iwPosition = new kakao.maps.LatLng(37.4971636070215, 127.03023053922148), //인포윈도우 표시 위치입니다
-    iwRemoveable = false; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
+var iwContent1 = 
+`<div class="map_mark_wrap">
+	<span class="map_mark_title">
+	샐러디 선릉점
+	</span> 
+	<div class="map_mark_content">
+	서울 강남구 선릉로93길 26 (역삼동) 1층 
+		<div class="map_mark_address">
+		02-556-4066  
+		</div>
+		<button class="map_mark_detail" type="button">자세히 보기</button>
+	</div>
+</div>`
+, // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+    // iwPosition = new kakao.maps.LatLng(37.49739336148695 , 127.0302391132642), //인포윈도우 표시 위치입니다
+iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
+
+var iwContent2 = 
+`<div class="map_mark_wrap">
+	<span class="map_mark_title">
+	샐러디 강남점
+	</span> 
+	<div class="map_mark_content">
+	서울 강남구 강남대로84길 23 (역삼동) 1층  
+		<div class="map_mark_address">
+		02-557-6738  
+		</div>
+		<button class="map_mark_detail" type="button">자세히 보기</button>
+	</div>
+</div>`,
+iwRemoveable = true;
+
+var iwContent3 = 
+`<div class="map_mark_wrap">
+	<span class="map_mark_title">
+	샐러디 삼성점
+	</span> 
+	<div class="map_mark_content">
+	서울 강남구 삼성로96길 6 (삼성동) 1층  
+		<div class="map_mark_address">
+		02-2191-5071  
+		</div>
+		<button class="map_mark_detail" type="button">자세히 보기</button>
+	</div>
+</div>`,
+iwRemoveable = true;
+
+var iwContent4 = 
+`<div class="map_mark_wrap">
+	<span class="map_mark_title">
+	샐러디 역삼점
+	</span> 
+	<div class="map_mark_content">
+	서울 강남구 테헤란로22길 14 (역삼동) 1층
+		<div class="map_mark_address">
+		02-538-4066  
+		</div>
+		<button class="map_mark_detail" type="button">자세히 보기</button>
+	</div>
+</div>`,
+iwRemoveable = true;
+
+
 
 // 인포윈도우를 생성하고 지도에 표시합니다
-var infowindow = new kakao.maps.InfoWindow({
+// 선릉점
+var infowindow1 = new kakao.maps.InfoWindow({
     map: map, // 인포윈도우가 표시될 지도
-    position : iwPosition, 
-    content : iwContent,
+    // position : iwPosition, 
+    content : iwContent1,
+    removable : iwRemoveable
+});
+
+// 강남점
+var infowindow2 = new kakao.maps.InfoWindow({
+    map: map, // 인포윈도우가 표시될 지도
+    content : iwContent2,
+    removable : iwRemoveable
+});
+
+// 삼성점
+var infowindow3 = new kakao.maps.InfoWindow({
+    map: map, // 인포윈도우가 표시될 지도
+    content : iwContent3,
+    removable : iwRemoveable
+});
+
+// 역삼점
+var infowindow4 = new kakao.maps.InfoWindow({
+    map: map, // 인포윈도우가 표시될 지도
+    content : iwContent4,
     removable : iwRemoveable
 });
 
 
+// 클릭시 인포윈도우 출력
+// 선릉역
 kakao.maps.event.addListener(marker1, 'click', function() {
 	// 마커 위에 인포윈도우를 표시합니다
-	infowindow.open(map, marker1);  
+	infowindow1.open(map, marker1);  
 });
+
+// 강남역
+kakao.maps.event.addListener(marker2, 'click', function() {
+	// 마커 위에 인포윈도우를 표시합니다
+	infowindow2.open(map, marker2);  
+});
+
+// 삼성역
+kakao.maps.event.addListener(marker3, 'click', function() {
+	// 마커 위에 인포윈도우를 표시합니다
+	infowindow3.open(map, marker3);  
+});
+
+// 역삼역
+kakao.maps.event.addListener(marker4, 'click', function() {
+	// 마커 위에 인포윈도우를 표시합니다
+	infowindow4.open(map, marker4);  
+});
+
 
 
 //지도의 중심좌표 설정
 map.setCenter(new kakao.maps.LatLng(37.4971636070215, 127.03023053922148));
 
-// // 지도를 클릭한 위치에 표출할 마커입니다
-// var marker = new kakao.maps.Marker({ 
-//     // 지도 중심좌표에 마커를 생성합니다 
-//     // position: map.getCenter() 
-// }); 
+// 지도를 클릭한 위치에 표출할 마커입니다
+var marker = new kakao.maps.Marker({ 
+    // 지도 중심좌표에 마커를 생성합니다 
+    // position: map.getCenter() 
+}); 
 
 
 // // 지도에 마커를 표시합니다
@@ -676,7 +880,7 @@ map.setCenter(new kakao.maps.LatLng(37.4971636070215, 127.03023053922148));
 
 
 
-// 메인배너 스와이프
+// sns 반응형 슬라이드
 const sns_slide_wrap = new Swiper(".sns_slide_wrap", {
 	loop : true,   // 슬라이드 반복 여부
 	loopAdditionalSlides : 1,
