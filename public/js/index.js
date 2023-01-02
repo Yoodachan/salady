@@ -280,7 +280,7 @@ window.addEventListener('scroll', () => {
 			})
 		}
 		// 메뉴 애니메이션
-		if ( (now_scroll >= (800)) && (now_scroll < (1600)) ) {
+		if ( (now_scroll >= (600)) && (now_scroll < (2000)) ) {
 			menu_title_text.classList.remove('menu_text_off');
 			menu_title_text.classList.add('menu_text_on');
 
@@ -290,7 +290,7 @@ window.addEventListener('scroll', () => {
 			menu_slide.classList.remove('menu_slide_anime_off');
 			menu_slide.classList.add('menu_slide_anime_on');
 		}
-		if ( (now_scroll < (800)) || (now_scroll >= (1600)) ) {
+		if ( (now_scroll >= (2000)) ) {
 			menu_title_text.classList.remove('menu_text_on');
 			menu_title_text.classList.add('menu_text_off');
 
@@ -302,7 +302,7 @@ window.addEventListener('scroll', () => {
 		}
 
 		// 프랜차이즈 애니메이션
-		if ( (now_scroll >= (1600)) && (now_scroll < (2400)) ) {
+		if ( (now_scroll >= (1400)) && (now_scroll < (2800)) ) {
 			franchise_title_text.classList.remove('franchise_title_off');
 			franchise_title_text.classList.add('franchise_title_on');
 
@@ -317,7 +317,7 @@ window.addEventListener('scroll', () => {
 			frc_btn_box_02.classList.remove('frc_btn_off');
 			frc_btn_box_02.classList.add('frc_btn_on');
 		}
-		if ( (now_scroll < (1600)) || (now_scroll >= (2400)) ) {
+		if ( (now_scroll >= (3200)) ) {
 			franchise_title_text.classList.remove('franchise_title_on');
 			franchise_title_text.classList.add('franchise_title_off');
 
@@ -334,7 +334,7 @@ window.addEventListener('scroll', () => {
 		}
 
 		// 스토어 애니메이션
-		if ( (now_scroll >= (2400)) && (now_scroll < (3200)) ) {
+		if ( (now_scroll >= (2200)) && (now_scroll < (4000)) ) {
 			store_title_text.classList.remove('store_title_off');
 			store_title_text.classList.add('store_title_on');
 
@@ -354,7 +354,7 @@ window.addEventListener('scroll', () => {
 
 		}
 
-		if ( (now_scroll < (2400)) || (now_scroll >= (3200)) ) {
+		if ( (now_scroll >= (4400)) ) {
 			store_title_text.classList.remove('store_title_on');
 			store_title_text.classList.add('store_title_off');
 
@@ -374,7 +374,7 @@ window.addEventListener('scroll', () => {
 		}
 
 		// SNS 애니메이션
-		if ( (now_scroll >= (3200)) && (now_scroll < (4000)) ) {
+		if ( (now_scroll >= (2800)) && (now_scroll < (5800)) ) {
 			sns_title_text.classList.remove('sns_title_off');
 			sns_title_text.classList.add('sns_title_on');
 
@@ -387,7 +387,7 @@ window.addEventListener('scroll', () => {
 			}
 
 		}
-		if ( (now_scroll < (3200)) || (now_scroll >= (4000)) ) {
+		if ( (now_scroll >= (5800)) ) {
 			sns_title_text.classList.remove('sns_title_on');
 			sns_title_text.classList.add('sns_title_off');
 
