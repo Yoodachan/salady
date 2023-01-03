@@ -240,7 +240,7 @@ input::placeholder {
 
 #postal_btn:hover {
   color:#fff;
-  background-color: #ad9582;
+  background-color: #226140;;
 }
 
 .name_bt_wrap,.id_bt_wrap,
@@ -322,7 +322,7 @@ input::placeholder {
   transform: rotate(45deg);
 }
 #apply_all:checked {
-  background-color:#ad9582;
+  background-color:#226140;;
 }
 #apply_all:checked::after {
   display: block;
@@ -409,7 +409,7 @@ input::placeholder {
 #apply_medie:checked,
 #apply_age:checked,
 #apply_marketing:checked {
-  background-color:#ad9582;
+  background-color:#226140;;
 }
 
 #apply_priv:checked::after,
@@ -462,7 +462,7 @@ input::placeholder {
 
 .sign_on:hover {
   border: 1px solid #e2e2e2;
-  background-color: #ad9582;
+  background-color: #226140;
   color: #fff;
 }
 
